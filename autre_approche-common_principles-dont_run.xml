@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="communs_intro_algo">
+     <title>Réfléchir à la logique</title>
+     <para>Les gens qui croient qu'il suffit de se jeter sur son clavier et de se mettre à
+            <quote>vomir</quote> du code pour créer une application ne pourraient pas faire plus
+        lourde erreur.</para>
+    <para>Il faut en effet prendre conscience du fait que, lorsque nous décidons de créer un
+        programme, nous le faisons toujours dans un but similaire: manipuler des données afin
+        d'atteindre un objectif spécifique.</para>
+    <para>Il ne sert donc à rien de nous jeter sur son clavier si nous n'avons pas une idée un tout
+        petit peu précise de l'objectif à atteindre, des données qu'il faudra manipuler et de la
+        manière dont ces données doivent être manipulées pour atteindre l'objectif en
+        question.</para>
+    <para>De plus, il ne faut pas oublier que le langage – quel qu'il soit – que nous choisirons ne
+        sera finalement que la convention qui nous permet de nous adresser à l'interpréteur ou au
+        compilateur qui utilise le langage; ni que l'interpréteur ou le compilateur ne sera là que
+        ... pour servir d'interpête entre nous et l'ordinateur.</para>
+    <para>Il va de soi que nous devrons nous veille à respecter les différentes conventions
+        utilisées par le langage que nous aurons choisi pour créer notre application.</para>
+    <para>Mais, avant que le langage choisi n'interfère dans notre travail, nous avons bien du pain
+        sur la planche.</para>
+
+</chapter>

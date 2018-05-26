@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="structures_decisionnelles">
+    <title>Les structures décisionnelles</title>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Conditions</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Eléments Algorithmique</primary>
+        <secondary>Décisions</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Eléments algorithmiques</primary>
+        <secondary>Alternatives</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Tests Vrai / Faux</secondary>
+    </indexterm>
+    <para>Pour être tout à fait honnête, ce que j'ai présenté comme un <quote>algorithme</quote>
+        dans le chapitre précédent tient d'avantage d'une <quote>liste d'instructions</quote> que
+        d'un véritable algorithme.</para>
+    <para>En effet, la notion d'algorithme ne peut être considérée comme complète que si nous lui
+        donnons la capacité de déterminer l'opportunité d'entreprendre ou non une action
+        particlulière en fonctions des circonstances rencontrées.</para>
+    <para>Les circonstances prises en compte sont communément appelées
+            <emphasis>conditions</emphasis> et consiste à une expression dont l'évaluation ne poura
+        aboutir qu'à deux résultat possibles:</para>
+    <itemizedlist>
+        <listitem>
+            <para><emphasis>Vrai</emphasis>, si la condition est remplie ou</para>
+        </listitem>
+        <listitem>
+            <para><emphasis>Faux</emphasis>, si la condition <emphasis role="bold">n'est
+                    pas</emphasis> remplie.</para>
+        </listitem>
+    </itemizedlist>
+    <para>Le flowchart nous permet de représenter les décisions au travers d'un losange dans lequel
+        nous écrirons la condition devant être testée.</para>
+    <para>Deux flèches partirons de ce losange: l'une menant à ce qui doit être exécuté si la
+        condition est remplie, une autre menant à ce qui doit être exécuté si la condition n'est
+            <emphasis>pas</emphasis> remplie, et qui ressemble à quelque chose comme</para>
+    <figure>
+        <title>Un test simple</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="images/flowchart_condition.svg"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    <note>
+        <para>Il arrive très régulièrement qu'il n'y ait des actions à entreprendre de dans un seul
+            cas. la flèche correspondant au cas dans lequel il <quote>n'y a rien à faire</quote>
+            mènera alors à la première action à devoir être effectuée de manière indépendante du
+            test.</para>
+    </note>
+    <warning>
+        <para>Par convention, nous essayerons <emphasis>généralment</emphasis>
+            <footnote>
+                <para>Nous verrons plus tard qu'il y a des circonstances dans lesquelles il est
+                    préférable de faire l'inverse</para>
+            </footnote>d'exprimer les conditions de manière à ce que le <quote>gros du
+                travail</quote> se trouve du coté de la branche <quote>vrai</quote> du test</para>
+    </warning>
+    <para>Il va de soi que <quote>tout à une fin</quote> et que, une fois que l'algorithme a
+        effectué les actions qui étaient <quote>soumises à condition</quote>, il devra reprendre son
+        exécution normale. Si bien que nous croiserons souvent des flowchart prenant d'avantage la
+        forme de</para>
+    <figure>
+        <title>Un test simple sous sa forme complète</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="images/flowchart_tests.svg"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    <example>
+        <title>Les tests Vrai / Faux en pseudocode</title>
+        <para>Il va de soi qu'il est possible de représenter ce genre de test en pseudo code. Nous
+            utiliserons généralement les termes de <quote>Si &lt;condition à vérifier&gt;</quote>
+            pour introduire les actions devant être effectuées si une condition est vérifiées, de
+                <quote>Sinon</quote> pour introduire les actions devant être effetuées dans le cas
+            contraire et de <quote>Fin Si</quote> pour indiquer la fin des actions soumises à
+            condition.</para>
+        <para>La forme <quote>classique</quote> d'un test <quote>vrai / faux</quote> en pseudocode
+            serait donc proche de</para>
+        <programlisting>Début &lt;nom de procédure&gt;
+    ... Tout ce qui doit être fait AVANT le test
+    Si &lt;condition à respecter&gt;
+        ... Ce qui doit être fait si la condition est remplie
+    Sinon
+        ... Ce qui doit être fait si la condition N'EST PAS remplie
+    Fin Si
+    ... Ce qui doit être fait APRES, sans être soumis à la condition
+Fin &lt;nom de procédure&gt;</programlisting>
+    </example>
+    <section>
+        <title>Les années bissextiles</title>
+        <para>Grâce aux structures décisionnelles, nous pouvons <quote>enfin</quote> envisager de
+            donner un <quote>semblant d'intelligence</quote> à notre algorithme.</para>
+        <para>Par exemple, nous pouvons définir un algorithme qui  </para>
+        <orderedlist>
+            <listitem>
+                <para>demande en quelle année nous sommes et</para>
+            </listitem>
+            <listitem>
+                <para>affiche l'année suivie de " est bissextile" ou " n'est pas bissextile" en
+                    fonction de la situation.</para>
+            </listitem>
+        </orderedlist>
+        <para>Nous sommes tellement habitués à manipuler les années bissextiles que nous n'y prétons
+            pour ainsi dire plus d'importance.  Pourtant, les règles qui régissent le fait qu'une
+            année soit bissextiles sont particulièrement précises, et ont une influence bien plus
+            importante que ce que nous ne pourrions croire de prime abord.  </para>
+        <para>Pensez donc: de ces règles dépendra le fait que la date du 29 février puisse être
+            considérée comme une date valide.</para>
+        <para>La règle s'exprime à peu près dans ces termes:</para>
+        <blockquote>
+            <para>Une année est bissextile si le nombre qu'elle représente est divisible par quatre,
+                sauf si ce nombre est divisible par 100, à moins qu'il ne soit également divisible
+                par 400.</para>
+        </blockquote>
+        <para>C'est ainsi que nous en arrivons à une situation dans laquelle</para>
+        <itemizedlist>
+            <listitem>
+                <para>1996 était une année bissextile, parce que 1996 est divisible par 4</para>
+            </listitem>
+            <listitem>
+                <para>1900 n'était pas une année bissextile, parce que, bien que 1900 soit divisible
+                    par quatre (comme toutes les cenaines), ce n'est pas divisible par 400 et</para>
+            </listitem>
+            <listitem>
+                <para>2000 était une année bissextile, parce que 2000 est non seulement divisible
+                    par cent (et est donc forcément divisilble par 4), mais est également divisible
+                    par 400</para>
+            </listitem>
+        </itemizedlist>
+        <para>Le moyen le plus simple de définir si une valeur est divisible par une autre est,
+            finalement, de travailler comme on l'a appris à l'école primaire au tout début du temps
+            où l'on apprenait le calcul.</para>
+        <para>A l'époque, nous n'avions pas encore vu qu'il était possible de travailler avec des
+            chiffres apèrs la virgule, et les divisions que l'on faisait  ne s'occupaient que de
+            valeurs entières et prenaient <quote>ce qu'il restait</quote> éventuellement de la
+            division en compte.  Ainsi, <code>7 / 3</code> était il égal à <code>2 reste
+            1</code>.</para>
+        <para>En informatique (et en mathématique, de manière générale), nous appelons le reste de
+            la division de deux entiers le <emphasis>modulo</emphasis>.  Si le reste de la division
+            d'un entier par un autre est égal à 0, c'est que le premier nombre est divisible par le
+            deuxième, tout simplement.</para>
+        <figure>
+            <title>Un premier exemple de test</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="30" fileref="images/flowchart_test_exemple.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <example>
+            <title>Un exemple de test en pseudocode</title>
+            <para>En psudocode, le même algorithme prendrait la forme de </para>
+            <programlisting>Début anneeBissextile
+    Afficher "Quelle est l'année?"
+    Attendre annee
+    Si annee MODULO 4 = 0
+         Si annee MODULO 100 = 0
+             Si annee MODULO 400 = 0
+                 Afficher annee " est bissextile"
+             Sinon
+                 Afficher annee " n'est pas bissextile"
+             Fin Si
+         Sinon
+             Afficher annee " est bissextile"
+         Fin Si
+    Sinon
+        Afficher annee " n'est pas bissextile"
+    Fin Si
+Fin anneeBissextile</programlisting>
+        </example>
+        <note>
+            <para>L'algorithme que je vous présente ici est tout à fait <emphasis role="bold"
+                    >correct</emphasis>, dans le sens où il nous permet d'obtenir <emphasis
+                    role="bold">exactement</emphasis> le résultat que l'on attend de sa part.</para>
+            <para>Nous verrons cependant plus tard qu'il n'est peut-être pas aussi efficace que ce
+                que nous pourrions souhaiter.</para>
+        </note>
+    </section>
+    <glossary>
+        <glossdiv>
+            <title>Les structures conditionnelles</title>
+            <glossentry>
+                <glossterm>Condition</glossterm>
+                <glossdef>
+                    <para>Une <emphasis>condition</emphasis> est un ensemble de circonstances
+                        pouvant être analysées de manière à prendre une décision.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Décision</glossterm>
+                <glossdef>
+                    <para>Une <emphasis>décision</emphasis> est le mécanisme qui consiste à
+                        déterminer s'il est opportun d'effectuer une action (ou un ensemble
+                        d'actions) particulière(s) en fonction d'une condition</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Alternative</glossterm>
+                <glossdef>
+                    <para>Une <emphasis>alternative</emphasis> permet de définir une action (ou un
+                        ensemble d'actions) particulière(s) à effectuer – s'il y en a – dans le cas
+                        où une condition ne serait pas remplie.</para>
+                </glossdef>
+            </glossentry>
+        </glossdiv>
+    </glossary>
+</chapter>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="glossaire">
+    <title>Glossaire de base</title>
+     <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Donnée</secondary>
+    </indexterm>
+   <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Expression</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Instruction</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Type de donnée</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Fonction</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Procédure</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Données</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Type de donnée</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Fonction</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Expression</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Instruction</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Fonction</primary>
+        <see>Jargon</see>
+    </indexterm>
+    <indexterm>
+        <primary>Données</primary>
+        <secondary>Constantes</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Données</primary>
+        <secondary>Littérales</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Données</primary>
+        <secondary>Variables</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Variables</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Constantes</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Jargon</primary>
+        <secondary>Littérales</secondary>
+    </indexterm> 
+    <blockquote>
+        <attribution>Eragon 2006</attribution>
+        <para>Blissingr signifie le feu. C'est le feu.</para>
+        <para>Le nom, c'est la chose. Connait le nom, et tu maîtrise la chose</para>
+    </blockquote>
+    <para>Avez vous remarqué que tous les termes que nous pouvons utiliser dans notre vie de tous
+        les jours représente soit <quote>une sorte de chose</quote>, soit <quote>une chose (ou une
+            personne) particulière</quote>, soit <quote>une action</quote>?</para>
+    <para>C'est parfaitement normal, me direz vous, car c'est ce qui permet à deux personnes (ou
+        plus) de communiquer entre elles.</para>
+    <para>Et, de fait, c'est parce qu'il existe des conventions qui permettent à chacun de savoir ce
+        que signifie les termes <quote>tasse</quote>, <quote>tournevis</quote> ou
+            <quote>cuisiner</quote> qu'il est possible de se faire comprendre.</para>
+    <para>Mais j'ai bien parler de conventions au pluriel, car il en existe – pour faire simple –
+        autant que de langue parlées. Ainsi, vous devriez utiliser les termes
+                <quote><foreignphrase>cup</foreignphrase></quote>,
+                <quote><foreignphrase>screwdriver</foreignphrase></quote> ou
+                <quote><foreignphrase>to cook</foreignphrase></quote> pour vous faire comprendre
+        d'une personne parlant anglais en désignant exactement les mêmes notions.</para>
+    <para>De plus, chaque domaine d'activité utilise des termes qui ont une signification spécifique
+        à ce domaine particulier.</para>
+    <para>Il arrive que ces termes ne soient utilisés que dans ce domaine particulier, mais il
+        arrive aussi qu'un même terme soit utilisé dans plusieurs domaines avec des significations
+        différentes.</para>
+    <para>Le terme <quote>fouet</quote> en est un parfait exemple, car il aura une signification
+        tout à fait différente pour le cuisinier de celle qu'il aura pour le marchand
+        d'esclaves.</para>
+    <para>Avant de commencer, il me semble donc important de vous expliquer quelques termes
+            <quote>de base</quote> (car d'autres viendront par la suite) utilisés par les
+        développeurs afin que nous puissions nous comprendre.</para>
+   
+ <glossary>
+        <glossdiv>
+            <title>Le jargon de base</title>
+            <glossentry>
+                <glossterm xml:id="jargon_donnee">une donnée</glossterm>
+                <glossdef>
+                    <para>une <emphasis>donnée</emphasis> va représenter une information – quelle
+                        qu'elle soit – qui sera utilisée par l'ordinateur. On peut faire la
+                        distinction entre trois <quote>notions</quote> de données bien particulier:
+                        les données dites <emphasis>constantes</emphasis>, ce que l'on appelle
+                        couremment des <emphasis>variables</emphasis> et ce que l'on apppelle des
+                            <emphasis>littérales</emphasis>.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Les constantes</glossterm>
+                <glossdef>
+                    <para>Le terme de constante désigne une donnée dont la valeur n'est pas desitnée
+                        à évoluer au fil du temps.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Les variables</glossterm>
+                <glossdef>
+                    <para>Le terme <emphasis>variable</emphasis> désigne une donnée dont tout ou
+                        partie de la valeur est susceptible d'évoluer au fil du temps.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Les littérales</glossterm>
+                <glossdef>
+                    <para>Le terme <emphasis>littérale</emphasis> représente une valeur qui est
+                        fournie directement <quote>telle quelle</quote> dans le code.  Ces valeurs
+                        sont  – forcément – <emphasis>constantes</emphasis>, vu qu'il n'y a aucune
+                        raison d'aller les modifier en cours d'exécution du programme. </para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm xml:id="jargon_expression">Expression</glossterm>
+                <glossdef>
+                    <para>Une <emphasis>expression</emphasis>représente un élément susceptible
+                        d'être compris par le langage que l'on utilise</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm xml:id="jargon_instruction">Instruction</glossterm>
+                <glossdef>
+                    <para>Une <emphasis>instruction</emphasis> représente une action quelconque que
+                        nous voulons pouvoir exécuter</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm xml:id="jargon_fonction">Une fonction</glossterm>
+                <glossdef>
+                    <para>une <emphasis>fonction</emphasis> regroupe un ensemble d'instructions qui
+                        doivent être exécutées dans un ordre bien particulier</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Procédure</glossterm>
+                <glossdef>
+                    <para>Le terme de <emphasis>procédure</emphasis> a une signifcation très
+                        semblable au terme de fonction.</para>
+                    <para>Bien que certains langages fassent une différence entre les deux termes,
+                        et que d'autres utiliseront de préférence un terme plutôt que l'autre, il
+                        n'est pas incorrect de les considérer comme de parfaits synonymes lorsque
+                        l'on parle des <quote>langages de programmation</quote> de manière
+                        générale.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Type de donnée</glossterm>
+                <glossdef>
+                    <para>Le terme de <emphasis>type de donnée</emphasis> représente la
+                            <quote>nature</quote> de la donnée que l'on veut manipuler et, par
+                        conséquent, l'usage qui peut en être fait, de la même manière qu'un couteau
+                        sera utilisé à des fins différentes qu'un tournevis.</para>
+                </glossdef>
+            </glossentry>
+        </glossdiv>
+    </glossary>
+</chapter>

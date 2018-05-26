@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="communs_pourquoi">
+    <title>Pourquoi cette partie?</title>
+    <para>Beaucoup trop de gens croient qu'il suffit d'avoir une idée de programme et de se jeter
+        sur son clavier et de commencer à <quote>vomir</quote> du code pour obtenir un
+        résultat.</para>
+    <para>Il ne pourraient faire plus grave erreur.  Car l'écriture du code – quel que soit le
+        langage – n'est en définitive <quote>qu'une étape parmi d'autres</quote> du processus
+        qui permet d'obtenir une application.</para>
+    <para>De leur côté, beaucoup de cours dédiés à l'apprentissage d'un langage particulier
+        accentuent cette idée mettant directement certains besoins rencontrés lors de la
+        création d'une application en relation avec la manière de répondre à ce besoin par le
+        code.</para>
+    <para>En écrivant cet ouvrage, j'ai – très clairement – pris la décision de rompre avec les
+        <quote>pratiques encestrales</quote>, et de proposer une approche plus cohérente –
+        et j'espère avec une coube d'apprentissage plus facile – du problème.</para>
+    <para>Car tous les <emphasis>bons</emphasis> développeurs vous le diront: un langage de
+        programmation n'est jamais que le moyen dont dispose le développeur pour se faire
+        comprendre par <quote>quelque chose d'aussi bête qu'un ordinateur</quote>.</para>
+    <para>Les meilleurs d'entre eux iront même plus loin, en disant que l'écriture du code n'est
+        – en définitive – qu'un <quote>long et fastidieux travail de dactylographie</quote>. Et
+        je reconnais sans vergogne que je suis à peu près de leur avis, bien que j'adore
+        véritablement écrire du code.</para>
+    <para>Les développeurs qui s'exclameront de la sorte se sont rendus compte que tous les
+        langages qui proposent un paradigme particulier respectent systématiquement les mêmes
+        règles, les mêmes principes, utilisent des concepts équivalents, dont la seule
+        différence est parfois le nom donnés à ces concepts.</para>
+    <para>Si cette partie existe et qu'elle se trouve en première position dans le livre, c'est
+        tout simplement parce que je suis entièrement d'accord avec eux.</para>
+    <para>C'est la raison pour laquelle l'approche que je suivrai dans cet ouvrage consistera
+        d'abord à vous apprendre les règles, les principes et les concepts d'un point de vue
+        purement théorique, sans me soumettre au <quote>carcan</quote> d'un quelconque langage
+        avant de vous expliquer précisément comment mettre ces règles, principes et concepts en
+        œuvre avec un langage comme le C++.</para>
+    <para>A mon humble avis, cette approche rendra non seulement votre apprentissage du C++ plus
+        facile, mais elle facilitera aussi l'apprentissage de n'importe auquel langage auquel
+        vous serez tentés de vous intéresser par la suite .</para>
+    <para>Et, de fait, si la première partie de cet ouvrage s'intitule <quote>les principes
+            communs</quote>, c'es parce que tous les langages se rapportant à la programmation
+        impérative respectent un ensemble de règles et utilisent un ensemble de concepts
+        commun.</para>
+    <para>Cette partie n'ayant finalement pour seul but que de vous les présenter.</para>
+</chapter>
+

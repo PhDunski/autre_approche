@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<set version="5.0" xml:id="autre_approche" xml:lang="fr"
+     xmlns="http://docbook.org/ns/docbook"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:ns6="http://www.w3.org/1999/xhtml"
+     xmlns:ns5="http://www.w3.org/2000/svg"
+     xmlns:ns3="http://www.w3.org/1998/Math/MathML">
+    <title>Une autre approche du C++</title>
+     <info>
+         <!--AUTEURS COMMUNS A TOUS LES MODULES-->
+         
+         <author>
+             <personname>Philippe Dunski</personname>
+             
+             <personblurb>
+                 <para>Philippe Dunski est venu sur le tard au développement informatique. Il s'est rapidement passionné pour le langage C++ qu'il a appris en grande partie en
+                     autodidacte avant de valider ses connaissances au travers d'un bachelor en
+                     informatique.</para>
+                 <para>Depuis ses débuts dans ce domaine, il écume les forums spécialisés grâce
+                     auxquels il a beaucoup appris et sur lesquels il dispense conseils et
+                     explications avec largesse.</para>
+                 <para>Il a également participé à de nombreux projets complexes dont de planification à long
+                     terme du matériel et du personnel roulant d'une entreprise de chemins de fer.</para>
+                 <para>Il est également l'auteur du livre "Coder efficacement --Bonnes pratiques et
+                     erreurs à éviter (en C++) (isbn 978-2-8227-0164-8 aux éditions
+                     D-bookeR.fr)"</para>
+             </personblurb>
+         </author>
+
+
+         <!--RELECTEURS -->
+
+         <!--   <othercredit class="other">
+       <personname>Prénom Nom</personname>
+       
+       <affiliation>
+         <jobtitle>Profession ou titre</jobtitle>
+         
+         <orgname>société</orgname>
+       </affiliation>
+       
+       <contrib>Révision technique</contrib>
+     </othercredit> -->
+
+         <!--AUTRES CONTRIBUTEURS -->
+
+     <!--    <othercredit class="other">
+             <personname>Marie Van Der Marlière</personname>
+
+             <affiliation>
+                 <orgname>www.marie-graphiste.com</orgname>
+             </affiliation>
+
+             <contrib>Conception de la couverture</contrib>
+         </othercredit>
+
+         <othercredit class="other">
+             <personname>générée sous Calenco avec des XSLT développées par la
+                 société NeoDoc</personname>
+
+             <affiliation>
+                 <orgname>www.neodoc.biz</orgname>
+             </affiliation>
+
+             <contrib>Mise en page</contrib>
+         </othercredit>
+-->
+         <!--PUBLICATION -->
+<!--
+         <copyright>
+             <year></year>
+
+             <holder>Éditions D-BookeR</holder>
+         </copyright>
+
+         <pubdate>mm/aaaa</pubdate>
+
+         <edition>1</edition>
+
+         <date>version 0.0.1</date>
+
+         <biblioid class="isbn" role="html"></biblioid>
+         -->
+     </info>
+    <xi:include href="autre_approche-book.xml"/> 
+
+     <setindex/>
+ </set>

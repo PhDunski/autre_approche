@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="lsp_prime">
+    <title>Le principe de responsabilité unique</title>
+    <subtitle>Première partie</subtitle>
+    <indexterm>
+        <primary>Principes</primary>
+        <see>Principe de la responsabilité unique</see>
+    </indexterm>
+    <indexterm>
+        <primary>SRP</primary>
+        <see>SOLID</see>
+    </indexterm>
+    <indexterm>
+        <primary>SOLID</primary>
+        <secondary>SRP</secondary>
+    </indexterm>
+    <para>L'un des principes les plus importants en programmation, auquel il est important de ne
+        déroger sous aucun prétexte est très certainement le principe appelé le <emphasis>principe
+            de responsabilité unique</emphasis>; dont vous croiserez souvent l'acronyme anglais
+            <acronym>SRP</acronym> mis pour<foreignphrase>Single Responsability
+            Principle</foreignphrase>.</para>
+    <para>Ce principe s'exprime de manière très similaire pour les algorithmes que nous voudrons
+        créer que pour les données que l'on envisage de manipuler. Voici comment il
+        s'exprime:</para>
+    <blockquote>
+        <title>Le principe de la responsabilité unique</title>
+        <para>Toute donnée ne doit être utilisée que dans un seul et unique but, clairement
+            déterminé;</para>
+        <para>Toute algorithme ne doit viser qu'un seul et unique objectif.</para>
+    </blockquote>
+    <para>L'un des problèmes auquel nous sommes régulièrement confrontés – surtout lorsque le
+        développeur n'a pas pris le temps de se <quote>poser</quote> trente secondes afin de
+        réfléchir à ce qu'il doit faire – est que de nombreux algorithmes essayent de résoudre tous
+        les problèmes en une fois, ce qui se traduit souvent par un algorithme prenant une forme
+        proche de</para>
+    <example>
+        <title>Un algorithme qui en fait trop</title>
+        <para>Imaginons que nous ayons pour but de programmer un robot afin qu'il s'occupe des
+            tâches ménagères</para>
+        <programlisting>Début tachesMenageresDeLaJournee
+    Remarque : je veux sortir le chien
+    ... suivent XX actions à entreprendre pour sortir le chien
+    Remarque : je veux préparer le café
+    ... suivent YY actions pour préparer le café
+    Remarque : je veux faire la vaisselle
+    ... suivent ZZ actions pour faire la vaisselle
+    Remarque : je veux faire la lessive
+    ... suivent XY actions pour faire la lessive
+    Remarque : je veux préparer le repas
+    ... suivent XZ action pour préparer le repas
+    Remarque : il y a tant de choses à faire dans une maison
+    Remarque : nous pourrions rajouter tant de choses
+fin tachesMenageresDeLaJournee</programlisting>
+    </example>
+    <para>A partir du moment où chaque <quote>tache ménagères</quote> est correctement effectuée, il
+        est très difficile de considérer qu'un tel algorithme soit faux.</para>
+    <para>Cependant, même si l'on peut considérer que cet algorithme ne poursuit qu'un seul et
+        unique objectif (celui d'effectuer les tâches ménagères de la journée), nous sommes bien
+        obligés de convenir qu'il en poursuit en réalité bien plus que cela, à savoir:</para>
+    <itemizedlist>
+        <listitem>
+            <para>sortir le chien (qui est, effectivement une tâche ménagère);</para>
+        </listitem>
+        <listitem>
+            <para>préparer le café (idem);</para>
+        </listitem>
+        <listitem>
+            <para>faire la vaisselle (idem);</para>
+        </listitem>
+        <listitem>
+            <para>faire la lessive (idem);</para>
+        </listitem>
+        <listitem>
+            <para>préparer le repas (idem)</para>
+        </listitem>
+        <listitem>
+            <para>... faire toutes les tâches ménagères que j'aurais pu vouloir ajouter.</para>
+        </listitem>
+    </itemizedlist>
+    <para>Certains d'entre vous pourraient estimer que ce n'est pas vraiment un problème car, comme
+        je l'ai indiqué, cet algorithme ne poursuit qu'un seul et unique objectif : celui
+        d'effectuer les tâches ménagères de la journée. Soit.</para>
+    <para>Mais réfléchissons un tout petit peu plus loin, et envisageons ne serait-ce que trente
+        secondes que nous livrions notre robot à deux (ou à plusieurs) clients. Que va-t-il se
+        passer, selon vous?</para>
+    <para>La réponse est simple à deviner:<itemizedlist>
+            <listitem>
+                <para>Certains clients seront enchantés de l'ordre dans lequel les tâches ménagères
+                    sont effectuées;</para>
+            </listitem>
+            <listitem>
+                <para>d'autres clients n'ont pas de chien, et ne souhaitent pas que le robot
+                        <quote>perde du temps</quote> à sortir un chien ... qui n'existe pas;</para>
+            </listitem>
+            <listitem>
+                <para>d'autres encore préféreront avoir le café avant que le chien ne soit
+                    sorti;</para>
+            </listitem>
+        </itemizedlist></para>
+    <para>En un mot comme en cent, nous trouverons toujours bien un client qui n'est pas pleinement
+        satisfait des tâches effectuées par notre robot ou de l'ordre dans lequel il les
+        effectue.</para>
+    <para>Et comme notre objectif est quand-même – comme tout bon commerçant – de satisfaire au
+        mieux notre clientèle afin de vendre le plus de robots possibles, nous en viendrions très
+        certainement à prévoir plusieurs algorithmes pour que notre robot puisse faire les mêmes
+        choses, mais dans un ordre différent. Par exemple:</para>
+    <example>
+        <title>Un algorithme qui en fait toujours trop</title>
+        <para>Cet algorithmes reprend les mêmes tâches ménagères, mais dans un ordre
+            différent</para>
+        <programlisting>Début tachesMenageresDeLaJourneeVersion2
+    Remarque : je veux préparer le café
+    ... suivent YY actions pour préparer le café
+    Remarque : je veux sortir le chien
+    ... suivent XX actions à entreprendre pour sortir le chien
+    Remarque : je veux préparer le repas
+    ... suivent XZ action pour préparer le repas
+    Remarque : je veux faire la vaisselle
+    ... suivent ZZ actions pour faire la vaisselle
+    Remarque : je veux faire la lessive
+    ... suivent XY actions pour faire la lessive
+    Remarque : il y a tant de choses à faire dans une maison
+    Remarque : nous pourrions rajouter tant de choses
+fin tachesMenageresDeLaJourneeVersion2</programlisting>
+    </example>
+    <para>Et vous aurez remarqué que je n'ai toujours pas pris en compte le cas où le client
+        n'aurait pas de chien...</para>
+    <para>Or, vu que c'est un autre algorithme, il sera implémenté ... dans une autre fonction. La
+        meilleure preuve en est que le nom de la fonction a été modifié.</para>
+    <para>Cela occasionnera d'ailleurs des problèmes du au non respect d'un principe d'Xtrem
+        Programming connu sous l'acronyme de <acronym>DRY </acronym>(pour <foreignphrase>Don't
+            Repeat Yourself</foreignphrase> ou, si vous préférez en français: <emphasis>Ne vous
+            répétez pas</emphasis>), dont je parlerai plus tard.</para>
+    <para>Mais vous l'aurez compris: si nous vendons notre robot à quinze clients différents, nous
+        risquons très fort de devoir fournir... quinze fonctions permettant d'effectuer les tâches
+        ménagères de la journée dans un ordre différent; ce qui se traduirait par... quinze
+        algorithmes différents.</para>
+    <para>Le plus frustrant de l'histoire, c'est que l'algorithme rattaché à chacune des tâches
+        ménagères reste fondamentalement le même: que l'on sorte le chien avant ou après avoir
+        préparé le café n'a absolument aucune incidence sur les actions qui doivent être entreprises
+        pour sortir le chien (ou pour préparer le café).</para>
+    <para>Et c'est donc là que le SRP prend tout son sens, car nous pourrions tout à fait éviter
+        d'avoir à recréer sans cesse des algorithmes identiques en créant des algorithmes
+        spécifiques qui ne s'occupent que d'une seule et unique chose.</para>
+    <example>
+        <title>plusieurs algorithmes secondaires</title>
+        <para>Ainsi, cet algorithme pourrait tout à fait être <quote>subdivisé</quote> en plusieurs
+                <quote>algorithmes secondaires</quote> sous une forme qui serait proche de</para>
+        <programlisting>début sortirLeChien
+    ... les XX actions à entreprendre pour sortir le chien
+fin sortirLeChien
+début preparerLeCafe
+    ... les YY actions à entreprendre pour préparer le café
+fin preparerLeCafe
+début faireLaVaisselle
+    ... les ZZ actions pour faire la vaisselle
+fin faireLaVaisselle
+début faireLaLessive
+    ... les XY actions pour faire la lessive
+fin faireLaLessive
+début preparerLeRepas
+    ... les XZ action pour préparer le repas
+fin preparerLeRepas
+... toutes les autres taches ménagères que l'on peut envisager</programlisting>
+    </example>
+    <para>Une telle séparation des responsabilités présente énormément d'avantages.</para>
+    <para>Le tout premier est qu'il est bien plus facile de <quote>s'y retrouver dans le
+            code</quote> lorsque nous sommes confrontés à une fonction qui ne fait que dix ou quinze
+        lignes que lorsque nous sommes confronté à une fonction qui en fait cent ou
+        deux-cents.</para>
+    <para>Le deuxième avantage est qu'il devient possible de tester chaque algorithme séparément: Si
+        un client nous appelle – par exemple – en nous disant qu'<quote>il y a un problème lorsque
+            le robot prépare le café</quote>, il ne sert à rien de s'inquiéter de ce que fait le
+        robot lorsqu'il sort le chien ou lorsqu'il fait la vaisselle.</para>
+    <para>Enfin, comme une <quote>journée type</quote> de notre robot consistera à ... effectuer
+        différentes tâches ménagères, il nous devient très facile de définir plusieurs algorithmes
+        de journée type comme étant le fait de... faire appel aux différents algorithmes que nous
+        avons créés.</para>
+    <example>
+        <title>Utiliser les algorithmes <quote>secondaires</quote></title>
+        <para>Ainsi, nous pourrions définir un premier algorithme de journée type sous la forme
+            de</para>
+        <programlisting>Début premiereJourneeType
+    Appeler sortirLeChien
+    Appeler preparerLeCafe
+    Appeler faireLaVaisselle
+    Appeler faireLaLessive
+    Appeler preparerLeRepas
+Fin premièreJourneeType</programlisting>
+        <para>Mais nous pourrions tout aussi bien créer une deuxième journée type <quote>dans la
+                foulée</quote>, sans rien avoir à rajouter. Elle pourrait prendre la forme de</para>
+        <programlisting>Début deuxiemeJourneeType
+    Appeler preparerLeCafe
+    Appeler sortirLeChien
+    Appeler preparerLeRepas
+    Appeler faireLaVaisselle
+    Appeler faireLaLessive
+fin deuxiemeJourneeType</programlisting>
+    </example>
+    <para>Et, le fin du fin, c'est que nous pourrions fournir au client une liste des tâches
+        ménagères que le robot est capable d'entreprendre, et le laisser décider de quelles tâches
+        il souhaite que le robot s'occupe et dans quel ordre.</para>
+</chapter>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="parametres">
+    <title>Paramètres et retours de fonction</title>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Paramètres</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Arguments</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>SOLID</primary>
+        <secondary>SRP</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Retour de fonction</secondary>
+    </indexterm>
+    <para>Je tentais plus haut de vous convaincre de l'importance de respecter le principe dit
+            <quote>de la responsabilité unique</quote>.</para>
+    <para>Peut-être ne l'avez vous pas remarqué, mais l'algorithme que je vous présentais plus haut
+        pour déterminer si une année est bissextile <emphasis role="bold">ne respecte pas</emphasis>
+        ce principe.</para>
+    <para>Avant de vous démontrer ce point particulier, j'implore votre indulgence, car j'ai une
+        sainte horreur de ceux qui jouent à <quote>faites ce que je dis, pas ce que je fais</quote>.
+        Or, c'est justement ce que j'ai fait dans le cas présent.</para>
+    <para>La seule raison valable qui puisse m'avoir poussé à agir de la sorte, c'est que, au moment
+        où je vous présentais cet algorithme, nous ne disposions pas de deux notions indispensables
+        pour pouvoir appliquer correctement ce principe.</para>
+    <para>Il est donc plus que temps d'aborder ces deux notions et de vous démontrer que j'ai
+        effectivement péché.</para>
+    <para>Si l'on observe attentivement l'algorithme de anneeBissextile que je vous ai donné, on se
+        rend compte qu'il prend en charge un grand nombre de responsabilités.  Jugez par vous
+        même:</para>
+    <orderedlist>
+        <listitem>
+            <para>Affichier "Quelle est l'annee";</para>
+        </listitem>
+        <listitem>
+            <para>récupérer l'année introduite par l'utilisateur;</para>
+        </listitem>
+        <listitem>
+            <para>Tester l'année pour savoir si elle est divisible par quatre, par cent et par
+                quatre-cent;</para>
+        </listitem>
+        <listitem>
+            <para>afficher le résultat du test.</para>
+        </listitem>
+    </orderedlist>
+    <para>On peut donc tourner les choses comme on le veut, mais cette fonction prend au final
+        quatre responsabilités distinctes, ce qui en fait donc trois de trop par rapport au principe
+        de la responsabilité unique.</para>
+    <para>Certains d'entre vous essayeront peut-être de se convaincre que <quote>ce n'est quand même
+            pas si grave</quote>, que <quote>il est complêtement maboule, ce mec!</quote>.</para>
+    <para>Si je ne peux pas forcément leur donner tort pour ce qui est de la deuxième phrase, pour
+        ce qui est de la première, je dois de m'imposer en disant que <quote><emphasis>c'est pire
+                que grave: c'est catastrophique</emphasis></quote>.</para>
+    <para>Mon discours a, en effet – pour ceux qui ne s'en seraient pas encore apperçus – toujours
+        été qu'un algorithme est indépendant du langage qui sera utilisé.  Et je ne reviendrai
+        évidemment pas sur ce discours qui reste pleinement d'actualité.</para>
+    <para>Mais mon discours n'a pas encore été tout à fait complet sur le sujet.  Car, en plus
+        d'être totalement indépendant du langage utilisé, un algorithme doit – sauf cas particuliers
+        – être totalement indépendant des circonstances dans lesquelles il est utilisé.  Mais cela
+        mérite bien sur quelques explications.</para>
+    <para>Quand je vous ai présenté cet algorithme, je vous ai dit</para>
+    <blockquote> 
+        <para>Grâce aux structures décisionnelles, nous pouvons <quote>enfin</quote> envisager de
+        donner un <quote>semblant d'intelligence</quote> à notre algorithme.</para>
+        <para>Par exemple, nous pouvons définir un algorithme qui  </para>
+        <orderedlist>
+            <listitem>
+                <para><emphasis role="bold">demande</emphasis> en quelle année nous sommes et</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">affiche</emphasis> l'année suivie de " est bissextile"
+                    ou " n'est pas bissextile" en fonction de la situation.</para>
+            </listitem>
+        </orderedlist>
+    </blockquote>
+    <para>En utilisant explicitement le terme <quote><emphasis>demande</emphasis></quote>,je
+        m'enfermais moi même dans une logique dans laquelle il semble évident que l'année qui sera
+        utilisée par l'algorithme serait introduite par l'utilisateur.</para>
+    <para>De la même manière, en utilisant le terme <quote><emphasis>affiche</emphasis></quote>, je
+        m'enfermais moi-même dans une logique dans laquelle le résultat de l'algorithme ne pourrait
+        être utilisé que pour... provoquer un affichage.</para>
+    <para>Oui, mais, si on y réfléchit un tout petit peu,  on se fout pas mal d'où la valeur de
+        l'année peut bien venir!!!  Qu'elle ait été introduite par l'utilisateur, qu'elle ait été
+        récupérée dans le BIOS de l'ordinateur ou qu'elle ait été récupérée au travers du réseau
+        (internet), ce qui importe, c'est la valeur qui représente l'année en question.</para>
+    <para>Et, de la même manière, on se fout pas mal de savoir si le résultat de l'algorithme sera
+        affiché ou – à l'inverse – s'il sera utilisé, par exemple, pour déterminer si le 29 avril
+        peut être considéré comme une date valide ou non.  </para>
+    <para>Cela sort complètement du cadre de l'algorithme dont le seul but est... de déterminer si
+        une année donnée est bissextile ou non, et cela, quelle que soit l'origine de la valeur
+        utilisée pour l'année et quel que soit l'utilisation que l'on fera du résultat
+        obtenu.</para>
+    <para>Et cela nous ramène donc aux deux notions qui nous manquent.</para>
+    <para>Un peu plus tôt, je vous ai indiqué que l'une des questions essentielles qu'il fallait se
+        poser était <quote>Où vais-je trouver les données (dont l'algorithme a besoin)?</quote>.  </para>
+    <para>L'une des réponses possible à cette question est – tout simplement – <quote>Elle sera
+            fournie par l'élément qui fait appel à l'algorithme</quote>.</para>
+    <para>L'énorme avantage, c'est que l'on n'a plus vraiment besoin de s'inquiéter de l'origine
+        effective, <quote>réelle</quote>, de la donnée: nous savons que l'algorithme aura besoin
+        d'une donnée particulière, qu'il est incapable d'en définir la valeur <quote>par
+            lui-même</quote>, mais qu'il a besoin de cette donnée pour pouvoir <quote>faire son
+            job</quote> et donc que <quote>l'élément qui fera appel</quote> à l'algorithme devra...
+        lui fournir cette donnée d'une manière ou d'une autre.</para>
+    <para>Selon le point de vue d'où l'on observe les choses, de telles données seront désignées
+        sous le terme de <emphasis>paramètre</emphasis> (attendu par l'algorithme), ou sous le terme
+            d'<emphasis>argument</emphasis> (fourni à l'algorithme).</para>
+    <para>D'un autre coté, un algorithme poursuit un objectif bien particulier.  Deux situations
+        peuvent dés lors se présenter, à partir du moment où l'on se rend compte qu'un algorithme ne
+        vaut que par l'utilisation qui en est faite:</para>
+    <para>Soit l'algorithme se <quote>suffit à lui-même</quote>, dans le sens où <quote>l'élément
+            qui fait appel</quote> à l'algorithme ne s'attend pas à obtenir une réponse de la part
+        de l'algorithme; soit l'algorithme devra <quote>fournir une réponse</quote> à l'élément qui
+        y a fait appel.</para>
+    <para>Pour que l'algorithme soit en mesure de fournir une réponse à l'élément qui y a fait
+        appel, nous définirons ce que l'on appelle couremment une <emphasis>valeur de
+            retour</emphasis>. Comme cette valeur de retour sera disponible pour une utilisation
+        bien particulière, son utilisation sera généralement définie en indiquant le
+            <emphasis>type</emphasis> de la valeur que l'algorithme doit renvoyer, que l'on désigne
+        généralement sous le terme de <emphasis>type de retour</emphasis>.</para>
+    <para>L'algorithme permettant de déterminer si une année est bissextile ou non a besoin de ces
+        deux notions pour pouvoir fonctionner correctement.  </para>
+    <para>En effet, l'année à prendre en compte est totalement indépendante de l'algorithme, et
+        l'algorithme n'a – a priori – aucun moyen d'en déterminer la valeur par lui-même; surtout si
+        nous acceptons l'idée que cette valeur peut venir de <quote>n'importe quelle
+        source</quote>.</para>
+    <para>De la même manière, la seule chose que nous attendons de la part de cet algorithme est de
+        nous dire si une année donnée est bissextile ou non.  Peu importe l'origine de l'année en
+        question, peu importe ce que l'on fera de la réponse obtenue:  ces deux informations sont du
+        seul recours de... l'élément qui fera appel à l'algorithme.</para>
+    <section>
+        <title>Paramètres d'entrée et / ou de sortie</title>
+        <indexterm>
+            <primary>Paramètres</primary>
+            <secondary>Paramètres d'entrée</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Paramètes</primary>
+            <secondary>Paramètres de sortie</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Paramètres</primary>
+            <secondary>Paramètres d'entrée / sortie</secondary>
+        </indexterm>
+        <para>De manière générale, on peut distinguer deux grandes catégories de paramètres. </para>
+        <para>D'une part, il y a les paramètres qui ne seront pas modifiés par la fonction – ou, du
+            moins, dont les modifications ne seront pas répercutées sur la donnée qui a été
+            transmise en argument dans la fonction appelante – et, de l'autre, il y a les paramètres
+            dont les modifications appportées par la fonction seront effectivement répercutées sur
+            la donnée qui a été transmise comme argument par la fonction appelée.</para>
+        <para>Nous désignerons souvent la première catégorie sous le terme de <emphasis>paramètre
+                d'entrée</emphasis> alors que nous désignerons la seconde catégorie sous le terme de
+                <emphasis>paramètre de sortie</emphasis>.</para>
+        <para>La grosse différence qui existe entre ces deux catégories est le fait que les
+                <emphasis>paramètes d'entrée</emphasis> sont clairement indispensables au bon
+            fonctionnement de la fonction, ne serait-ce que parce qu'ils représentent des données
+            auxquelles la fonction n'a aucun moyen d'avoir accès; alors que les <emphasis>paramètres
+                de sorties</emphasis> ne sont généralement fournis à la fonction <emphasis>que pour
+                lui permettre d'y apporter des modifications</emphasis>.</para>
+        <para><emphasis>A priori</emphasis>, lorsqu'un paramètre est désigné comme étant un
+                <emphasis>paramètre de sortie</emphasis>, la fonction n'utilisera pas la valeur de
+            ce paramètre dans sa logique décisionnelle; si bien qu'il serait envisageable de
+            transformer ce paramètre en une variable locale destinée à être renvoyée en tant que
+            retour de fonction.</para>
+        <para>Ceci dit, nous sommes régulièrement confrontés à des paramètres qu'il s'agirait de
+            classer dans la catégorie des <emphasis>paramètres de sorties</emphasis> – parce que les
+            modifications qui y seront apportées par la fonction appelée seront répercutées au
+            niveau de la variable qui a servi d'argument dans la fonction appelante – qui
+            interviennent néanmoins dans la logique décisionnelle de la fonction, ce qui les ferait
+                <emphasis>de facto</emphasis> entrer dans la catégorie des <emphasis>paramètres
+                d'entrée</emphasis>.</para>
+        <para>Nous désignerons <quote>logiquement</quote> ce genre de paramètre comme étant des
+                <emphasis>paramètres d'entrée / sortie</emphasis>.</para>
+        <sidebar>
+            <title>Les effet de bord</title>
+            <indexterm>
+                <primary>Eléments Algorithmiques</primary>
+                <secondary>Effets de bord</secondary>
+            </indexterm>
+            <para>Nous essayerons généralement autant que possible d'éviter l'utilisation de
+                    <emphasis role="bold">paramètre de sorties</emphasis> dans les fonctions, car
+                ils occasionnent ce qu'il convient d'appeler un <emphasis role="bold">effet de
+                    bord</emphasis>.</para>
+            <para>Nous disons qu'une fonction présente un effet de bord lorsqu'elle va avoir un
+                impact au niveau de la valeur d'une donnée qui existe en dehors de cette
+                fonction.</para>
+            <para>De manière générale, nous essayerons autant que faire se peut d'éviter ce genre de
+                situation, ne serait-ce que parce que les effets de bord peuvent créer une certaine
+                confusion dans l'esprit de celui qui lira le code de la fonction appelante et qui
+                risque – s'il n'a pas pleinement conscience du fait que la fonction appelée génère
+                un effet de bord – de s'étonner que la valeur d'une donnée avant l'appel de la
+                fonction est différente de sa valeur après que la fonction ait été appelée.</para>
+            <para>Nous verrons d'ailleurs plus tard qu'il existe de nombreuses situations dans
+                lesquelles un tel effet de bord occasionne énormément de risques du point de vue de
+                la logique elle-même.</para>
+            <para>Cependant, nous verrons également plus tard qu'il existe de nombreux cas dans
+                lesquels nous n'avons finalement pas d'autre solution que de provoquer un effet de
+                bord; dans lesquels nous n'avons en définitive que le choix entre provoquer un effet
+                de bord et celui de ne pas être en mesure de respecter le SRP.</para>
+            <para>Dans de telles situations, nous avons généralement intérêt à avoir recours à une
+                fonction qui occasionne un effet de bord plutôt que de décider de déroger à un des
+                principes majeurs de développement.</para>
+        </sidebar>
+    </section>
+    <section>
+        <title>Représenter les paramètres</title>
+        <para>Lorsque l'on crée un algorithme, il est primordial de faire en sorte que la personne
+            qui l'aura devant les yeux qui qui devra le manipuler soit en mesure de le comprendre le
+            plus facilement possible.</para>
+        <para>Après tout, il faut se souvenir que, au final, notre algorithme devra être compris par
+            quelque chose d'aussi bête qu'un ordinateur, c'est à dire, par quelque chose qui ne
+            connaît que deux valeurs (1 et 0) et qui ne dispose que d'un nombre particulièrement
+            instructions.</para>
+        <para>Mais il faut assi se méfier de la personne qui s'occupera de traduire notre algorithme
+            dans un langage de programmation quelconque, car, si on laisse <quote>traîner</quote> la
+            moindre ambiguïté quant à l'usage qui sera fait d'une donnée, nous courrons le risque
+            que la personne qui se chargera de traduire l'algorithme dans un langage donné commence
+            à <quote>interpréter</quote> ce qui se passe dans les <quote>zone d'ombres</quote>
+            laissées par l'algorithme.</para>
+        <para>Et le fait que la personne qui traduira l'algorithme dans un langage de programmation
+            particulier sera très souvent la personne qui a créé l'algorithme n'aura en réalité
+            aucun impact sur ce genre de problème.</para>
+        <para>Pour que la personne qui devra traduire notre algorithme dans un langage de
+            programmation quelconque  – dont il est toujours préférable de se dire que ce sera
+            quelqu'un d'autre, et qu'il risque d'être distrait en le faisant – ne puisse avoir aucun
+            doute quant à l'utilité d'une donnée qui est attendue sous forme d'un paramètre par
+            notre algorithme, il est important de lui transmettre deux informations simples que sont
+            le <quote>quoi</quote> et le <quote>pour quoi</quote>.</para>
+        <para>Le <quote>quoi</quote> doit permettre à la personne de connaître non seulement le nom
+            qui sera donné à la fonction dans notre algorithme, mais aussi le type de cette donnée,
+            pour qu'il puisse l'indiquer dans son code; alors que le <quote>pour quoi</quote> devra
+            lui permettre de déterminer s'il a affaire à un paramètre d'entrée, à un paramètre de
+            sortie ou à un paramètre d'entrée / sortie.</para>
+        <para>L'idéal est donc, pour chaque paramètre requis par un algorithme, de l'indiquer
+            clairement sous une forme proche de <code>IN : TypeDeDonnée nomParamètre</code> dans
+            laquelle nous utiliserons bien sur IN pour les <emphasis>paramètres d'entrée</emphasis>,
+            OUT pour les <emphasis>paramètres de sortie</emphasis> et IN/OUT pour les
+                <emphasis>paramètres d'entrée / sortie</emphasis>.</para>
+    </section>
+    <section>
+        <title>La valeur de retour</title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Valeur de retour</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Eléments Algorithmique</primary>
+            <secondary>Type de retour</secondary>
+        </indexterm>
+        <para>Il semble évident que, lorsque l'on fait appel à un algorithme quelconque, notre but
+            est forcément d'obtenir un résultat prédictible et reproductible.</para>
+        <para>Ce qui peut parraître moins évident, c'est le fait le fait que le résultat que nous
+            obtiendrons en faisant appel à un algorithme particulier n'a réellement de l'intérêt
+            qu'au travers ... de l'utilisation qui pourra être faite de ce résulat par la
+            suite.</para>
+        <para>En effet, aucune des choses que nous pouvons mettre en place dans une application n'a
+            d'intérêt si elle n'est pas utilisée:</para>
+        <para>Nous pouvons créer le meilleur algorithme du monde, s'il n'est pas utilisé, nous avons
+            simplement <quote>perdu notre temps</quote> à le mettre au point.</para>
+        <para>De la même manière, si nous ne pouvons pas utiliser le résultat d'un algorithme
+            quelconque, cela nous pousse à nous poser une question embarassante, qui risque d'en
+            fâcher plus d'un : pourquoi avoir <quote>perdu notre temps</quote> à calculer se
+            résultat?</para>
+        <para>Dés lors, pour qu'un algorithme puisse avoir une utilité réelle, il est souvent
+            nécessaire qu'il puisse ... renvoyer (à celui qui y a fait appel) une valeur qui
+            correspondra au résultat du traitement effectué.</para>
+        <para>Le plus souvent, ce qui nous intéressera sera le type de la donnée qui correspond au
+            résultat obtenu, car, du fait des boucles et des structures décisionnelles qui peuvent
+            jalonner un algorithme, la valeur en elle-même du résultat peut être
+                <quote>incertaine</quote>; du moins, aussi longtemps que l'on ne dispose pas de
+            l'ensemble des données qui seront transmises comme paramètre à notre algorithme.</para>
+        <para>C'est la raison pour laquelle nous désignerons généralement la donnée qui sera
+            renvoyée par un algorithme à celui qui y a fait appel sous le terme de <emphasis>type de
+                retour</emphasis> ou, par facilité, sous le terme de <emphasis>valeur de
+                retour</emphasis>.</para>
+        <para>Généralement, nous introduirons le type de la valeur renvoyée par un algorithme en
+            faisant suivre le nom de l'algorithme de deux points <code>:</code> et du type de la
+            valeur renvoyée, sous une forme qui sera donc fort proche de <code>nomDeLalgorithme :
+                typeDeRetour</code></para>
+    </section>
+    <section>
+        <title>Année bissextile seconde</title>
+        <para>Nous disposons maintenant de toutes les informations qui nous permettront de définir
+            un algorithme efficace permettant de vérifier si une année donnée est bissextile ou
+            non.</para>
+        <para>En pseudocode, cet algorithme prendrait une forme proche de</para>
+        <example>
+            <title>Annee bissextile seconde</title>
+            <programlisting>bissextile : booleen
+in Entier annee
+Si(annee MODULO 4 = 0)
+    Si(annee MODULO 100 = 0)
+       renvoyer annee MODULO 400 = 0
+    Fin Si
+    renvoyer Vrai
+Fin Si
+Renvoyer Faux
+Fin  bissextile</programlisting>
+        </example>
+        <para>En Nassi-Shneidermann, cet algorithme pourrait prendre une forme proche de</para>
+        
+        <figure>
+            <title>Une boucle <quote>Tant que</quote> en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_Bissextile2.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <sidebar>
+            <title>Utiliser les branches else ... ou non</title>
+            <para>Vous l'aurez remarqué dans les deux formes que je viens de présenter pour cet
+                algorithme que j'ai fait en sorte que l'instruction <quote>Renvoyer Faux</quote> se
+                trouve complètement en dehors de la structure décisionnelle constituée par le test
+                    <code>si annee MODULO 4 = 0</code>.</para>
+            <para>Peut être aurez vous été surpris de cette décision, et peut-être même pourriez
+                vous croire que cet algorithme est incorrect; que j'aurais du mettre ce retour de
+                valeur dans la branche <quote>Faux</quote> du test.</para>
+            <para>S'il est vrai que j'aurais <emphasis>pu</emphasis> mettre ce retour dans la
+                branche <quote>Faux</quote> du test, je peux néanmoins vous assurer que cet
+                algorithme est fournira toujours un résultat résultat parfaitement correct.</para>
+            <para>En effet, tous les cas qui pourraient survenir si la condition <code>annee MODULO
+                    4 = 0</code> est vérifiée vont provoquer la <quote>fin prématurée</quote> de
+                l'algorithme, soit à cause de l'instruction <quote>Renvoyer Vrai</quote> si l'année
+                considérée est divisible par quatre mais qu'elle n'est pas divisible par 100, soit
+                en renvoyant le résultat du test annee MODULO 400 = 0 si l'année est divisible par
+                100.</para>
+            <para>Les instructions qui arrivent en dehors de la structure conditionnelle initiée par
+                    <code>annee MODULO 4 = 0</code> ne seront donc atteintes que si cette condition
+                    <emphasis role="bold">n'est pas</emphasis> vérifiée; exactement comme cela
+                aurait été le cas de la branche <quote>Faux</quote> du test.  La logique est donc
+                tout à fait correcte.</para>
+            <para>La seule chose, c'est que je m'évite ainsi de devoir préciser que je crée une
+                alternative, ce qui rend finalement l'algorithme <quote>plus simple</quote> (surtout
+                dans le cadre d'une représentation sous la forme d'un pseudo code).</para>
+            <para>En outre, l'exprérience démontre que les outils utilisés par certains langages ont
+                – sous certaines conditions – tendance à se plaindre lorsqu'ils sont confrontés à
+                une fonction qui est sensée renvoyer une fonction mais que la dernière instruction
+                dans le <quote>flux d'exécution normale</quote> n'est pas une instruction provoquant
+                le renvoi d'une valeur.</para>
+            <para>Or, si l'on venait à placer l'instruction <code>Renvoyer Faux</code> dans la
+                branche <quote>Faux</quote> du test (ce qui serait tout à fait correct, d'un point
+                de vue purement logique), nous n'aurions plus aucun chemin d'exécution qui ne mène
+                pas tout droit à  <quote>une fin prématurée</quote> de l'algorithme.</para>
+            <para>Et, partant de là, le fait de rajouter une instruction de renvois de valeur (dont
+                nous serions déjà en peine de définir la <quote>meilleur valeur possible</quote>, vu
+                que toutes les valeurs sont déjà prises en compte) dans le flux
+                    <quote>normal</quote> d'exécution de l'algorithme (comprenez : en dehors de tout
+                test) ne ferait que... rajouter une instruction qui n'aurait aucune chance d'être
+                atteinte, quelles que soit les circonstances, quelle que soit la valeur que nous
+                puissions associer au paramètre <code>annee</code>.</para>
+            <para>Cela ne veut bien sûr absolument pas dire qu'il ne faudra <emphasis role="bold"
+                    >jamais</emphasis> utiliser la possibilité qui nous est donnée de définir des
+                alternatives.  Cela veut seulement dire que, parfois, quand les circonstances sont
+                favorables, il n'est pas <emphasis role="bold">forcément</emphasis> nécessaire d'y
+                recourir.</para>
+        </sidebar>
+    </section>
+    <glossary>
+        <glossdiv>
+        <title>Les données exeternes</title>
+            <glossentry>
+                <glossterm>Paramètre</glossterm>
+                <glossdef>
+                    <para>Un <emphasis>paramètre</emphasis> représente une donnée que l'utilisateur
+                        d'un algorithme doit lui fournir pour que l'algorithme soit en mesure
+                        d'effectuer le travail que l'on attend de sa part.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Argument</glossterm>
+                <glossdef>
+                    <para>Un argument représente la donnée qui sera utilisée comme paramètre pour un
+                            <quote>algorithme secondaire</quote> au niveau de l'algorithme qui y
+                        fait appel</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Paramètre d'entrée</glossterm>
+                <glossdef>
+                    <para>Un <emphasis>paramètre d'entrée</emphasis> représente un paramètre qui
+                        sera transmis à un algorithme afin qu'il puisse l'utiliser afin de prendre
+                        différentes décision et dont les éventuelles altérations de la valeur que le
+                        paramètre pourrait subir ne seront pas répercutées, au niveau de
+                        l'algorithme appelant, sur la donnée ayant servi d'argument.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Parmaètre de sortie</glossterm>
+                <glossdef>
+                    <para>Un <emphasis>paramètre de sortie</emphasis> représente un paramètre qui
+                        sera fourni à l'algorithme dans le seul but que ce dernier puisse en altérer
+                        la valeur et que les altérations apportées soient répercutée, au niveau de
+                        l'algorithme appelant, sur la donnée ayant servi d'argument.</para>
+                    <para>A priori, la valeur un paramètre de sortie ne devrait pas être utilisé par
+                        l'algorithme dans sa logique décisionnelle.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Paramètre d'entrée / sortie</glossterm>
+                <glossdef>
+                    <para>Un <emphasis>paramètre d'entrée / sortie</emphasis> est un paramète qui
+                        est clairement utilisé pour servir à la fois de paramètre d'entrée – dont la
+                        valeur sera utilisée par l'algorithme dans sa logique décisionnelle – et de
+                        paramètre de sortie (dont les modification seront répecutée au niveau de la
+                        donnée ayant servi d'agrument dans l'alogirhme appelant)</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Effet de bord</glossterm>
+                <glossdef>
+                    <para>Un effet de bord représente les modifications subies par la donnée ayant
+                        servi d'argument à un algorithme lorsque l'argument est utilisé en tant que
+                        paramètre de sortie (voire, en tant que paramètre d'entrée / sortie).</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Valeur de retour</glossterm>
+                <glossdef>
+                    <para>La valeur de retour représente le type de la donnée qu'un algorithme est
+                        capable de renvoyer à celui qui y a fait appel afin de lui faire connaître
+                        le résultat de l'exécution.</para>
+                </glossdef>
+            </glossentry>
+        </glossdiv>
+    </glossary>
+</chapter>

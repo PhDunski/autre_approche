@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.1" xml:id="intro_tools">
+    <title>Les outils du développeur</title>
+    <para/>
+    <section xml:id="tools_paper_pen">
+        <title>Du papier et un bic</title>
+        <para/>
+    </section>
+    <section xml:id="tools_brain">
+        <title>Un cerveau</title>
+        <para/>
+    </section>
+    <section xml:id="tools_text_editor">
+        <title>Un éditeur de texte plat</title>
+        <para/>
+    </section>
+    <section xml:id="tools_toolchain">
+        <title>Une chaine de compilation</title>
+        <para/>
+    </section>
+    <section xml:id="automatic_compile">
+        <title>Automatiser la compilation</title>
+        <para/>
+    </section>
+    <section xml:id="automatic_config">
+        <title>Automatiser la configuration d'un projet</title>
+        <para/>
+    </section>
+    <section xml:id="concurrent_versions">
+        <title>Gérer différentes versions</title>
+        <para/>
+    </section>
+    <section xml:id="continue_integration">
+        <title>Les outils intégration continue</title>
+        <para/>
+    </section>
+    <section xml:id="ides">
+        <title>Les environnements de développement intégré</title>
+        <para/>
+    </section>
+</chapter>

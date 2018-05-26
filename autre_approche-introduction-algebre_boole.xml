@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="algebre_bool">
+    <title>L'algèbre de Boole</title>
+    <indexterm>
+        <primary>Algèbre de Boole</primary>
+    </indexterm>
+    <indexterm>
+         <primary>Calcul booléen</primary>
+         <see>Algèbre de Boole</see>
+    </indexterm>
+    <para>Selon wikipedia, ce que l'on désigne sous le terme d'<emphasis>algèbre de Boole</emphasis>
+        représente</para>
+    <blockquote>
+        <attribution>sources wikipedia</attribution>
+        <para>L'algèbre de Boole, ou <emphasis>calcul booléen</emphasis>, est la partie des
+            mathématiques qui s'intýresse à une approche algébrique de la logique, vue en termes de
+            variables, d'opérateurs et de fonctions sur les variables logiques, ce qui permet
+            d'utiliser des techniques algýbriques pour traiter les expressions à deux valeurs du
+            calcul des propositions. </para>
+    </blockquote>
+    <para>Cette approche fut lancée en 1854 par le mathématicien, logicien et philosophe George
+        Boole, dont elle porte le nom en son honneur</para>
+    <section>
+        <title>Deux valeurs</title>
+        <para>L'algèbre de Boole s'intéresse à un ensemble (au sens mathématique du terme) appelé B
+            et ne contenant que deux valeurs: la valeur <quote>vrai</quote> et la valeur
+                <quote>faux</quote>. </para>
+    </section>
+</chapter>

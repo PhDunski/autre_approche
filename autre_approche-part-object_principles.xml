@@ -1,0 +1,33 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="oo_principles" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Les principes de l'orienté objet</title>
+    <partintro>
+        <para>Dans cette partie, j'aborderai la conception orientée objet d'un point de vue purement
+            théorique.  Parmi les aspects étudiés, on peut citer:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Penser en termes de services</para>
+            </listitem>
+            <listitem>
+                <para>la loi de Déméter</para>
+            </listitem>
+            <listitem>
+                <para>les principes SOLID non vu précédemment</para>
+            </listitem>
+            <listitem>
+                <para>Sémantique de valeur Vs Sémantique d'entité</para>
+            </listitem>
+            <listitem>
+                <para>Les patrons de conception</para>
+            </listitem>
+        </itemizedlist>
+    </partintro>
+    <chapter>
+        <title>Organiser son projet</title>
+        <para></para>
+    </chapter>
+</part>

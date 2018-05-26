@@ -1,0 +1,44 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="principes_communs" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Les principes communs</title>
+    <partintro>
+        <para>Dans cette partie, j'aborderai les principes qui sont finalement communs à l'ensemble
+            des langages dits <quote>procéduraux</quote>.</para>
+        <para>Cela inclut:</para>
+        <itemizedlist>
+            <listitem>
+                <para>les notions de base, comme celle de fonction, de tests, de boucles et de
+                    récursivité, ainsi que certaines structures typiques, comme la notion de
+                    tableau, de pile, de file, ou d'arbre binaire;</para>
+            </listitem>
+            <listitem>
+                <para>une présentation de certaines représentation algorithmique
+                        <quote>agnostiques</quote>;</para>
+            </listitem>
+            <listitem>
+                <para>le principe de la responsabilité unique;</para>
+            </listitem>
+            <listitem>
+                <para>la notion d'encapsulation;</para>
+            </listitem>
+        </itemizedlist>
+   
+    </partintro> 
+    <xi:include href="autre_approche-common_principles-why.xml"/>
+    <xi:include href="autre_approche-common_principles-dont_run.xml"/>
+    <xi:include href="autre_approche-common_principles-basic_questions.xml"/> 
+    <xi:include href="autre_approche-common_principles-glossary.xml"/> 
+    <xi:include href="autre_approche-common_principles-algorithms.xml"/>
+    <xi:include href="autre_approche-common_principles-pseudocode.xml"/>
+    <xi:include href="autre_approche-common_principles-flowchart_bases.xml"/> 
+    <xi:include href="autre_approche-common_principles-srp_premiere.xml"/>
+    <xi:include href="autre_approche-common_principles-decisionnelles.xml"/>
+    <xi:include href="autre_approche-common_principles-boucles.xml"/> 
+    <xi:include href="autre_approche-common_principles-limites_flowchart.xml"/> 
+    <xi:include href="autre_approche-common_principles-nassi_shneiderman.xml"/> 
+    <xi:include href="autre_approche-common_principles-parametres.xml"/> 
+</part>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="nassi_bases">
+    <title>Le Nassi-Shneidermann</title>
+    <subtitle>Une manière différente de représenter un algorithme</subtitle>
+    <indexterm>
+        <primary>Structurogramme</primary>
+        <see>Nassi-Shneidermann</see>
+    </indexterm>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>Nassi-Shneidermann</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Graphe NSD</primary>
+        <see>Nassi-Shneiderman</see>
+    </indexterm>
+    <indexterm>
+        <primary>Nassi-Shneidermann</primary>
+    </indexterm>
+    <para>Je vous ai fait part à peine plus haut des limites dont souffrait le flowchart. Voici une
+        méthode qui lève la plupart d'entre elle. Elle est appelée
+            <emphasis>Nassi-Shneidermann</emphasis>, du nom des inventeurs de la technique. On y
+        fait également régulièrement référence au travers des termes
+            <emphasis>structurogramme</emphasis> ou <emphasis>graphe NSD</emphasis>.</para>
+    <para>Cette technique est très intéressante dans le cadre de la <emphasis>programmation
+            structurée</emphasis> parce qu'elle permet de représenter bien plus clairement certains
+        concepts (comme les boucles), dont nous avons vu qu'elles atteignaient les limites du
+        flowchart.</para>
+    <para>Il faut cependant reconnaître que la <quote>perte</quote> des pyctogrammes du flowchart
+        rend peut-être les choses <quote>moins faciles</quote> à appréheder quand on n'en a pas
+        l'habitude.</para>
+    <section>
+        <title>Qu'est-ce qui change?</title>
+        <para>Soyons clairs, en dehors de l'objectif poursuivi par le flowchart et le
+            Nassi-shneidermann, il <emphasis role="bold">n'y a aucun point commun</emphasis> entre
+            les deux techniques:</para>
+        <para>Là où le <emphasis role="bold">flowchart</emphasis> utilise des pictogrammes
+            spécifiques pour représenter les différentes actions, le <emphasis role="bold"
+                >Nassi-Shneidermann</emphasis> ne fait aucune différence entre une opération
+            auxilière, l'appel d'un autre algorithme, l'affichage d'information ou le fait de
+            récupérer des données introduites par l'utilisateur.</para>
+        <para>Là où le <emphasis role="bold">flowchart</emphasis> va relier les différentes
+            instructions entre elles grâce à des flèches, les instructions seront exécutées
+            strictement dans l'ordre dans lequel elles apparaissent dans un <emphasis role="bold"
+                >Nassi-Sheidermann</emphasis> (en partant du haut et en se dirigeant vers le bas du
+            diagramme).</para>
+        <para>Là où le <emphasis role="bold">flowchart</emphasis> utilise un pictogramme pour
+            représenter le début de l'algorithme et un autre pour en représenter la fin, alors que
+            ces deux pyctogrammes peuvent se retrouver finalement <quote>n'importe où</quote> dans
+            l'algorithme, en <emphasis role="bold">Nassi-Shneidermann</emphasis>, le début de
+            l'algorithme est forcément <quote>en haut</quote> du diagramme, et sa fin est focément
+            ... en bas du diagramme.</para>
+        <para>Alors que les boucles sont <quote>relativement</quote> difficiles à identifier dans un
+                <emphasis>flowchart</emphasis>, il est facile de les identifier, non seulement en se
+            disant <quote>tiens, voilà une boucle</quote>, mais, surtout en se disant <quote>tiens,
+                voilà une boucle de &lt;tel type></quote> en
+            <emphasis>Nassi-Shneidermann</emphasis>.</para>
+        <para>Au vu de toutes ces différences, nous pouvons presque nous demander si nous sommes bel
+            et bien en face de deux techniques poursuivant le même but. Mais je peux pourtant vous
+            assurer que tel est bien le cas.</para>
+    </section>
+    <section>
+        <title>Un carré dans un carré</title>
+        <para>En Nassi-Sheiderman, la fonction est représentée par un carré qui contient un autre
+            carré dans laquelle la logique prendra place <quote>dans l'ordre du flux
+                d'exécution</quote>.</para>
+        <para>Ainsi, un Nassi-Shneidermann classique pourrait ressembler à quelque chose
+            comme</para>
+        <figure>
+            <title>Un Nassi-Shneidermann classique</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_exemple.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section>
+        <title>Les appels externes</title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Fonctions Externes</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Nassi-Shneidermann</primary>
+            <secondary>Fonctions externes</secondary>
+        </indexterm>
+        <para>Voici sans doute le seul point commun que nous pourrions trouver entre le flowchart et
+            le Nassi-Shneidermann: l'appel de fonctions externes.</para>
+        <para>En effet, l'appel d'une fonction externe est clairement mis en évidence dans le
+            Nassi-Shneidermann par l'adjonction de <quote>côtés</quote> de part et d'autre de
+            l'action en elle-même, tout comme c'est le cas en flowchart.</para>
+        <para>Ainsi, l'appel d'une fonction (ou d'une procédure) externe sera-t-il représenté sous
+            la forme de </para>
+        <figure>
+            <title>Appel de fonction externe en Nassi-Shneiderman</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_externe.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section xml:id="nassi_tests">
+        <title>Les tests</title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Tests</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Nassi-Shneidermann</primary>
+            <secondary>Tests <quote>Vrai / Faux</quote></secondary>
+        </indexterm>
+        <para>Les tests <quote>vrai / faux</quote> seront représenté par un triangle divisant
+            littéralement le diagramme en deux, ce qui permet d'avoir, sur une même ligne, les
+            actions à entreprendre si la condition est vérifiée et l'alternative. </para>
+        <para>Pour savoir ce qu'il faut faire à partir du résultat du test, il <quote>suffit</quote>
+            donc de choisir la colonne qui y correspond</para>
+        <figure>
+            <title>Un test en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_test.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Comme je vous l'ai déjà fait remarquer, il est tout à fait possible de représenter
+            n'importe quel algorithme sous n'importe quelle forme.</para>
+        <para>L'algorithme que je vous présentais alors pour définir si une année est bissextile
+            pourrait donc sans aucun problème être représenté sous la forme d'un Nassi-Shneiderman.
+            Il prendrait alors une forme proche de</para>
+        <figure>
+            <title>Un exemple de test simple en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_exemple_test.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <note>
+            <para>Je n'ai absolument modifié d'acune manière l'algorithme précédent. Je n'ai fait
+                que le représenter d'une manière différente.</para>
+            <para>Il souffre donc exactement du même défaut que son prédécesseur, à savoir: le fait
+                qu'il n'est peut-être pas aussi efficace que ce que nous pourrions souhaiter.</para>
+            <para>Mais nous reviendrons sur ce point plus tard.</para>
+        </note>
+    </section>
+    <section xml:id="nassi_tant">
+        <title>Les boucles <quote>Tant que</quote></title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Boucles "Tant que"</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Nassi-Shneiderman</primary>
+            <secondary>Boucles <quote>Tant que</quote></secondary>
+        </indexterm>
+        <para>Les boucles <quote>Tant que</quote> sont représenté sous la forme d'un L placé à
+            l'horizontale regroupant l'ensemble des actions à entreprendre dans la boucle.</para>
+        <para>Elles prennent donc la forme de</para>
+        <figure>
+            <title>Une boucle <quote>Tant que</quote> en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_boucle_tant.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section>
+        <title>Les boucle <quote>Jusque</quote>
+        </title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Boucles "Jusque"</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Nassi-Shneidermann</primary>
+            <secondary>Boucles <quote>Jusque</quote></secondary>
+        </indexterm>
+        <para>Les boucle <quote>jusque</quote> ne font en définitive qu'inverser les actions et les
+            conditions par rapport à la boucle <quote>tant</quote>, en Nassi-Shneidermann. Si bien
+            qu'elles ressemblent à quelque chose comme</para>
+        <figure>
+            <title>Une boucle <quote>Jusque</quote> en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_boucle_jusque.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section>
+        <title>Les boucles <quote>Pour</quote></title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Boucles "Pour"</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Nassi-Shneidermann</primary>
+            <secondary>Boucle <quote>Pour</quote></secondary>
+        </indexterm>
+        <para>Enfin, les boucles <quote>Pour</quote> prennent la forme d'une pince, ce qui les fait
+            ressembler à</para>
+        <figure>
+            <title>Une boucle <quote>Pour</quote> en Nassi-Shneidermann</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/nassi_boucle_pour.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+</chapter>

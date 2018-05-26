@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cpp_kessako">
+    <title>C++? KESSAKO?</title>
+    <indexterm>
+        <primary>Langage</primary>
+        <see>langage de programmation</see>
+     </indexterm>
+     <indexterm>
+        <primary>Langage de programmation</primary>
+    </indexterm>
+    <indexterm>
+        <primary>Langage multi-paradigme</primary>
+    </indexterm>
+    <indexterm>
+        <primary>Langage compilé</primary>
+    </indexterm>
+    <indexterm>
+        <primary>Langage de troisième génération</primary>
+    </indexterm>
+    <para>Si cet ouvrage a atterri dans vos mains, c'est parce que vous voulez apprendre ou vous
+        perfectionner en C++. Mais j'estime personnellement qu'il est impossible de comprendre un
+        sujet, d'arriver à le maîtriser, si l'on n'a pas déjà une vision -- serait-elle générale --
+        du contexte dans lequel le sujet en question évolue.</para>
+    <para>Un homme sans histoire est un homme sans avenir car il se condamne à reproduire les
+        erreurs du passé dit-on souvent. C++ a -- comme bien d'autres langages de programmation --
+        tiré les leçons du passé pour se forger sa propre philosophie.</para>
+    <para> Si vous voulez apprendre C++, vous devez <foreignphrase>ad minima</foreignphrase> savoir
+        ce que c'est. Si vous espérez un jour atteindre un niveau élevé de maîtrise de C++, vous
+        devrez en comprendre la philosophie propre. Et vous ne pourrez obtenir cette compréhension
+        qu'en comprenant le contexte dans lequel il a vu le jour et les défis qu'il a décidé de
+        relever.</para>
+    <para>Mettons donc directement fin au suspense. C++ est ce que l'on appelle un <quote>langage de
+            programmation</quote><quote>compilé</quote>, <quote>multi paradigme</quote> dit
+            <quote>de troisième génération</quote>.</para>
+    <para>Ce chapitre revient en détail sur chacun des termes utilisés afin de vous permettre de
+        comprendre exactement de quoi il retourne.</para>
+    <section xml:id="cpp_langage">
+        <title>Un langage de programmation</title>
+        <para>Vous l'aurez compris, C++ n'est très certainement pas une marque de voiture ni le
+            titre d'un livre de recettes de cuisine. C'est ce que l'on appelle un <emphasis>langage
+                de programmation</emphasis>. Cela implique, d'abord et avant tout qu'il s'agit d'un
+            langage.</para>
+        <para>Un langage n'est rien de plus qu'un ensemble de conventions qui permettent à deux
+            interlocuteurs de se comprendre lorsqu'ils tentent de communiquer entre eux.</para>
+        <para>Ces conventions peuvent prendre plusieurs formes allant du terme utilisé pour
+            représenter quelque chose à la syntaxe utilisée, en passant par l'ordre dans lequel les
+            différents termes sont "mis en phrase". C'est ainsi que si vous voulez une cuillère,
+            vous parlerez de <foreignphrase>lepel</foreignphrase> en nérlandais ou de
+                <foreignphrase>spoon</foreignphrase> en anglais et que vous devrez placer les
+            différents termes qui correspondent au sujet, au verbe et aux attributs dans un ordre
+            bien déterminé afin de faire une phrase qui respecte les conventions propre à la langue
+            que vous parlez.</para>
+        <para>La seule différence entre n'importe quelle langue comme le français, l'espagnol ou
+            l'anglais et C++, c'est que l'un des interlocuteur est une machine. Toutes les
+            conventions que nous utiliserons aurons donc pour objectif de nous faire comprendre par
+            "quelque chose d'aussi bête qu'un ordinateur".</para>
+    </section>
+    <section xml:id="cpp_compile">
+        <title>Un langage compilé</title>        
+        <indexterm>
+            <primary>Langage</primary>
+            <secondary>Langage compilé</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Langage compilé</primary>
+        </indexterm>
+        <indexterm>
+            <primary>Langage</primary>
+            <secondary>Bytecode</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Outils</primary>
+            <secondary>Compilateur</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Outils</primary>
+            <secondary>Interpréteur</secondary>
+        </indexterm>
+        <para>Nous le verrons plus loin<!--lien à  rajouter-->, un ordinateur n'est capable de
+            comprendre qu'un nombre limité d'instructions et uniquement lorsqu'elles prennent la
+            forme d'une succession de 1 et de 0.</para>
+        <para>Il est possible de distinguer deux grandes catégories de langages de programmation en
+            fonction de la manière dont les différentes instructions sont converties en un
+            succession de 1 et de 0 compréhensible par le processeur: Les langages interpretés d'une
+            part et les langages compilés de l'autre.</para>
+        <para>Les langages interprétés sont des langages dont chaque exécution provoquera la
+            conversion <quote>à la volée</quote> de l'ensemble du code en instructions
+            compréhensibles par le processeur, alors que le code écrit dans un langage compilé sera
+            converti une bonne fois pour toutes en un ensemble d'instructions et sauvegardé sous la
+            forme d'un fichier exécutable.</para>
+        <para>L'application qui permet d'interpréter du code écrit dans un langage interprété
+            s'appelle, très logiquement, un interpréteur alors que l'application permettant de créer
+            un exécutable à partir d'un code écrit dans un langage compilé s'appelle -- tout aussi
+            logiquement -- un compilateur.</para>
+        <sidebar>
+            <title>Les langages "semi compilés"</title>
+            <para>Certains langages estiment, à plus ou moins juste titre, que ces deux catégories
+                souffrent d'inconvénients majeurs et tentent de concilier ces deux aspects
+                antagonistes afin d'en ressortir le meilleur des deux côtés.</para>
+            <para>L'idée générale est de convertir le code source écrit par le développeur en un
+                langage intermédiaire, nommé <emphasis>byte code</emphasis> qui sera interprété à
+                l'exécution par ce que l'on appelle alors une <emphasis>machine
+                virtuelle</emphasis>. Java et le framework <emphasis>.net</emphasis> sous windows
+                sont basés sur de telles machines virtuelles.</para>
+            <para>On parle alors de langage <emphasis>semi compilé</emphasis> -- ou de langage
+                    <emphasis>semi interprété</emphasis> selon le point de vue -- pour indiquer que
+                    <quote>la moitié du travail</quote> a été effectuée avant l'exéctution mais que
+                l'autre moité devra être faite plus tard.</para>
+        </sidebar>
+        <section xml:id="avantage_inconvenients">
+            <title>Des avantages et des inconvénients</title>
+            <para>Ces catégories présentent toutes les deux des avantages et des inconvénients. </para>
+            <para>Le pire de l'histoire étant qu'un avantage de l'une correspond souvent à un
+                inconvénient de l'autre et que, chacun voyant midi à sa porte, les avantages cités
+                par certains peuvent très facilement être considérés comme des inconvénients par
+                d'autres.</para>
+            <section>
+                <title> Les langages interprétés</title>
+                <para>Le propre des langages interprétés est qu'il n'est pas nécessaire de générer
+                    le code binaire exécutable pour être en mesure d'utiliser les programmes qu'ils
+                    décrivent. Cela se traduit par deux avantages principaux:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Le code est directement utilisable sur n'importe quelle architecture,
+                            sur n'importe quel système d'exploitation aussi longtemps que le système
+                            sur lequel il est exécuté dispose de l'interpréteur adapté au langage
+                            utilisé.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Le développement et les corrections sont souvent plus rapides car il
+                            n'est pas nécessaire d'attendre que l'ensemble du processus de
+                            compilation n'ait été exécuté.</para>
+                    </listitem>
+                </itemizedlist>
+                <para>Par contre, les langages interprétés ne sont malgré tout pas exempts
+                    d'inconvénients. </para>
+                <para>Aussi bizare que cela puisse parraître, la raison est exactement la même que
+                    pour les avantages : il n'est pas nécessaire de générer le code binaire
+                    exécutable afin d'être en mesure d'utiliser les programmes qu'ils décrivent.
+                    Cela se traduit alors par plusieurs inconvénients majeurs :</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>L'impossibilité d'exécuter le programme sans recourir à un
+                            interpréteur ou à une machine virtuelle. Cette restriction est
+                            particulièrement importante si vous devez développer un programme qui,
+                            pour une raison ou une autre, ne peut pas attendre que la machine
+                            virtuelle ou l'interpréteur soit disponible (tout ce qui a trait au
+                            "noyau" du système d'exploitation, par exemple) ;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Le <quote>passage obligé</quote> par l'interpréteur afin de fournir au
+                            processeurs les instructions qu'il doit exécuter. Cette iterprétation du
+                            code fait que les instructions seront rarement optimisées pour une
+                            architecture particulière et prend généralement du temps. Il n'est donc
+                            pas rare que les langages interprétés soient <quote>relativement plus
+                                lents</quote> à l'exécution que les langages compilés.</para>
+                    </listitem>
+                    <listitem>
+                        <para>L'interpréteur ou la machine virtuels sont indispensables pour
+                            l'exécution des programmes.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section>
+                <title>Les langages compilés</title>
+                <para>Ce ne sera sans doute une surprise pour personne, le propre des langages
+                    compilés est qu'il impliquent de générer le code binaire exécutable avant de
+                    pouvoir utiliser les programmes qu'ils décrivent. </para>
+                <para>Cela se traduit par plusieurs avantages majeurs :</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Le programme est exécutable sans qu'il soit besoin d'installer
+                                <quote>autre chose</quote> que le programme lui-même et ses
+                            éventuelles dépendances</para>
+                    </listitem>
+                    <listitem>
+                        <para>Comme le programme est directement composé des instructions que le
+                            processeur devra exécuter, les programmes issus de langages compilés
+                            sont globalement plus rapides à l'exécution que ceux issus des langages
+                            interprétés.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Les compilateurs sont souvent en mesure de fournir un code binaire
+                            exécutable utilisant des instructions processeur spécifiques à
+                            l'architecture ciblée. L'<quote>optimisation</quote> qu'implique
+                            l'utilisation d'instructions spécifiques tend, là aussi, à rendre le
+                            programme globalement plus rapide.</para>
+                    </listitem>
+                </itemizedlist>
+                <para>Mais ces avantages ne doivent pas occulter les inconvénients pour autant. </para>
+                <para>La principale raison de ceux-ci sera, une fois encore, strictement la même :
+                    les programmes décrits par les langages compilés nécessitent la génération du
+                    code binaire exécutable avant de pouvoir être utilisés. </para>
+                <para>Cela se traduit par deux inconvénients majeurs:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Pour être en mesure d'utiliser un programme sur une architecture ou
+                            avec un système d'exploitation donné, il faut généralement que le
+                            programme ait été compilé spécifiquement pour l'architecture et / ou
+                            pour le système d'exploitation visé: un programme compilé pour être
+                            utilisé sous windows ne pourra – par exemple – en aucun cas être utilisé
+                            sous linux sans passer par l'étape de compilation au préalable.
+                            L'inverse est d'ailleurs tout aussi vraie.</para>
+                    </listitem>
+                    <listitem>
+                        <para>La génération du code binaire exéctutable est un processus qui prend
+                            du temps et qui doit impérativement être exécuté dés que l'on a effectué
+                            le moindre changement dans le code. L'apport de correction au code peut
+                            donc demander d'avantage de temps si plusieurs modifications de code
+                            s'avèrent nécessaires avant d'arriver à apporter la correction
+                            adéquate.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+        </section>
+    </section>
+    <section xml:id="multi_paradigme">
+        <title>Un langage multiparadigme</title>
+        <indexterm>
+            <primary>Stroutrup, Bjarne</primary>
+        </indexterm>
+        <indexterm>
+            <primary>Bjarne Stroutrup</primary>
+            <see>Stroutrup, Bjarne</see>
+        </indexterm>
+        <para>Selon wikipedia un paradigme est</para>
+        <blockquote>
+            <attribution>wikipedia</attribution>
+            <para>une représentation du monde, une manière de voir les choses, un modèle cohérent de
+                vision du monde qui repose sur une base définie (matrice disciplinaire, modèle
+                théorique ou courant de pensée). C'est une forme de rail de la pensée dont les lois
+                ne doivent pas être confondues avec celles d'un autre paradigme et qui, le cas
+                échéant, peuvent aussi faire obstacle à l'introduction de nouvelles solutions mieux
+                adaptées.</para>
+        </blockquote>
+        <para>Si cette définition s'applique parfaitement à des langages comme java ou C# qui ont
+            décidé de respecter -- parfois en dehors de toute logique -- intégralement le paradigme
+            orienté objet, elle mériterait amplement d'être quelque peu adoussie lorsqu'il est
+            question de C++.</para>
+        <para>Avec une définition tellement restrictive, il serait en effet assez difficile
+            d'envisager la possibilité de disposer de plusieurs paradigmes au sein d'un seul et
+            unique langage car, si on en croit la définition, le passage d'un paradigme à l'autre
+            n'irait jamais sans poser un certain nombre de problèmes.</para>
+        <para>De deux choses l'une. Ou bien cette définition est fausse, du moins en partie, car
+            trop restrictive, ou bien C++ doit être considéré plutôt comme un langage <quote>multi
+                points de vue</quote> que comme un langage multiparadigme. </para>
+        <para>Cette réflexion ne vient pas de moi, je dois l'avouer. Je l'ai allègrement adaptée de
+            Bjarne Stroutrup (le créateur originel de C++) qui semble ne réellement pas apprécier
+            que l'on parle de <quote>son</quote> langage comme d'un langage multiparadigme.</para>
+        <para>Et j'ai personnellement tendance à me rallier à son point de vue. </para>
+        <para>Mais bon, en attendant de trouver une meilleure formule, continuons donc à parler de
+            C++ comme d'un langage multiparadigme, en adoucissant la définition du terme sous une
+            forme qui parler d'un <quote>schéma de pensée, d'une manière d'aborder le monde qui nous
+                entoure</quote>.</para>
+        <para>Car, si l'on admet une telle définition, C++ entre bel et bien dans la catégorie des
+            langages dits <quote>multiparadigme</quote> (si tant est qu'il n'en soit pas le seul
+            représentant). Voici ceux auxquels il donne acces.</para>
+        <section xml:id="paradigme_imperatif">
+            <title>Le paradigme impératif</title>
+            <indexterm>
+                <primary>Paradigmes</primary>
+                <secondary>Paradigme impératif</secondary>
+            </indexterm>
+            <para>Le paradigme impératif est sans doute le paradigme le plus ancien à avoir été mis
+                en œuvre en informatique. </para>
+            <para>Il considère qu'un programme n'est en définitive qu'une suite d'instructions qu'il
+                faut effectuer dans un ordre bien précis afin d'obtenir un résultat reproductible et
+                clairement identifié.</para>
+            <para>Il faut bien sûr s'entendre sur le sens que l'on donne au terme instruction, car
+                une instruction peut en réalité s'avérer être un bloc d'instructions exécutées dans
+                un ordre précis qui sera rerpésenté sous la forme d'une fonction, par
+                exemple.</para>
+            <para>Chaque instruction correspond plus ou moins à une manipulation effectuée sur une
+                donnée particulière.</para>
+            <para>Ce paradigme fera l'objet d'une étude approfondie dans la partie Principes
+                communs.</para>
+        </section>
+        <section xml:id="paradigme_oo">
+            <title>Le paradigme orienté objet</title>
+            <para>Le paradigme orienté objet est en grande partie basée sur le paradigme impératif
+                avec malgré tout une différence majeure : au lieu de réfléchir en termes de données
+                manipulées, nous réfléchirons en termes de services attendus de la part des données
+                que l'on manipule, bien que ce ne soit pas -- très loin de là -- sa caractéristique
+                majeure.</para>
+            <para>Ce paradigme s'intéresse en effet beaucoup plus aux fonctions que l'on peut
+                appeler depuis une donnée qu'à la manière dont les données sont réellement
+                manipulées. Il fera l'objet d'une étude approfondie dans la partie Les principes de
+                l'orienté objet.</para>
+        </section>
+        <section xml:id="paradigme_generique">
+            <title>Le paradigme générique</title>
+            <indexterm>
+                <primary>Paradigmes</primary>
+                <secondary>Paradigme Générique</secondary>
+            </indexterm>
+            <para>Enfin, C++ est un langage qui permet l'utiisation du paradigme générique. Ce
+                paradigme respecte un schéma de pensée totalement différent dans le sens où il est
+                possible de ne pas savoir quel type de donnée nous manipulerons réellement, mais de
+                savoir par contre parfaitement la manière dont ces données seront manipulées. </para>
+            <para>Cette approche permet d'éviter de nombreuses copies inutiles (et sources
+                d'erreurs) de code. Elle fera l'objet d'une étude aprofondie dans la partie Le
+                paradigme générique.</para>
+        </section>
+        <section>
+            <title>Une intégration parfaite</title>
+            <para>Si j'ai tendance à être d'accord avec Stroutroup quant à l'usage du vocable
+                    <quote>langage multiparadigme</quote> vis à vis de C++, c'est essentiellement
+                parce que, contrairement à ce que laisse entendre la définition fournie par
+                wikipedia, il est tout à fait possible d'intégrer dans un seul langage différents
+                paradigmes en faisant en sorte qu'il soit facile de passer de l'un à l'autre et même
+                d'utiliser une fonction ou une structure de données issue de l'un dans un contexte
+                dans lequel on en utilise clairement un autre.</para>
+            <para>C++ a réussi cet exercice avec brio, car il est tout aussi facile d'invoquer une
+                fonction générique depuis une fonction libre (issue du paradigme procédural) que
+                depuis la fonction membre d'une classe (issue du paradigme Orienté Objet). A vrai
+                dire, il est tout à fait possible d'utiliser n'importe quelle structure de donnée ou
+                fonction issue de n'importe quel paradigme dans le contexte d'utilisation de
+                n'importe quel autre paradigme.</para>
+            <para>C'est sans doute ce qui rend le C++ si complexe, mais c'est aussi ce qui le rend
+                si puissant. Contrairement à ce que l'on pourrait croire, l'intégration de ces trois
+                paradigmes fait effectivement de C++ un des langages parmis les plus complexes, mais
+                vous ne manquerez pas de le constater au travers de cet ouvrage, cela n'en fait pas
+                forcément un langage compliqué pour la cause.</para>
+        </section>
+    </section>
+    <section xml:id="whats_this_generations">
+        <title>les générations de langage</title>
+        <para>La communication entre l'homme et la machine a toujours posé problème, car nous ne
+            sommes – décidément – vraiment pas <quote>faits pareils</quote>: l'homme est
+                <quote>quelque chose</quote> de complexe, capable de comprendre un grand nombre de
+            mots, et de subtilités diverses, alors que la machine, elle, elle ne fonctionne que
+            grâce au courant électrique, et elle ne connaît finalement que deux états: le courant
+            passe, ou il ne passe pas.</para>
+        <para>Il n'y a aucune nuance dans ces deux états, car il est impossible de faire passer
+                <quote>mais pas trop</quote> le courant dans les circuits de la machine.</para>
+        <para>Pour nous faire comprendre par la machine, nous avons donc du mettre au point des
+            langages que la machine serait en mesure de comprendre, malgré son manque de
+            nuances.</para>
+        <para>Bien sur, les langages mis au point ont évolué avec le temps, et l'on peut désormais
+            les classer en trois catégories distinctes que voici:</para>
+        <section xml:id="whats_this_machine">
+            <title>Le langage machine</title>
+             <indexterm>
+                 <primary>Générations de langages</primary>
+                 <secondary>Le langage machine</secondary>
+             </indexterm>
+             <indexterm>
+                 <primary>Générations de langages</primary>
+                 <secondary>opcode</secondary>
+             </indexterm>
+            <para>L'informatique telle que nous la connaissons aujourd'hui a pris véritablement son
+                essors lorsque l'idée de Von Newman <footnote>
+                    <para>voir: merci Mr Von Newman </para>
+                </footnote> a été mise en œuvre.</para>
+            <para>Les choses sont devenues <quote>plus faciles</quote> que ce qu'elles étaient avant
+                car ce que l'on pouvait désormais appeler <quote>ordinateurs</quote> (bien qu'il
+                semble que le terme ne soit apparu que plus tard) disposaient désormais d'un certain
+                nombre d'instructions auxquelles nous pouvions faire appel.</para>
+            <para>Selon l'idée de Von Newman, chaque instruction est représentée par une valeur
+                numérique qui lui est propre, mais qui ne peut – bien évidemment – être comprise par
+                l'ordinateur que si elle est représentée sous une forme binaire.</para>
+            <para>Il était désormais possible d'écrire des programmes sous une forme proche
+                de</para>
+            <example>
+                <title>un programme en langage machine</title>
+                <programlisting>0010001000000100
+0010010000000100
+0001011001000010
+0011011000000011
+1111000000100101
+0000000000000101
+0000000000000110
+0000000000000000</programlisting>
+                <para>Dans ce genre de programme, chaque ligne de code est composée de seize bits
+                    pouvant soit représenter une instructions, soit une valeur simple.</para>
+                <para>Dans cet exemple, les trois dernières lignes représentent respectivement les
+                    valeurs 5, 6 et 0, sous une notation Ã seize bits avec complément Ã deux. Les
+                    cinq première lignes de code représentent quant Ã elle les instructions qui
+                    devront être exécutées.</para>
+                <para>Pour pouvoir interpréter ce code, l'opérateur (et l'ordinateur) devait
+                    interpréter les quatre premiers bits de chaque ligne comme un
+                        <emphasis>opcode</emphasis> représentant l'instruction Ã effectuer, les
+                    douze derniers bits contenant les valeurs les valeurs associée aux opérandes de
+                    l'opération.</para>
+                <para>Ces opérandes pouvaient correspondre soit Ã un des registres utilisé par la
+                    machine pour manipuler les données, soit Ã une adresse mémoire Ã laquelle la
+                    machine pourrait trouver une donnée Ã traiter.</para>
+                <para>Ainsi, la première ligne de ce code <code>0010001000000100</code> contient un
+                        <emphasis>opcode</emphasis>(<code>0010</code>) et deux opérandes.</para>
+                <para>L'<emphasis>opcode</emphasis> correspond Ã l'instruction <quote>copie le
+                        contenu de l'adresse mémoire indiquée dans le registre de travail
+                        indiqué</quote>. Pour savoir de quel registre de travail nous parlons, il
+                    fallait observer les trois bits suivants (<code>001</code>). Les neufs derniers
+                    bits représentant l'adresse mémoire dont il fallait copier le contenu dans le
+                    registre de travail.</para>
+            </example>
+            <para>Et, bien sur – où aurait été le plaisir autrement? – même si tous les ordinateurs
+                disposent sans doute d'instructions identiques (comme <quote>ajouter une valeur à ce
+                    qui se trouve dans le registre A</quote>), le code correspondant à chaque
+                instruction peut tout à fait varier d'un ordinateur à l'autre.</para>
+            <para>Le langage machine est depuis considéré comme la première <emphasis role="bold"
+                    >génération de langage</emphasis> .</para>
+        </section>
+        <section>
+            <title>les mnemoniques</title>
+            <indexterm>
+                <primary>Générations de langages</primary>
+                <secondary>Les mnémoniques</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Outils des développeurs</primary>
+                <secondary>Assembleur</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Générations de langages</primary>
+                <secondary>Les langages de deuxième génération</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Générations de langages</primary>
+                <secondary>Le langage assembleur</secondary>
+            </indexterm>
+            <para>Vous l'aurez compris, le langage machine a apporté <quote>une certaine
+                    facilité</quote> à la programmation, mais il reste malgré tout très sujet à
+                l'introduction d'erreur: il suffit en effet de se tromper et de mettre un
+                    <code>1</code> là où il aurait fallu un <code>0</code> (ou l'inverse) pour que,
+                dans le meilleur des cas, une valeur incorrecte soit utilisée ou, dans le pire des
+                cas, pour que ce soit carrément la mauvaise instruction qui soit utilisée.</para>
+            <para>Les développeurs de l'époque mirent donc au point des outils capables de
+                comprendre un certains nombre de symboles et de les traduire en langage
+                machine.</para>
+            <para>Nous pouvions désormais utiliser des instructions comme <code>ADDA
+                    &lt;valeur></code> en éyant la certitude que ce serait traduit en langage
+                machine sous la forme de l'instruction correspondant à <quote>ajouter telle valeur
+                    au registre A</quote>.</para>
+            <para>Ils nommèrent <emphasis>mnémonique</emphasis> les instructions comme
+                    <code>ADDA</code> , et il en existait – vous vous en seriez douté – un grand
+                nombre d'autres.</para>
+            <para>Ces mnémoniques, que l'on regroupe volontiers dans le vocable de <emphasis>langage
+                    assembleur</emphasis> représente ce qu'il est convenu d'appeler un
+                    <emphasis>langage de deuxième génération</emphasis>.</para>
+            <para>Quant à l'outil qu'ils mirent au point pour automatiser cette
+                    <quote>traduction</quote>, il le nommèrent
+                <emphasis>assembleur</emphasis>.</para>
+        </section>
+        <section xml:id="third_gen">
+            <title>les langages de <quote>proches du langage humain</quote></title>
+           <indexterm>
+                <primary>Générations de langages</primary>
+                <secondary>Les langages de troisième génération</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Générations de langages</primary>
+                <secondary>Les langages "proches du langage humain"</secondary>
+            </indexterm>
+            <para>Le langage assembleur avait <quote>ouvert la voie</quote>: grâce à lui, il
+                devenait possible de <quote>s'abstraire</quote> de certains détails propres à la
+                machine sur laquelle on travaille (comme l'<emphasis>opcode</emphasis> spécifique à
+                une instruction particulière), mais reste malgré tout très proche de ce que ce que
+                l'on peut désormais appeler un ordinateur est capable de comprendre.</para>
+            <para>L'évolution suivante a consisté à créer ce que l'on appelle couremment des langage
+                proches du langage humain; c'est à dire des langages qui s'éloignent encore un peu
+                plus (on dit généralement <quote>qui font un peu plus abstraction</quote>) de la
+                représentation des données et des instructions telles qu'elles sont comprise par
+                l'ordinteur pour se rapporcher d'une représentation <quote>facilement
+                    compréhensible</quote>, qui peut facilement être lue par un humain.</para>
+            <para>Cette nouvelle évolution a donné naissance aux langages dont on dit généralement
+                qu'ils font partie des <emphasis>langages de troisième génération</emphasis>.</para>
+        </section>
+        <section xml:id="sequentielVSfonctionnel">
+            <title>Plusieurs approches</title>
+            <para>Des divergences d'opinion sont très vite apparues, à partir du moment où il
+                devenait possible d'avoir des langages de programmation <quote>proches du langage
+                    humain</quote>, quant à l'idée que se faisaient les gens de ce que devait
+                permetre un tel langage.</para>
+            <para>Cretaines personnes estimaient en effet que le seul langage réellement universel
+                est le langage des mathématiques, et qu'un langage de programmation doit donc
+                permettre d'exprimer les choses sous la forme de fonction mathématiques.</para>
+            <para>D'autres estimaient qu'un langage de programmation devait pouvoir exprimer les
+                différentes étapes par lesquelles il est nécessaire de passer pour obtenir un
+                résultat prévisible et reproductible.</para>
+            <para>Les premiers ont donc mis au point des langages dont on dit désormais qu'ils
+                favorisent la <emphasis>programmation fonctionnelle</emphasis>, alors que les second
+                mettaient au point des langages dont on dit désormais qu'il favorient la
+                    <emphasis>programmation Séquentielle</emphasis>.</para>
+            <para>Il va de soi que ces deux approches ont occasionné de nombreuses <quote>guerres de
+                    clochers</quote> et qu'il a longtemps été considéré comme impensable de les
+                concilier.</para>
+            <para>Cependant, chaque approche a fini par montrer ces limites, si bien que l'on en
+                arrive de plus en plus souvent à observer l'arrivée <quote>sur le marcher</quote> de
+                langages qui tente de concilier ces deux approches de manière à <quote>profiter du
+                    meilleur des deux mondes</quote>.</para>
+            <para>Le langage C et le C++ ont clairement fait le choix de favoriser la programmation
+                impérative. Cependant, les évolutions récentes de C++ tendent de plus en plus à
+                intégrer la capacité d'utiliser la programmation fonctionnelle.</para>
+        </section>
+    </section>
+</chapter>

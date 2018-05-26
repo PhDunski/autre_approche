@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="29cm" height="40cm" viewBox="38 29 562 793" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Arrière-plan">
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="164" cy="64" rx="66.0491" ry="33.0245"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="164" y="67.9">
+        <tspan x="164" y="67.9">anneeBissextile</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 91.85 129 L 236.15,129 L 236.15,169 C 207.29,163 192.86,161 164,161 C 135.14,161 120.71,159 91.85,153 L 91.85,129z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="164" y="145">
+        <tspan x="164" y="145">"Quelle est l'année ?"</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 140.075 206 L 185.925,190 L 185.925,230 L 140.075,230 L 140.075,206z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="163" y="222">
+        <tspan x="163" y="222">annee</tspan>
+      </text>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="161,256.581 273.838,313 161,369.419 48.1618,313 "/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="161" y="308.9">
+        <tspan x="161" y="308.9">annee MODULO 4</tspan>
+        <tspan x="161" y="324.9">= 0</tspan>
+      </text>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="161,397.506 281.988,458 161,518.494 40.0118,458 "/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="161" y="453.9">
+        <tspan x="161" y="453.9">annee MODULO 100</tspan>
+        <tspan x="161" y="469.9">=0</tspan>
+      </text>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="160,558.756 280.988,619.25 160,679.744 39.0118,619.25 "/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="160" y="615.15">
+        <tspan x="160" y="615.15">annee MODULO 400</tspan>
+        <tspan x="160" y="631.15">=0</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="164" y1="97.9502" x2="164" y2="118.304"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="164,125.804 159,115.804 164,118.304 169,115.804 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="163.787" y1="162.001" x2="163.375" y2="187.145"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="163.252,194.644 158.416,184.563 163.375,187.145 168.415,184.727 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="162.592" y1="231.004" x2="162.293" y2="246.41"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="162.147,253.908 157.342,243.813 162.293,246.41 167.341,244.007 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="161" y1="370.419" x2="161" y2="386.77"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="161,394.27 156,384.27 161,386.77 166,384.27 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="160.62" y1="519.305" x2="160.441" y2="548.209"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="160.394,555.709 155.456,545.678 160.441,548.209 165.456,545.74 "/>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 323 602.5 L 501,602.5 L 501,642.5 C 465.4,636.5 447.6,634.5 412,634.5 C 376.4,634.5 358.6,632.5 323,626.5 L 323,602.5z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="412" y="618.5">
+        <tspan x="412" y="618.5">annee "n'est pas bissextile</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 326.125 438.5 L 469.875,438.5 L 469.875,478.5 C 441.125,472.5 426.75,470.5 398,470.5 C 369.25,470.5 354.875,468.5 326.125,462.5 L 326.125,438.5z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="398" y="454.5">
+        <tspan x="398" y="454.5">annee " est bissextile</tspan>
+      </text>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="173" y="380.5">
+      <tspan x="173" y="380.5">Vrai</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="168" y="548.5">
+      <tspan x="168" y="548.5">Vrai</tspan>
+    </text>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 320.025 294.25 L 507.975,294.25 L 507.975,334.25 C 470.385,328.25 451.59,326.25 414,326.25 C 376.41,326.25 357.615,324.25 320.025,318.25 L 320.025,294.25z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="414" y="310.25">
+        <tspan x="414" y="310.25">annee " n'est pas bissextile"</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="274.73" y1="313.562" x2="309.289" y2="313.733"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="316.789,313.77 306.764,318.72 309.289,313.733 306.813,308.72 "/>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="279" y="302.5">
+      <tspan x="279" y="302.5">Faux</tspan>
+    </text>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 83.175 715.5 L 232.825,715.5 L 232.825,755.5 C 202.895,749.5 187.93,747.5 158,747.5 C 128.07,747.5 113.105,745.5 83.175,739.5 L 83.175,715.5z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="158" y="731.5">
+        <tspan x="158" y="731.5">annee " est bissextile"</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="158.951" y1="680.22" x2="158.528" y2="704.82"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="158.399,712.319 153.572,702.234 158.528,704.82 163.57,702.406 "/>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="168" y="699.5">
+      <tspan x="168" y="699.5">Vrai</tspan>
+    </text>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="273.582" y1="618.454" x2="312.268" y2="619.585"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="319.765,619.804 309.623,624.51 312.268,619.585 309.915,614.514 "/>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="285" y="602.5">
+      <tspan x="285" y="602.5">Faux</tspan>
+    </text>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="282.988" y1="458.257" x2="315.402" y2="458.326"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="322.902,458.342 312.892,463.32 315.402,458.326 312.913,453.32 "/>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="286" y="445.5">
+      <tspan x="286" y="445.5">Faux</tspan>
+    </text>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="501" y1="622.5" x2="554.265" y2="621.866"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="561.764,621.777 551.824,626.895 554.265,621.866 551.705,616.896 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="470.869" y1="458.609" x2="555.264" y2="458.735"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="562.764,458.747 552.756,463.732 555.264,458.735 552.771,453.732 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="508.974" y1="315.036" x2="555.264" y2="315.419"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="562.764,315.481 552.723,320.399 555.264,315.419 552.806,310.399 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="233.828" y1="735.36" x2="555.264" y2="734.768"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="562.764,734.754 552.773,739.773 555.264,734.768 552.755,729.773 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="564" cy="804.75" rx="34.1346" ry="17.0673"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="564" y="808.65">
+        <tspan x="564" y="808.65"></tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="565" y1="316.5" x2="564.057" y2="776.947"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="564.042,784.447 559.062,774.437 564.057,776.947 569.062,774.458 "/>
+    </g>
+  </g>
+</svg>

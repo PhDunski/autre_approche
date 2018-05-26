@@ -1,0 +1,17 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="syntaxe_base" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>La syntaxe de base</title>
+    <partintro>
+        <para>Dans cette partie, j'aborderai la syntaxe de base propre au C++ ainsi que la manière
+            de mettre les différentes notions abordées d'un point de vue théorique dans la <link
+                linkend="principes_communs">section précédante</link> en œuvre.</para>
+    </partintro>
+    <chapter>
+        <title>La fonciton principale</title>
+        <para></para>
+    </chapter>
+</part>

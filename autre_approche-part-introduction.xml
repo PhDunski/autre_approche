@@ -1,0 +1,31 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="introduction" xml:lang="fr" version="5.0" 
+      xmlns="http://docbook.org/ns/docbook" 
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Introduction</title>
+  <partintro>
+    <para>Dans cette partie, j'aborderai un cerain nombre de points qui n'ont en définitive qu'un rapport lointain avec la programmation en générale,
+    et encore plus avec la programmation en C++ en particulier.</para>
+    <para>J'y aborderai en effet des notions comme les grands noms qui ont permis à l'informatique
+      de devenir ce qu'elle est, les différents types et générations de langages ou les outils dont
+      vous pourriez avoir besoin.</para>
+    <para>Le rôle de cette partie est donc essentiellement de vous permettre d'<quote>élargir vos
+        horizons</quote>, d'améliorer votre compréhension générale de ce qu'est un ordinateur et des
+      problèmes particuliers que peut poser ce genre de machine.</para>
+    <para>Il n'est pas nécessaire de lire cette partie avant de lire les autres, mais il sera y sans
+      doute très régulièrement fait référence par la suite.  Vous pourrez donc lire les chapitres
+      qu'elle contient au moment où les informations vous seront utiles.</para>
+    <para>Vous y trouverez notemment XXX pages, correspondant à YYY chapitres, répartis en neuf
+      parties distinctes et contenant un nombre incalculable de références croisées. </para>
+    <para>Voici en quelques mots le sommaire de l'ouvrage que vous tenez entre les mains.</para>
+    </partintro>
+  <xi:include href="autre_approche-introduction-programme.xml"/>
+<xi:include href="autre_approche-introduction-algebre_boole.xml"/>
+   <xi:include href="autre_approche-introduction-von_newman.xml"/>
+  <xi:include href="autre_approche-introduction-cplusplus_whats_this.xml"/>
+  <xi:include href="autre_approche-introduction-tools.xml"/>
+  <xi:include href="autre_approche-introduction-bases_calcul.xml"/>
+  <xi:include href="autre_approche-introduction-grands_personages.xml"/> 
+</part>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+     <title>Les bases de calcul</title>
+     <para>Lorsqu'il s'agit de représenter des valeurs numériques, nous sommes particulièrement
+        habitués à les représenter à l'aide de dix <quote>graphes</quote> que nous appelons
+        généralement <quote>les chiffres</quote> qui vont – comme tout le monde le sait – de 0 à 9
+        inclus.</para>
+    <para>Ce qu'il faut bien comprendre, c'est que la manière de représenter une valeur numérique à
+        l'aide de ces <quote>glyphes</quote> n'est jamais qu'une convention <quote>parmis tant
+            d'autres</quote> qui puisse être utilisée pour la représentation des valeurs
+        numérique.</para>
+    <para>Nous pourrions, en effet, définir un ensemble composé d'un nombre quelconque de
+            <quote>glyphes</quote>qui seraient utilisés selon des règles identiques mais qui
+        permettrait la représentation de n'importe quelle valeur.</para>
+    <para>Pensez, par exemple, au système horraire, dans lequel une heure est composée de … 60
+        minutes, et dans lequel une minute est composée de … 60 secondes.</para>
+    <para>Au lieu d'utiliser la <link linkend="base_dix">notation décimale</link> qui nous est bien
+        connue, nous pourrions parfaitement définir un ensemble de … 60 glyphes différents qui nous
+        permettrait de représenter les minutes et les seconde à l'aide d'un seul glyphe, mais avec
+        lequel nous pourrions néanmoins utiliser la représentation <code>¢% minutes</code> par
+        exemple serait parfaitement capable de représenter,  ¢ heures et %minutes.</para>
+    <section xml:id="base_dix">
+        <title>La notation décimale</title>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La notation décimale</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La base dix</secondary>
+        </indexterm>
+        <para>Ce que l'on appelle couramment la <emphasis>notation décimale</emphasis> (ou, plus
+            simplement, la <emphasis>base dix</emphasis>) correspond aux conventions que nous
+            apprenons à utiliser depuis notre plus jeune âge pour représenter des valeurs
+            numériques.</para>
+        <para>Le terme <emphasis>décimal</emphasis> – et surtout le terme <emphasis>dix</emphasis>
+            venant du fait que l'on dispose de … dix <quote>symboles</quote> – couramment appelés
+            des <quote>chiffres</quote> – pour représenter <quote>n'importe quelle valeur
+                numérique</quote>.</para>
+        <para>Pour représenter des valeurs plus grandes que neuf, nous allons <quote>tout
+                simplement</quote> placer les différents chiffres l'un à coté de l'autre et
+                <quote>adapter</quote> la valeur de chaque chiffre en fonction de sa position dans
+            le nombre représenté.</para>
+        <para>Ainsi, si nous voulons représenter la valeur numérque quatre-cent nonente sept, nous
+            la représenterons sous la forme du nombre 497, et nous suivrons une logique proche de<itemizedlist>
+                <listitem>
+                    <para><code>4</code> est à la troisième position, sa valeur est donc de <code>4
+                            * 10<superscript>2</superscript></code></para>
+                </listitem>
+                <listitem>
+                    <para><code>9</code> est à la deuxième position, sa valeur est donc de <code>9 *
+                                10<superscript>1</superscript></code></para>
+                </listitem>
+                <listitem>
+                    <para><code>7</code> est à la première position, sa valeur est donc de <code>7
+                                *10<superscript>0</superscript></code></para>
+                </listitem>
+                <listitem>
+                    <para>la somme correspond donc à <code>4 * 10<superscript>2</superscript> + 9 *
+                                10<superscript>1</superscript> + 7 *
+                            10<superscript>0</superscript></code></para>
+                </listitem>
+            </itemizedlist></para>
+        <para>A vrai dire, nous sommes tellement habitué à travailler de la sorte que nous le
+            faisons pour ainsi dire <quote>naturellement</quote>, sans même avoir besoin d'y
+            penser.</para>
+        <para>Mais, si nous voulions exprimer le raisonnement dans son intégralité, nous pourrions
+            dire que</para>
+        <blockquote>
+            <para xml:id="base_dix_raisonnement">La valeur d'un chiffre est égal à la multiplication
+                de sa valeur naturelle par la base utilisée élevée à la puissance représentée par sa
+                position moins un</para>
+        </blockquote>
+        <para>D'une manière plus mathématique, nous pourrions exprimer ce même raisonnement sous une
+            forme proche de</para>
+        
+            <equation>
+                <title>Calculer une valeur dans différentes bases</title>
+                <mathphrase>V = S * B<superscript>P-1</superscript></mathphrase>
+            </equation>
+            <para>avec<itemizedlist>
+                    <listitem>
+                        <para>V : valeur réelle</para>
+                    </listitem>
+                    <listitem>
+                        <para>S : valeur du symbole</para>
+                    </listitem>
+                    <listitem>
+                        <para>B : base utilisée</para>
+                    </listitem>
+                    <listitem>
+                        <para>P : position du chiffre dans le nombre</para>
+                    </listitem>
+                </itemizedlist></para>
+        
+        <note>
+            <para>Nous verrons plus loin que la valeur 10 n'as absolument pas été choisie au
+                hasard.</para>
+        </note>
+    </section>
+    <section xml:id="base_deux">
+        <title>La notation binaire</title>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La notation binaire</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La base deux</secondary>
+        </indexterm>
+        <para>Depuis <quote>toujours</quote>, lorsque l'on travaille avec de l'électricité, nous
+            n'avons finalement que peu de choix: soit le courant passe <quote>quelque part</quote>,
+            soit il ne passe pas.</para>
+        <para>Pour représenter n'importe quelle valeur numérique à l'intérieur d'un ordinateur, nous
+            ne pouvons donc disposer que de deux <quote>symboles</quote>, qui seront par convention
+            le <code>0</code> pour représenter le fait que le courant ne passe pas et le
+                <code>1</code> pour représenter le fait que le courant passe.</para>
+        <para>Je parlerai souvent – en abusant du terme – de <emphasis>bit</emphasis> pour désigner
+            les symboles utilisés en notation binaire, car il s'agit du terme généralement utilisé
+            pour désigner, au niveau de l'ordinateur, l'élément qui permet de se rendre compte que
+            le courant passe ou non.</para>
+        <para>Mais alors, vous demanderez vous peut-être, comment est il possible de représenter des
+            valeurs tellement importantes?</para>
+        <para>La réponse à cette question est toute simple: il suffit de respecter exactement la
+            même équation que celle que l'on suit en <link linkend="base_dix_raisonnement">base
+                dix</link>. La seule différence, c'est que, au lieu de multiplier la valeur du
+            symbole par <code>10<superscript>P-1</superscript></code> , nous allons la multiplier
+            par <code>2<superscript>P-1</superscript></code>.</para>
+        <para>Si bien que nous pouvons tout à fait représenter la valeur quatre-cent nonente sept en
+            binaire sous la forme de <code>1 1111 0001</code>.</para>
+        <para>En effet, si nous suivons le même raisonnement, nous nous rendons compte que<itemizedlist>
+                <listitem>
+                    <para>le <code>1</code> qui se trouve à la neuvième position correspond à une
+                        valeur égale à <code>1 * 2<superscript>8</superscript></code>, soit
+                            <code>256</code> en décimal</para>
+                </listitem>
+            <listitem>
+                <para>le <code>1</code> qui se trouve à la huitième position correspond à une
+                    valeur égale à <code>1 * 2<superscript>7</superscript></code>, soit
+                    <code>128</code> en décimal</para>
+            </listitem>
+            <listitem>
+                <para>le <code>1</code> qui se trouve à la septième position correspond à une
+                    valeur égale à <code>1 * 2<superscript>6</superscript></code>, soit
+                    <code>64</code> en décimal</para>
+            </listitem>
+            <listitem>
+                <para>le <code>1</code> qui se trouve à la sixième position correspond à une
+                    valeur égale à <code>1 * 2<superscript>5</superscript></code>, soit
+                    <code>32</code> en décimal</para>
+            </listitem>
+            <listitem>
+                <para>le <code>1</code> qui se trouve à la cinquième position correspond à une
+                    valeur égale à <code>1 * 2<superscript>4</superscript></code>, soit
+                    <code>16</code> en décimal</para>
+            </listitem>
+            <listitem>
+                <para>le <code>1</code> qui se trouve à la cinquième position correspond à une
+                    valeur égale à <code>1 * 2<superscript></superscript></code>, soit
+                    <code>1</code> en décimal</para>
+            </listitem>
+            <listitem>
+                <para><code>256 + 128 + 64 +32 +16 + 1 = 497</code></para>
+            </listitem>
+            </itemizedlist></para>
+        <section xml:id="base_deux_complications">
+            <title>La difficulté du binaire</title>
+            <para>Le gros problème, lorsqu'il s'agit de représenter une valeur numérique, c'est que
+                quel que soit la base utilisée, le risque de faire une erreur lors de la
+                retranscription de cette valeur augmente énormément avec le nombre de symboles
+                nécessaire à cette représentation.</para>
+            <para>Il n'y a en effet pas grand chose à faire: si vous voulez utiliser trois symboles
+                (décimaux) pour représenter une valeur numérique comprise dans l'intervalle autorisé
+                par ces trois symboles (typiquement l'intervalle [0,999[), vous avez logiquement le
+                choix entre... mille valeurs possibles.</para>
+            <para>Mais sur ces mille valeurs possibles, il n'y en aura jamais qu'une seule qui
+                correspondra effectivement à la valeur que vous voulez représenter. Ce qui laisse
+                neuf-cent nonente neuf valeurs erronées.</para>
+            <para>Et même si on décide qu'il n'y a qu'une alternative dans le sens où soit, nous
+                utilisons le bon symbole à la bonne place, soit nous utilisons un symbole incorrect
+                à une place particulière, le fait d'utiliser trois symboles nous donne trois
+                possibilités de faire une erreur.</para>
+            <para>Mais il faut également prendre en compte le fait que, chaque fois que nous
+                écrivons un symbole, que ce soit le bon ou non ne nous empêchera absolument pas de
+                faire une erreur sur les symboles qu'il reste à retranscrire.</para>
+            <para>Si bien que, pour représenter la valeur quatre-cent nonente sept de la section
+                précédante sous une forme décimale, nous nous retrouvons avec <code>3 + 2 +1 =
+                    7</code> risques de faire une erreur en le retranscrivant.</para>
+            <para>Et comme cette même valeur numérique nécessite 9 bits pour pouvoir être
+                représentée, le risque de faire une erreur augmente de manière significative, car
+                nous nous retrouvons  <code>9 + 8 + 7 + 6 +5 +4 + 3 +2 + 1 = 45</code> risques de
+                faire une erreur de retranscription.</para>
+            <para>Je vous ferai grâce du calcul, mais songez que, pour une valeur numérique
+                représentée (en binaire) à l'aide de 32 bits, il est possible de représenter 4 294
+                967 296 valeurs différentes, ce qui fait que, pour une valeur correcte, il y en a
+                plus de quatre milliards qui seront erronnées.</para>
+            <para>Mais, indépendamment de la valeur représentée lors de la retranscription, si l'on
+                doit représenter une valeur sur tente deux bits, nous avons cinq-cent soixante et
+                une <quote>chances</quote> de faire une erreur  contre une seule chance de ne pas en
+                faire.</para>
+            <para>Et, bien sur, le risque de faire une erreur se répète forcément... pour chaque
+                valeur numérique que nous voudrons représenter.</para>
+        </section>
+    </section>
+    <section xml:id="base_seize">
+        <title>La notation hexadécimale</title>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La notation hexadécimale</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La base seize</secondary>
+        </indexterm>
+        <para>Le <link linkend="base_deux_complications">risque d'erreur</link> lors de
+            l'utilisation de la notation binaire a très vite été flagrant, même lorsque les
+            ordinateurs étaient très loin de comprendre <quote>d'une seule traite</quote>
+            trente-deux bits consécutifs.</para>
+        <para>Pour leur malheur, les premiers à devoir programmer ce que l'on appelait à l'époque
+            des <quote>super calculateurs</quote> n'avaient pas vraiment le choix, car il devaient
+            littérallement brancher un fils entre la sortie d'un bit particulier et l'entrée de
+            l'élélemnt suivant pour le bit correspondant.</para>
+        <para>L'idée de Von Neuman permettra, une fois qu'un système d'entrée sera mis au point de
+            remédier à ce problème.</para>
+        <para>Vous l'avez remarqué, j'ai écrit la valeur binaire en regroupant les bits par groupe
+            de quatre bits consécutifs dans la <link linkend="base_deux">section précédante</link>.
+            Cela n'était absolument pas un hasard.</para>
+        <para>Les gens se sont en effet rendus compte, s'ils prennaient un groupe de quatre bits
+            consécutifls , que ce groupe leur permettrait de représenter un ensemble de valeurs
+            compris dans l'intervalle <code>[0,15[</code> (en notation décimale), et qu'il ne
+            manquerait alors que six symboles pour pouvoir représenter les valeurs comprises dans
+            l'intervalle <code>[10,15]</code>.</para>
+        <para>Or, ces six symboles étaient faciles à trouver : il <quote>suffisait</quote> de
+            prendre les première lettres de l'alphabet.  La <emphasis>notation
+                hexadécimale</emphasis> (ou en <emphasis>base seize</emphasis>) était née.</para>
+        <para>Une même cause ayant toujours les mêmes effet, en respectant l'équation donnée pour le
+            calcul en <link linkend="base_dix_raisonnement">base dix</link>, mais en multipliant la
+            valeur du symbole par <code>16<superscript>P-1</superscript></code>, ils étaient donc en
+            mesure de représenter n'importe quelle valeur sous une forme hexadécimale.</para>
+        <para>Ainsi, la valeur quatre-cent nonente sept que j'utilisais comme exemple plus haut
+            peut-elle être représentée sous la forme hexadécimale de 1F1.  Et nous pouvons en
+            apporter la preuve:<itemizedlist>
+                <listitem>
+                    <para>Le 1 se trouvant à la position 3 correspond à la valeur <code>1 *
+                                16<superscript>2</superscript></code>, soit  <code>256</code> en
+                        décimale</para>
+                </listitem>
+                <listitem>
+                    <para>Le F se trouvant à la position 2 correspond à la valeur <code>15 *
+                                16<superscript>1</superscript></code> soit <code>240</code> en
+                        décimale</para>
+                </listitem>
+                <listitem>
+                    <para>Le 1 se trouvant à la position 1 correspond à la valeur <code>1 *
+                                16<superscript>0</superscript></code>, soit <code>1</code> en
+                        décimale</para>
+                </listitem>
+                <listitem>
+                    <para><code>256 + 240 + 1</code> (en décimal) est bien égal, jusqu'à preuve du
+                        contraire, à <code>497</code> (en décimal, toujours)</para>
+                </listitem>
+            </itemizedlist></para>
+        
+    </section>
+    <section xml:id="base_huit">
+        <title>La notation octale</title>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La notation octale</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Bases de calcul</primary>
+            <secondary>La base huit</secondary>
+        </indexterm>
+        <para>Avant même que la notation <link linkend="base_seize">hexadécimale</link>
+            n'apparaisse, les gens avaient bien pris conscience des problèmes liés à <link
+                linkend="base_deux_complications">l'utilisation du binaire</link>.</para>
+        <para>Leur première idée fut donc de créer des groupes de trois bits, car ceux-ci leur
+            permettaient de représenter des valeurs comprises dans l'intervalle
+            <code>[0,8[</code>.</para>
+        <para>La <emphasis>notation octale</emphasis>, que l'on peut également appeler la notation
+            en <emphasis>base huit</emphasis> était née.</para>
+        <para>Une même cause ayant toujours les mêmes effets, en respectant l'équation donnée pour
+            le calcul en <link linkend="base_dix_raisonnement">base dix</link>, mais en multipliant
+            la valeur du symbole par <code>8<superscript>P-1</superscript></code>, ils étaient donc
+            en mesure de représenter n'importe quelle valeur sous une forme octale.</para>
+        <para>Ainsi, la valeur quatre-cent nonente sept que j'utilisais comme exemple plus haut
+            peut-elle être représentée sous la forme octale de <code>761</code>. Et nous pouvons en
+            apporter la preuve:<itemizedlist>
+                <listitem>
+                    <para>le <code>7</code> qui se trouve à la troisième position correspond à une
+                        valeur égale à <code>7 * 8<superscript>2</superscript></code>, soit <code>64
+                            * 7 = 448</code> en décimal</para>
+                </listitem>
+                <listitem>
+                    <para>le <code>6</code> qui se trouve à la deuxième position correspond à une
+                        valeur égale à <code>7 * 8<superscript>1</superscript></code>, soit
+                            <code>48</code> en décimal</para>
+                </listitem>
+                <listitem>
+                    <para>le <code>1</code> qui se trouve à la première position correspond à une
+                        valeur égale à <code>1 * 8<superscript>0</superscript></code>, soit
+                            <code>1</code> en décimal</para>
+                </listitem>
+                <listitem>
+                    <para><code>448 + 48 + 1</code> (en décimal) est bien égal, jusqu'à preuve du
+                        contraire, à <code>497</code>.</para>
+                </listitem>
+            </itemizedlist></para>
+        <para>Ces groupes de trois bits consécutifs présentaient des avantages indéniables, parmis
+            lesquels nous pouvons entre autre citer:<itemizedlist>
+                <listitem>
+                    <para>le fait qu'ils permettaient de réduire drastiquement le risque d'erreur
+                        lors de la retranscription;</para>
+                </listitem>
+                <listitem>
+                    <para>le fait que le nombre de symboles nécessaires à la représentation d'une
+                        valeur numérique particulière était fort proche du nombre de symboles
+                        nécessaire pour la représentation de la même valeur en décimale;</para>
+                </listitem>
+                <listitem>
+                    <para>nous disposions déjà de tous les symboles pour représenter cet intervalle
+                        par l'intermédiaire des chiffres arabes;</para>
+                </listitem>
+            </itemizedlist></para>
+        <sidebar>
+            <title>Pourquoi dans cet ordre?</title>
+            <para>D'aucuns pourront – avec raison – se demander pourquoi j'ai décidé de présenter la
+                notation octale <emphasis role="bold">après</emphasis> la notation
+                hexadécimale.</para>
+            <para>En effet, que nous considérions l'ordre <quote>logique</quote>
+                <code>2 &lt; 8 &lt; 16</code> ou l'ordre <quote>historique</quote> de l'apparition
+                des différentes bases de calcul, tout aurait du m'inciter à parler de la notation
+                octale <emphasis role="bold">avant</emphasis> la notation hexadécimale.</para>
+            <para>Cependant, la très grosse majorité des ordinateurs auxquels vous serez confrontés
+                sont capables de travailler avec des ensembles de bits consécutifs qui sont des
+                multiples de quatre.</para>
+            <para>En effet, les termes d'<quote><emphasis>architecture 32bits</emphasis></quote> et
+                        d'<emphasis><quote>architecture 64bits</quote></emphasis> représentent
+                    <quote>tout simplement</quote> des ordinateurs dont <quote>toute la mécanique
+                    interne</quote> travaille avec des groupes de … 32 ou de 64 bits
+                consécutifs.</para>
+            <para>Pas de bol, 32 et 64 sont bel et bien des multiples de quatre, mais ne sont pas
+                des multiples de trois, si bien que vous serez sans doute bien plus souvent
+                confrontés à une notation hexadécimale qu'à une notation octale.</para>
+        </sidebar>
+    </section>
+    <section xml:id="base_equivalence">
+        <title>Une équivalence parfaite</title>
+        <para>L'existence des différentes bases nous mets exactement dans la même situation qui met
+            en parallèle le système métrique (milimètres, metres, kilomètres) et le système
+            anglo-saxon de mesure (pouce, pied, mile): </para>
+        <para>Comme les deux systèmes permettent de représenter exactement la même chose, il est
+            tout à fait possible d'effectuer une conversion de manière à représenter <emphasis
+                role="bold">la même valeur</emphasis> dans l'un ou l'autre système.</para>
+        <para>De la même manière, les notations binaire, octale, décimale et hexadécimale ne sont
+            jamais que des <emphasis>conventions</emphasis> utilisées pour faciliter la
+            représentation de choses strictement identiques.</para>
+        <para>Il est donc possible de convertir une valeur représentée dans l'une de ces notations
+            pour la fournir dans une autre, ce qui fait que l'équivalence est parfaite.</para>
+        <para>Il est d'ailleurs possible de placer cette équivalence dans un tableau</para>
+        <table frame="all">
+            <title>équivalence des différentes base</title>
+            <tgroup cols="4">
+                <colspec colname="c1" colnum="1" colwidth="1*"/>
+                <colspec colname="c2" colnum="2" colwidth="1*"/>
+                <colspec colname="c3" colnum="3" colwidth="1*"/>
+                <colspec colname="c4" colnum="4" colwidth="1*"/>
+                <thead>
+                    <row>
+                        <entry>binaire</entry>
+                        <entry>octal</entry>
+                        <entry>décimal</entry>
+                        <entry>hexadécimal</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry><code>0000</code></entry>
+                        <entry><code>00</code></entry>
+                        <entry><code>00</code></entry>
+                        <entry><code>00</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0001</code></entry>
+                        <entry><code>01</code></entry>
+                        <entry><code>01</code></entry>
+                        <entry><code>01</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0010</code></entry>
+                        <entry><code>02</code></entry>
+                        <entry><code>02</code></entry>
+                        <entry><code>02</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0011</code></entry>
+                        <entry><code>03</code></entry>
+                        <entry><code>03</code></entry>
+                        <entry><code>03</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0100</code></entry>
+                        <entry><code>04</code></entry>
+                        <entry><code>04</code></entry>
+                        <entry><code>04</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0101</code></entry>
+                        <entry><code>05</code></entry>
+                        <entry><code>05</code></entry>
+                        <entry><code>05</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0110</code></entry>
+                        <entry><code>06</code></entry>
+                        <entry><code>06</code></entry>
+                        <entry><code>06</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>0111</code></entry>
+                        <entry><code>07</code></entry>
+                        <entry><code>07</code></entry>
+                        <entry><code>07</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1000</code></entry>
+                        <entry><code>10</code></entry>
+                        <entry><code>08</code></entry>
+                        <entry><code>08</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1001</code></entry>
+                        <entry><code>11</code></entry>
+                        <entry><code>09</code></entry>
+                        <entry><code>09</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1010</code></entry>
+                        <entry><code>12</code></entry>
+                        <entry><code>10</code></entry>
+                        <entry><code>0A</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1011</code></entry>
+                        <entry><code>13</code></entry>
+                        <entry><code>11</code></entry>
+                        <entry><code>0B</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1100</code></entry>
+                        <entry><code>14</code></entry>
+                        <entry><code>12</code></entry>
+                        <entry><code>0C</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1101</code></entry>
+                        <entry><code>15</code></entry>
+                        <entry><code>13</code></entry>
+                        <entry><code>0D</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1110</code></entry>
+                        <entry><code>16</code></entry>
+                        <entry><code>14</code></entry>
+                        <entry><code>0E</code></entry>
+                    </row>
+                    <row>
+                        <entry><code>1111</code></entry>
+                        <entry><code>17</code></entry>
+                        <entry><code>15</code></entry>
+                        <entry><code>0F</code></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+</chapter>

@@ -1,0 +1,39 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="cpp_oo" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>C++ et l'orienté objet</title>
+    <partintro>
+        <para>Dans cette partie, j'aborderai les techniques qui permettent au C++ de tirer le
+            meilleur parti du paradigme orienté objet. On peut citer parmis celles-ci:</para>
+        <itemizedlist>
+            <listitem>
+                <para>les moyens d'encapsulation</para>
+            </listitem>
+            <listitem>
+                <para>l'amitié</para>
+            </listitem>
+            <listitem>
+                <para>Assurer la sémantique d'entité</para>
+            </listitem>
+            <listitem>
+                <para>l'héritage public</para>
+            </listitem>
+            <listitem>
+                <para>l'héritage privé</para>
+            </listitem>
+            <listitem>
+                <para>l'héritage multiple</para>
+            </listitem>
+            <listitem>
+                <para>Manipuler des hiérarchies de classes</para>
+            </listitem>
+        </itemizedlist>
+    </partintro>
+    <chapter>
+        <title>Assurer l'encapsulation</title>
+        <para></para>
+    </chapter>
+</part>

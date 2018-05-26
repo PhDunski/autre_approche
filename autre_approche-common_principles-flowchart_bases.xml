@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="flowchart_base">
+    <title>Le <quote>Flowchart</quote></title>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>Flowchart</secondary>
+    </indexterm>
+    <para>L'une des première méthodes utilisées pour représenter un algorithme a été la méthode
+        appelée <emphasis>flowchart</emphasis>. Ce terme n'est rien d'autre que la contraction du
+        mot anglais <quote><foreignphrase>flow</foreignphrase></quote> qui signifie
+            <quote>déroulement</quote> et du mot anglais
+            <quote><foreignphrase>chart</foreignphrase></quote> qui signifie
+            <quote>diagramme</quote>.</para>
+    <para>Nous pouvons donc assez facilement déduire de ces deux traductions que le terme
+            <emphasis>flowchart</emphasis> représente un... diagramme de déroulement, et donc qu'il
+        permet de représenter la manière dont les choses doivent se dérouler.</para>
+    <para>Cependant, le terme en lui-même peut aussi être traduit par le terme d'<quote>organigramme
+            (de programmation)</quote>, que vous rencontrerez sans doute de manière récurrente sur
+        les forums francophones dédiés à la programmation.</para>
+    <section xml:id="flowchart_idee">
+        <title>L'idée de base</title>
+        <para>L'idée de base de cette représentation est d'utiliser des pictogrammes dont le sens ne
+            fera aucun doute pour celui qui analyse l'algorithme afin de représenter les différentes
+            étapes de cet algorithme.</para>
+        <para>Chaque étape étant reliée à la suivante par une flèche indiquant clairement le sens
+            dans lequel l'exécution se déroule.</para>
+    </section>
+    <section xml:id="flowchart_begin_end">
+        <title>Un début et un fin</title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Point d'entrée</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Point de sortie</secondary>
+        </indexterm>
+        <para>Je vous l'ai déjà répété bien des fois, le but d'un algorithme est de fournir la
+            logique qui devra être mise en œuvre (sans doute par un ordinateur) pour obtenir un
+            résultat donné.</para>
+        <para>Nous pourrions tout à fait exprimer les choses sous un angle différent et dire qu'un
+            algorithme représente la logique à mettre en œuvre pour permettre à l'oridinateur, au
+            départ d'une situation donnée, d'arriver à une situation clairement définie.</para>
+        <para>Cette deuxième manière d'exprimer les choses présente l'énorme avantage de mettre en
+            évidence une caractéristique essentielle à tout algorithme, qui est le fait que chaque
+            algorithme démarre systématiquement avec une <quote>situation de départ</quote> et tente
+            d'atteindre une <quote>situation d'arrivée</quote>.</para>
+        <para>Autrement dit, il y a systématiquement un début et une fin à un algorithme. En
+            flowchart, nous représenterons généralement ces deux points particuliers sous la forme
+            de cercles ou d'éllipses, respectivement appelés <emphasis>connecteur
+                d'entrée</emphasis> et <emphasis>connecteur de sortie</emphasis>.</para>
+        <para>Ces deux points (entrée et sortie) définissent ce que l'on appelle généralement une
+                <quote>procédure</quote></para>
+        <figure>
+            <title>Un début et une fin</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_begin_end.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>En pseudo code, nous pourrions représenter cela par les termes <quote>Début
+                Procédure</quote> et <quote>Fin Procédure</quote> ou,:</para>
+        <example>
+            <title>Le début et la fin en pseudocode</title>
+            <programlisting>Début Procédure 
+...
+Fin Procédure</programlisting>
+        </example>
+    </section>
+    <section>
+        <title>Les actions simples</title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Opérations auxilières</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Procédures externes</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Entrées manuelles</secondary>
+        </indexterm>
+        <indexterm>
+            <primary>Eléments algorithmiques</primary>
+            <secondary>Affichage</secondary>
+        </indexterm>
+        <para>Pouvoir définir le début et la fin d'un algorithme est particulièrement important.
+            Mais si nous ne serions guère avancé si nous étions incapable de représenter ce qui se
+            passe entre ces deux points.</para>
+        <para>Le flowchart définit de très nombreux symboles destinés à représenter certaines
+            actions courantes. Parmis ceux-ci, nous pouvons au minimum citer</para>
+        <itemizedlist>
+            <listitem>
+                <para>le symbole représentant une action devant être exécutée – une multiplication
+                    ou une addition par exemple – représenté par un rectangle ou un carré;</para>
+            </listitem>
+            <listitem>
+                <para>Une entrée effectuée par l'utilisateur sera représentée par un
+                        <quote>rectangle</quote> dont le coté du dessus n'est pas parallèlle;</para>
+            </listitem>
+            <listitem>
+                <para>L'affichage sera représenté par un rectangle dont le coté du dessous prend la
+                    forme d'une doucine</para>
+            </listitem>
+            <listitem>
+                <para>l'appel à une procédure définie par ailleurs – que nous appellerons
+                        <emphasis>fonction (ou procédure) externe</emphasis> représenté par un carré
+                    ou un rectangle avec un <quote>bord vertical</quote></para>
+            </listitem>
+        </itemizedlist>
+        <figure>
+            <title>Les actions de base</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_actions.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <note>
+            <para>Pour être tout à fait précis, le symbole que j'utilise pour l'affichage est celui
+                qui était utilisé pour les bandes relais. </para>
+            <para>Le flowchart dispose d'un tas de symboles représentant des cartes perforées, des
+                bandes relais ou des bandes perforées, mais... aucun sybmole pour l'écran.</para>
+        </note>
+        <note>
+            <para>Il existe une quantité énorme de pictogrammes associés au flowchart, dont certains
+                sont adaptés à des situations bien précises.</para>
+            <para>Il n'entre pas dans les intentions de cet ouvrage de les passer tous en revue. Si
+                vous souhaitez en avoir un apperçu exhaustif, effectuez une recherche sur
+                    <quote>flowchart symbols</quote> avec votre moteur de recherche préféré</para>
+        </note>
+        <section xml:id="pseudo_actions">
+            <title>Les actions simples en pseudocode</title>
+            <para>Les opérations auxilières, comme les additions et autres seront tout simplement
+                représentées par... l'opération qui doit être effectuées</para>
+            <para>les entrées et sorties seront, quant à elles, sans doute représentées par des
+                verbes comme <quote>Afficher</quote>, <quote>Lire</quote>, et autres</para>
+            <para>Enfin, l'appel à une procédure externe sera sans doute représenté par
+                l'utilisation de termes comme <quote>Appeler</quote></para>
+        </section>
+        <section xml:id="premier_algo">
+            <title>Un premier algorithme</title>
+            <indexterm>
+                <primary>Données</primary>
+                <secondary>Constantes</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Données</primary>
+                <secondary>Littérales</secondary>
+            </indexterm>
+            <indexterm>
+                <primary>Données</primary>
+                <secondary>Variables</secondary>
+            </indexterm>
+            <para>A l'aide de ces quelques symboles, nous pourrions déjà créer ce qu'il est bel et
+                bien convenu d'appeler un <quote>premier algorithme</quote>. Il ne nous manque, pour
+                le flowchart, finalement qu'une seule information: comment relier les différents
+                éléments entre eux.</para>
+            <para>Et la réponse est on ne peut plus simple: il suffit de tracer une flèche qui part
+                d'un élément du diagramme et qui en rejoint un autre; le sens de la flèche
+                permettant d'indiquer quand quel ordre les instructions seront exécutées.</para>
+            <para>Ainsi, si nous voulons créer une procédure qui demande son nom et son age à
+                l'utilisateur avant d'afficher le tout, nous pourrions le faire sous la forme
+                de</para>
+            <figure>
+                <title>Un premier flowchart</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata scale="50" fileref="images/premier_flowchart.svg"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>C'est simple, et c'est efficace.</para>
+            <example>
+                <title>Premier algorithme en pseudocode</title>
+                <para>Nous aurions pu créer exactement le même algorithme en pseudocode, qui aurait
+                    alors sans dout pris la forme de</para>
+                <programlisting>Début &lt;Nom de Procédure&gt;
+    Afficher "Quel est ton nom?"
+    Attendre nom
+    Afficher "Quel est ton age?"
+    Attendre age
+    Afficher "Bonjour " nom 
+             "Tu as dit avoir " age " ans"
+Fin &lt;Nom de Procédure></programlisting>
+                <para> Où &lt; Nom de procédure &gt; correspondra à un nom permettant d'identifier
+                    la procédure dont il est question de manière strictement unique et non
+                    ambiguë.</para>
+            </example>
+        </section>
+        <section>
+            <title>Enfin des données à traiter</title>
+            <para>Bon, le premier exemple était particulièrement simple. Il ne faut cependant pas
+                négliger l'intérêt didactique de cet exemple, car il met bien en évidence le fait
+                que tout algorithme va – a priori – <emphasis role="bold">manipuler des
+                    données</emphasis>.</para>
+            <para>Vous ne l'avez peut-être pas remarqué, mais cette algorithme manipule énormément
+                de données, la preuve:<itemizedlist>
+                    <listitem>
+                        <para>"Quel est votre nom?" peut être considéré comme une donnée de type
+                                <quote>chaine de caractère</quote> (*)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>nom</code> est une donnée qui sera aussi considérée comme une
+                            donnée de type <quote>chaine de caractères</quote> (étant donné que l'on
+                            s'attend d'avantage à ce que l'utilisateur introduise
+                                <quote>jean-francois</quote> que <code>3.1415926</code>) </para>
+                    </listitem>
+                    <listitem>
+                        <para>"Quel est ton age?" peut également être considéré comme une donnée de
+                            type <quote>chaine de caractères</quote></para>
+                    </listitem>
+                    <listitem>
+                        <para><code>age</code> est une donnée que l'on peut considérer comme étant
+                                <quote>de type entier</quote> (étant donné que l'on s'attend
+                            d'avanage à ce que l'utilisateur introduise <code>21</code> que
+                                <quote>hello world</quote>)</para>
+                    </listitem>
+                    <listitem>
+                        <para>"Bonjour ", " tu as dit avoir " et "ans" peuvent enfin – elles aussi –
+                            être considérées comme des données de type <quote>chaine de
+                                caractères</quote>.</para>
+                    </listitem>
+                </itemizedlist></para>
+            <note>
+                <para>(*)Nous pourrions même préciser que ces données sont des <emphasis>constantes
+                    </emphasis>et des <emphasis>littérales</emphasis>, car il est évident qu'elles
+                    ne changeront absolument jamais et que, de plus, leur valeur est fournie
+                        <quote>telle quelle</quote> dans le code.</para>
+                <para>Nous pouvons mettre cette notion de <emphasis>donnée constante</emphasis> en
+                    opposition avec les données <code>nom</code> et <code>age</code>, qui
+                    correspondent à ce que l'on appelle des <emphasis>variables</emphasis>.</para>
+            </note>
+        </section>
+    </section>
+    <section>
+        <title>La liste des variables</title>
+        <para>Il est souvent intéressant, lorsque l'on définit un algorithme, d'y adjoindre un
+            récapitulatifs des données qui seront utilisées par celui-ci. Cela permet, en cas de
+            besoin, à celui qui devra l'implémenter dans un langage quelconque, de savoir à quoi il
+            a réellement affaire.</para>
+            <para>Le plus facile pour fournir cette liste est souvent de créer un tableau qui
+                reprenne l'ensemble des caractéristiques de celles-ci, sous une forme qui pourrait
+                être proche de</para>
+            <table frame="all">
+                <title>les données du premier algorithme</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c4" colnum="4" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Nom / Valeur</entry>
+                            <entry>Type</entry>
+                            <entry>usage</entry>
+                            <entry>remarques</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>"Quel est ton nom?"</entry>
+                            <entry>chaine de caractères</entry>
+                            <entry>affichage</entry>
+                            <entry>constante littérale</entry>
+                        </row>
+                        <row>
+                            <entry>"Quel est ton age?"</entry>
+                            <entry>chaine de caractères</entry>
+                            <entry>affichage</entry>
+                            <entry>constante littérale</entry>
+                        </row>
+                        <row>
+                            <entry>"Bonjour "</entry>
+                            <entry>chaine de caractères</entry>
+                            <entry>affichage</entry>
+                            <entry>constante littérale</entry>
+                        </row>
+                        <row>
+                            <entry>" tu as dit avoir "</entry>
+                            <entry>chaine de caractères</entry>
+                            <entry>affichage</entry>
+                            <entry>constante littérale</entry>
+                        </row>
+                        <row>
+                            <entry>nom</entry>
+                            <entry>chaine de caractères</entry>
+                            <entry>le nom de la personne</entry>
+                            <entry>introduit par l'utilisateur</entry>
+                        </row>
+                        <row>
+                            <entry>age</entry>
+                            <entry>entier</entry>
+                            <entry>l'âge de la personne</entry>
+                            <entry>introduit par l'utilisateur</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>Un tel tableau n'est pas forcément indispensable, mais il permet d'éviter toute
+                ambiguïté quant à l'usage qui sera fait des données que l'on manipule.</para>
+    </section>
+    <glossary>
+        <glossdiv>
+            <title>Algorithmes : notions de base</title>
+            <glossentry>
+                <glossterm>Point d'entrée</glossterm>
+                <glossdef>
+                    <para>Le point d'entrée correspond au moment où l'on décide de faire appel à un
+                        algorithme particulier.</para>
+                    <para>Il correspond généralement à une situation particulière qui justifie que
+                        l'on ait recours à l'algorithme</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Point de sortie</glossterm>
+                <glossdef>
+                    <para>Le <emphasis>point de sortie</emphasis> correspond à la fin de
+                        l'algorithme; au moment où l'on estime avoir atteint l'objectif fixé, à
+                        moins bien sur que l'algorithme ne se soit rendu compte qu'il ne pourrait
+                        jamais l'atteindre.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Opération auxilière</glossterm>
+                <glossdef>
+                    <para>Une opération auxilière correspond aux différentes opérations de base
+                        susceptibles d'être effectuées directement par l'algorithme, sans forcément
+                        nécessiter le recours à un <quote>algorithme secondaire</quote></para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Entrée / Sortie</glossterm>
+                <glossdef>
+                    <para>Les <emphasis>entrées</emphasis> et les <emphasis>sorties</emphasis>
+                        correspondent au moyen par lequel l'ordinateur sera capable d'interagir avec
+                        des <quote>éléments extérieurs</quote>.</para>
+                    <para>Ces termes sont définis sont définis du point de <emphasis>vue de
+                            l'ordinateur</emphasis>, si bien que les <emphasis>entrées</emphasis>
+                        correspondent <emphasis>à tout ce qui peut arriver</emphasis> à l'ordinateur
+                        et qui pourra être utilisé par lui alors que les
+                            <emphasis>sorties</emphasis> correspondent à <emphasis>tout ce qui
+                            part</emphasis> de l'ordinateur afin d'être utilisé par les
+                            <quote>éléments extérieurs</quote>.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Procédure externe</glossterm>
+                <glossdef>
+                    <para>Une <quote>procédure externe</quote> correspond à un algorithme qui a été
+                        développé <quote>par ailleurs</quote> et auquel il nous est possible de
+                        faire appel en cas de besoin.</para>
+                </glossdef>
+            </glossentry>
+        </glossdiv>
+    </glossary>
+</chapter>

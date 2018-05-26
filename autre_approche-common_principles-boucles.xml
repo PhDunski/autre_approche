@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="boucles">
+    <title>Les boucles</title>
+    <indexterm>
+        <primary>Eléments Algorithmiques</primary>
+        <secondary>Boucles</secondary>
+    </indexterm>
+    <para>Nous pourrions qualifier les différents algorithmes que je vous ai présentés jusqu'ici de
+                <quote><foreignphrase>one shot</foreignphrase></quote>, dans le sens où la logique
+        qu'ils mettent en évidence est destinée à n'être exécutée qu'une seule et unique fois: si
+        nous voulions que cette logique soit exécutée plusieurs fois, nous devrions faire appel à
+        l'algorithme le nombre de fois souhaité.</para>
+    <para>Mahleureusement pour nous, la logique d'un grand nombre d'algorithme nécessite d'être
+        exécutée <quote>un certain nombre de fois</quote>.</para>
+    <example>
+        <title>La répétition de base</title>
+        <para>Bien sur, si nous voulions faire sortir le chien trois fois d'affilée, nous pourrions
+            tout à fait envisager de créer un algorithme proche de</para>
+        <programlisting>début sortirTroisFoisLeChien
+    Appeler sortirLeChien
+    Appeler sortirLeChien
+    Appeler sortirLeChien
+fin sortirTroisFoisLeChien</programlisting>
+    </example>
+    <para>Il serait particulièrement malvenu de dire qu'un tel algorithme est faux, à partir du
+        moment où il fait exactement ce que l'on attend de sa part, à savoir... sortir le chien
+        trois fois.</para>
+    <para>Mais imaginez maintenant que nous voulions entreprendre une action particulière non pas
+        trois ou quatre fois, mais bien... une bonne centaine ou un bon millier de fois (voire
+        d'avantage). Essayez d'imaginer à quoi pourrait ressembler un tel algorithme sous cette
+        forme!</para>
+    <para>Ensuite, imaginez les problèmes que cela pourrait occasionner si, au lieu d'effectuer
+        l'action 100 fois comme il est nécessaire de le faire, nous venions à <quote>mal
+            compter</quote> le nombre d'appels que l'on place dans cet algorithme, et que nous
+        finission par y faire appel seulement 97 fois, ou, à l 'inverse 103 fois.</para>
+    <para>Pire enocre: il se peut que le nombre de fois qu'une action devra être entreprise dépende
+        exclusivement de circonstances qui ne pourront être connues que... lors de l'exécution de
+        l'algorithme.</para>
+    <para>Nous avons donc besoin de la notion que l'on appelle une
+        <emphasis>boucle</emphasis>.</para>
+    <para>En flowchart, cette notion est représentée par une ligne qui rejoint un endroit de
+        l'algorithme par lequel le <quote>flux d'exécution normal</quote> est déjà passé.</para>
+    <para>De manière générale, elle sera donc représentée sous une forme proche de</para>
+    <figure>
+        <title>Une boucle de base en flowchart</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata scale="50" fileref="images/flowchart_boucle.svg"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    <para>Bien sur, vous l'aurez surement compris rien qu'en regardant cette image, un algorithme
+        utilisant une boucle <quote>telle quelle</quote> sera dans l'impossibilité de sortir de
+        cette boucle, ce qui le rend <quote>incorrect</quote> aux yeux de certains
+        développeur.</para>
+    <para>Car, en effet, s'il n'est pas possible de sortir de la boucle, cela signifie qu'il est
+        impossible d'atteindre... Le point auquel il est possible de considérer que l'objectif de
+        l'algorithme est atteint, ni même d'atteindre le point où l'on pourrait considérer qu'il est
+        impossible d'atteindre l'objectif fixé.</para>
+    <para>Si bien qu'une condition permettant de déterminer s'il faut entrer dans la boucle ou non
+        est nécessaire. </para>
+    <para>Selon la position de cette condition par rapport à l'action (ou aux actions) qui devra
+        (devront) être exécutée(s) dans la boucle, nous pouvons dores et déjà citer deux grandes
+            <quote>quatégories</quote> de boucles:</para>
+    <itemizedlist>
+        <listitem>
+            <para>D'une part, il y a des boucles dont la conditon pour savoir s'il faut entrer dans
+                la boucle est évaluée <emphasis role="bold">avant</emphasis> d'exécuter la boucle
+                et</para>
+        </listitem>
+        <listitem>
+            <para>d'autre part, il y a des boucles dont la condition permettant de déterminer s'il
+                faut faire <quote>un nouveau passage</quote> dans la boucle est évaluée <emphasis
+                    role="bold">après</emphasis> que la boucle ait été exécutée.</para>
+        </listitem>
+    </itemizedlist>
+    <section xml:id="Boucles_tant">
+        <title>Les boucles <quote>tant que</quote></title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Boucles "Tant que"</secondary>
+        </indexterm>
+        <para>On désigne les boucles pour lesquelles la condition d'entrée dans la boucle est
+            évaluée avant d'exécuter les actions de celle-ci par le terme de <emphasis>boucle
+                    <quote>tant que</quote></emphasis>, car nous exécuterons les actions en question
+                <quote>tant que </quote> la condition sera remplie.</para>
+        <para>En flowchart, une telle boucle prendra généralement une forme proche de</para>
+        <figure>
+            <title>Une boucle <quote>Tant Que</quote> en flowchart</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_boucle_tant.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <example>
+            <title>Une boucle tant que en pseudocode</title>
+            <para>En pseudocode, nous indiquerons généralement ce genre de boucle au travèrs des
+                termes Tant que, ce qui pourrait donner quelque chose ressemblant à</para>
+            <programlisting>Début &lt;nom de procécure&gt;
+    ... Avant la boucle
+    Tant que &lt;condition à remplire&gt;
+        ... ce qui doit être fait
+    Fin tant
+    ... Après la boucle
+Fin &lt;nom de procédure&gt;</programlisting>
+        </example>
+    </section>
+    <section xml:id="Boucle_jusque">
+        <title>Les boucles <quote>Jusque</quote></title>
+        <indexterm>
+            <primary>Eléments Algorithmiques</primary>
+            <secondary>Boucles "jusque"</secondary>
+        </indexterm>
+        <para>On désigne les boucles pour lesquelles nous vérifions après avoir exécuté ce qui doit
+            l'être dans la boucle s'il faut <quote>retourner une fois de plus</quote> dans la boucle
+            par le terme de <emphasis>boucle <quote>jusque</quote></emphasis>.</para>
+        <para>En flowchart, une telle boucle sera représentée sous une forme proche de</para>
+        <figure>
+            <title>Une boucle <quote>Jusque</quote> en flowchart</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_boucle_jusque.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <example>
+            <title>Une boucle tant que en pseudocode</title>
+            <para>En pseudocode, nous indiquerons généralement ce genre de boucle au travèrs des
+                termes Tant que, ce qui pourrait donner quelque chose ressemblant à</para>
+            <programlisting>Début &lt;nom de procécure&gt;
+    ... Avant la boucle
+    Faire
+        ... ce qui doit être fait
+    Jusque &lt;condition à remplire&gt;
+    ... Après la boucle
+Fin &lt;nom de procédure&gt;</programlisting>
+        </example>
+        <warning>
+            <para>De manière assez contre intuitive, nous aurons généralement à définir la condition
+                dans une telle boucle comme étant la condition de <emphasis role="bold"
+                    >sortie</emphasis> de la boucle (comprenez: la condition qui fait que l'on passe
+                à l'étape qui suit la boucle) à cause du terme <quote>jusque</quote>.</para>
+            <para>Or la plupart des langages considèrent cette condition comme la condition de
+                    <emphasis role="bold">rentrée</emphasis> dans la boucle (comprenez: celle qui
+                fera que la boucle est exécutée <quote>une fois de plus</quote>)</para>
+        </warning>
+    </section>
+    <section xml:id="boucle_pour">
+        <title>Les boucle <quote>pour</quote></title>
+        <indexterm>
+            <primary>Eléments algorithmiques</primary>
+            <secondary>Boucles "pour"</secondary>
+        </indexterm>
+        <para>Il existe une dernière notion de boucle, qui est – en définitive – fort proche de la
+            notion de boucle <quote>tant que</quote>, mais qui est sans doute bien plus souvent
+            utilisée: la notion de <emphasis>boucle <quote>pour</quote></emphasis>.</para>
+        <para>Nous nous rendrons en effet rapidement compte qu'il est souvent intéressant – voire
+            indispensable – de disposer d'un <quote>compteur</quote> qui sera incrémenté à chaque
+            passage dans la boucle.</para>
+        <para>Ce compteur peut avoir mille et un usages différents, il serait donc vaint que
+            j'essaye de tous les détailler.  </para>
+        <para>Contentons nous donc de savoir, dans un premier temps, que nous avons besoin d'un
+            compteur soit pour <quote>garder en mémoire</quote> le nombre de fois qu'une boucle
+            s'est effectuée, soit pour pouvoir parcourir un ensemble bien particulier
+            d'éléments.</para>
+        <para>La forme <quote>classique</quote> d'une telle boucle en flowchart ressemblera sans
+            doute à quelque chose comme</para>
+        <figure>
+            <title>Une boucle <quote>pour</quote> en flowchart</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_boucle_pour.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>        
+        <example>
+            <title>Une boucle pour que en pseudocode</title>
+            <para>En pseudocode, nous indiquerons généralement ce genre de boucle au travèrs des
+                termes Pour , ce qui pourrait donner quelque chose ressemblant à</para>
+            <programlisting>Début &lt;nom de procécure&gt;
+    ... Avant la boucle
+    Pour compteur = &lt;ValeurDeDepart&gt; à &lt;ValeurD'arrivee&gt;
+               (par pas de &lt;PasAAppliquer&gt;)
+        ... ce qui doit être fait
+    Fin pour
+    ... Après la boucle
+Fin &lt;nom de procédure&gt;</programlisting>
+            <para>où PasAAppliquer représente la manière dont la valeur du compteur doit évoluer
+                entre chaque exécution de la boucle.</para>
+            <para>On considère en effet par défaut que cette valeur va être incrémentée de 1 entre
+                chaque passage dans la boucle, mais il se peut que l'on souhaite que la valeur du
+                compteur évolue d'une manière différente:<itemizedlist>
+                    <listitem>
+                        <para>parce que nous voulons la décrémenter au lieu de l'incrémenter;</para>
+                    </listitem>
+                    <listitem>
+                        <para>parce que nous voulons l'augmenter de 3;</para>
+                    </listitem>
+                    <listitem>
+                        <para>parce que nous voulons la multiplier par deux;</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>Bref, en un mot comme en cent, l'incrémentation <quote>classique</quote> du
+                compteur ne correspond pas à nos besoins, et que nous sohaitons donc faire évoluer
+                sa valeur de manière différente.</para>
+        </example>
+    </section>
+    <section>
+        <title>Les boucles sont <quote>interchangeables</quote></title>
+        <para>Dans bien des cas, les différentes sortes de boucles sont plus ou moins
+            interchangeables, dans le sens où, en modifiant un peu la logique, il est possible
+            d'utiliser une boucle <quote>tant que</quote> à la place d'une boucle
+                <quote>jusque</quote> et inversement.</para>
+        <para>Je vous ai d'ailleurs fait remarquer plus haut qu'une boule <quote>pour</quote>
+            n'était qu'une adaptation de la boucle <quote>tant que</quote>, mais nous pourrions tout
+            à fait obtenir un résultat similaire avec une boucle <quote>jusque</quote>, la
+            preuve:</para>
+        <figure>
+            <title>Une autre boucle <quote>pour</quote> en flowchart</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata scale="50" fileref="images/flowchart_boucle_pour2.svg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>   
+        <para>La très grosse différence avec la première tenant dans le fait que celle-ci sera
+            exécutée au moins une fois quoi qu'il arrive.</para>
+        <note>
+            <para>La très grosse différence entre une boucle <quote>Tant que</quote> et une boucle
+                    <quote>Jusque</quote> tient essentiellement dans le fait que les actions qui
+                doivent être (éventuellement) répétées dans la boucle seront effectivement exécutées
+                une première fois.</para>
+            <para>Ainsi, les actions devant être répétées à l'intérieur d'une boucle <quote>Tant
+                    que</quote>pourront ne jamais être exécutées du tout si la condition permettant
+                de rentrer dans la boucle ne sont jamais remplies, alors qu'elles seraient – en
+                théorie – systématiquement exécutées au moins une fois dans le cadre d'une boucle
+                    <quote>Jusque</quote>.</para>
+        </note>
+        <warning>
+            <para><quote>En théorie</quote>, les actions se trouvant dans une boucle
+                    <quote>Jusque</quote> seront effectuées une première fois <quote>quoi qu'il
+                    arrive</quote>.  Mais il va de soi que nous pouvons également modifier ce
+                comportement en ajoutant – par exemple – une structure conditionnelle destinée à
+                    <quote>empêcher</quote> les actions de la boucle d'être exécutée.</para>
+        </warning>
+        <warning>
+            <para>Il est donc tout à fait correct de dire que les différents types de boucles sont
+                    <quote>interchangeables</quote>.</para>
+            <para>Il est cependant très important de se rendre compte que le choix du type de la
+                boucle que nous pourrons faire va très fortement influer sur la qui est mise en
+                place dans la boucle.</para>
+            <para>Si, à partir du moment où cette logique est correcte, il est difficile de
+                considérer qu'un algorithme est erroné, il faut cependant garder en tête le fait
+                que, tout correct qu'il puisse être, l'algorithme risque de ne pas être <quote>aussi
+                    efficace</quote> que ce que l'on aurait pu souhaiter.</para>
+            <para>Le choix adéquat du type de boucle pourra donc avoir un impacte majeure sur
+                l'efficacité générale de l'algorithme.</para>
+        </warning>
+    </section>
+    <glossary>
+        <glossdiv>
+            <title>Les boucles</title>
+            <glossentry>
+                <glossterm>Boucle</glossterm>
+                <glossdef>
+                    <para>Le terme de <emphasis role="bold">boucle</emphasis> représente toute
+                        situation dans laquelle un algorithme effectuera une (ou plusieurs)
+                        action(s) de manière répétée</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Boucle <quote>Tant Que</quote></glossterm>
+                <glossdef>
+                    <para>Une <emphasis role="bold">boucle <quote>Tant que</quote></emphasis>
+                        représente une situation dans laquelle l'algorithme vérifiera une condition
+                        avant d'exécuter les instructions qui se trouvent dans une boucle.</para>
+                    <para>Si la condition n'est pas vérifiée, la boucle n'est pas exécutée.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Boucle <quote>Jusque</quote></glossterm>
+                <glossdef>
+                    <para>Une <emphasis role="bold">boucle </emphasis><quote><emphasis role="bold"
+                                >Jusque</emphasis></quote> est une boucle dont on peut partir du
+                        principe que la logique sera exécutée au minimum une fois.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Boucle <quote>Pour</quote></glossterm>
+                <glossdef>
+                    <para>Une <emphasis>boucle <quote>Pour</quote></emphasis> est une boucle qui
+                        sera exécutée un nombre bien particulier de fois et dont la logique pourra
+                        en permanence disposer d'une donnée représentant spécifiquement le nombre de
+                        fois que la boucle a déjà été exécutée.</para>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>Condition d'entrée</glossterm>
+                <glossdef>
+                    <para>Le terme de <emphasis>condition d'entrée</emphasis> est utilisé pour
+                        désigner la condition qui sera vérifiée pour déterminer si l'algorithme doit
+                        passer <quote>une fois de plus</quote> par les instructions contenue dans la
+                        boucle.</para>
+                    <para>La différence majeure qui existe entre une boucle <quote>Jusque</quote> et
+                        une boucle <quote>Tant que</quote> résidant dans le moment où cette conditon
+                        est vérifiée dans le flux d'exécution normal.</para>
+                </glossdef>
+            </glossentry>
+        </glossdiv>
+    </glossary>
+</chapter>

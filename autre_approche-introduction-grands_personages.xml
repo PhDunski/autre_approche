@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="personnages">
+     <title>Les grand noms de l'informatique</title>
+     <para>Dans ce chapitre, je rends hommage aux <quote>grand noms</quote> de l'informatique, à
+        toutes ces personnes sans lesquelles l'informatique ne serait sans doute pas ce qu'elle est
+        devenue.</para>
+    <section xml:id="j_von_neumann">
+        <title>John Von neumann</title>
+        <indexterm>
+            <primary>John Von neumann</primary>
+            <see>Von neumann, Jhon</see>
+        </indexterm>
+        <indexterm>
+            <primary>Von neumann, Jhon</primary>
+        </indexterm>
+        <para>Né en 1903 à Budapest et mort en 1957 à Washington, Jhon Von Neuman peut être
+            considéré à juste titre comme le père  de l'informatique moderne.</para>
+        <para>Il fut en effet le premier, avec ses collaborateurs, à proposer une structure de
+            stockage unique pour conserver à la fois les instructions et les données demandées ou
+            produite par un calcul.</para>
+        <para>Cette structure est toujours utilisées dans les ordinateurs modernes. <footnote>
+                <para>Voir aussi merci Mr Von neumann</para>
+            </footnote></para>
+        <section xml:id="b_stroutrup">
+            <title>Bjarn Stroutrup</title>
+            <indexterm>
+                <primary>Stroutrup, Bjarne</primary>
+            </indexterm>
+            <para>Bjarne Stroutrup est véritablement le père du C++.  Sans lui, le C++ – et a
+                fortiori, cet ouvrage – n'aurait jamais vu le jour.</para>
+            <para>Il est l'auteur de plusieurs ouvrages pouvant être considérés comme des références
+                en matière de C++, bien que certains soient devenus plus ou moins obsolètes à cause
+                de leur âge.</para>
+            <para>Parmi ceux-ci, nous pouvons citer:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><link linkend="TCPPPL">The C++ Programming Language</link>: un ouvrage de
+                        référence sur le C++, régulièrement remis à jour en ce qui concerne les
+                        normes récentes</para>
+                </listitem>
+                <listitem>
+                    <para><link linkend="TACPPRM">The Annotated C++ Reference Manual</link> : Bien
+                        que non remis à jour, cet ouvrage peut à juste titre servir de référence
+                        pour les fonctionnalités les plus ancienne du C++</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </section>
+</chapter>
+

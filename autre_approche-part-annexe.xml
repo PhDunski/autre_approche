@@ -1,0 +1,27 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="annexe" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Annexe</title>
+    <partintro>
+        <para>Dans cette partie, j'aborderai une série de thèmes qui n'avaient décidément par leur
+            place ailleurs.  Parmi ceux-ci, nous pouvons citer:</para>
+        <itemizedlist>
+            <listitem>
+                <para>une introduction à la manière d'organiser son projet</para>
+            </listitem>
+            <listitem>
+                <para>une rapide introduction à CMake</para>
+            </listitem>
+            <listitem>
+                <para>une introduction rapide du processus appelé compilation</para>
+            </listitem>
+        </itemizedlist>
+    </partintro>
+    <chapter>
+        <title>Organiser son projet</title>
+        <para></para>
+    </chapter>
+</part>

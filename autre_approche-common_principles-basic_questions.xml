@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" 
+    xml:id="basic_questions">
+    
+     <title>Quatre questions de base</title>
+     <para>De manière générale, quel que puisse être notre objectif lors du développement d'une
+        application ou d'une fonctionnalité quelconque, nous aurons toujours besoin de répondre à
+        quatre questions de base.</para>
+    <para>Tant que nous n'aurons pas une réponse satisfaisante à ces quatre questions, il ne servira
+        finalement pas à grand-chose de vouloir écrire le code.</para>
+    <para>Pour être tout à fait honnête, les trois premières ont, surtout, pour objectif de
+            <quote>débrousailler les chemins tortueux</quote> de la réflexion afin de nous mener à
+        la dernière, dont le but sera de nous permettre de coder <quote>relativement
+            facilement</quote> les fonctionnalités dont on a besoin. </para>
+    <para>Voici donc les quatre question que nous devrons nous poser.</para>
+    <section xml:id="question_what">
+        <title>Que doit faire ma fonctionnalité?</title>
+        <para>Vouloir développer une fonctionnalité quelconque – quelle que soit la taille de cette
+            fonctionnalité – sans en avoir au préalable définis les objectifs n'a absolument aucun
+            sens :</para>
+        <para>Vous ne pourrez en effet jamais déterminer si la fonctionnalité que vous avez
+            développée répond à vos attentes si ... vous ne savez pas, à la base, quelles sont
+            réellement ces attentes.</para>
+        <para>Vous aurez bien souvent déjà répondu en partie à cette question, car, le plus souvent,
+            lorsque vous décidez de développer quelque chose, c'est sans doute parce que vous avez
+            eu – ou que quelqu'un d'autre a eu –  une idée proche de</para>
+        <blockquote>
+            <para>Tiens, ce serait pas mal si on avait une fonctionnalité qui &lt;fait telle ou
+                telle chose&gt;</para>
+        </blockquote>
+        <para>ou proche de</para>
+        <blockquote>
+            <para>Tiens, j'ai besoin d'une fonctionnalité qui &lt;fait telle ou telle chose&gt;</para>
+        </blockquote>
+        <para>De telles idées sont largement suffisantes pour décider de lancer le développement de
+            quelque chose.</para>
+        <para>Il faudra cependant prendre en compte le fait que ces idées risquent d'évoluer
+            énormément au fil du temps.</para>
+    </section>
+    <section xml:id="question_which_data">
+        <title>De quelles données aurai-je besoin?</title>
+        <para>Je vous l'ai dit plus haut: le but premier de n'importe quelle application, de
+            n'importe quelle fonctionnalité que vous pourrez développer restera <emphasis
+                role="bold">toujours</emphasis> de... manipuler des données.</para>
+        <para>Il est donc très intéressant de vouloir <quote>une fonctionnalité qui &lt;fait quelque
+                chose&gt;</quote>, mais, si l'on ne détermine pas préciséments les données qui seront
+            manipulée pour <quote>faire cette chose</quote>, nous n'arriverons sans doue jamais au
+            résultat souhaîté.</para>
+        <para>Nous verrons plus loin que cette notion de <quote>données manipulées</quote> peut
+            s'avérer particulièrement complexe à définir.</para>
+        <para>Mais nous verrons aussi quelques règles qui peuvent très largement faciliter le
+            travail lorsqu'il est question de répondre à cette question.</para>
+    </section>
+    <section xml:id="question_where">
+        <title>Ou vais-je trouver ces données?</title>
+        <para>Au risque de faire un sillogisme, il faut bien se rendre compte que les données que
+            notre fonctionnalité devra manipuler ne <quote>tomberont pas du ciel</quote>, que nous
+            ne les obtiendrons pas <quote>de l'air du temps</quote>, et qu'il est donc très
+            important de définir clairement quelle en est l'origine.</para>
+        <para>Nous nous rendrons en effet compe au cours de cette section qu'une fonctionnalité peut
+            manipuler des données de différentes origines:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Certaines données font <quote>partie intégrante</quote> de la fonctionnalité
+                    que l'on souhaite développées</para>
+            </listitem>
+            <listitem>
+                <para>D'autres données peuvent être fournies par <quote>ce qui fait appel</quote>
+                    (au niveau d'une application, par exemple) à la fonctionnalité </para>
+            </listitem>
+            <listitem>
+                <para>D'autres données, enfin, peuvent venir <quote>de l'extérieur</quote>.</para>
+            </listitem>
+        </itemizedlist>
+        <para>Chacune de ces origines sera étudiée plus en détail par la suite, et nous nous
+            rendrons rapidement compte que l'origine d'une donnée va influer énormément sur la
+            manière dont elle devra être traitée.</para>
+    </section>
+    <section xml:id="question_how">
+        <title>Comment dois-je les manipuler?</title>
+        <para>Une fois que nous avons pu déterminer de quelles données nous avons besoin ainsi que
+            leurs origines respectives, il ne reste finalement plus qu'une question à se poser, mais
+            elle est primordiale : comment dois-je manipuler ces données?</para>
+        <para>Le but de cette question est de nous inciter à réfléchir correctement à l'ensemble de
+            la logique qui nous permettra d'obtenir le résulat attendu.</para>
+        <para>L'expérience m'a en effet prouvé que, si nous sommes capables d'exprimer <emphasis
+                role="bold">très clairement</emphasis> cette logique, en prenant tous les aspects du
+            problème en compte, l'écriture du code devient un vrai jeu d'enfant: </para>
+        <para>une fois que nous avons corrigé les inévitables erreurs de syntaxe et que nous avons
+            été en mesure de reproduire fidèlement la logique exprimée – et pour autant, bien sur,
+            que cette logique soit correcte – nous pouvons quasiment avoir la certitude que notre
+            fonctionnalité fera exactement ce que l'on attend d'elle.</para>
+        <para>Bien sûr, la grosse difficulté réside – justement – dans le fait d'exprimer cette
+            logique de manière précise, et à s'assurer qu'elle est correcte.</para>
+        <para>Mais tout cela sera abordé dans les chapitres suivants.</para>
+    </section>
+</chapter>
+

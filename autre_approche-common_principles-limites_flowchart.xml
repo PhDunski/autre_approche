@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="limites_flowchart">
+     <title>Les limites du flowchart</title>
+     <para>Le flowchart est un moyen très élégant de représenter des algorithmes, et présente – tres
+        certainement – l'énorme intérêt d'être relativement facile à comprendre vu que chaque
+        pyctogramme représente une action bien particulière, un élément bien particulier de
+        l'algorithme.</para>
+    <section xml:id="spagetti">
+        <title>Un <quote>plat de spagetti</quote></title>
+    <para>Mais il souffre également de deux problèmes majeurs:</para>
+    <para>Le premier est du à la manière dont les différentes parties de l'algorithmes sont reliées
+        entre elles: même en y portant toute notre attention, il est fréquent de se retrouver avec
+        tellement de flèches dans tous les sens que l'algorithme fini par ressembler à un
+            <quote>gros plat de spagetti</quote>.</para>
+    <para>Imaginons que nous voulons demander un choix <quote>en boucle</quote> à l'utilisateur, et
+        que nous voulions effectuer différentes actions en fonction de ses choix .  Voici à quoi
+        pourrait ressembler le  flowchart:</para>
+    <figure>
+        <title>Quand le flowchart atteint ses  limites</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata scale="50" fileref="images/flowchart_limites.svg"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    <para>Vous remarquerez que je suis encore bien gentil, et que je me suis limité à une boucle et
+        à quatre choix, dont la plupart fait appel à un algorithme externe.  Je vous laisse imaginer
+        à quoi il aurait pu ressembler si l'algorithme avait été un peu plus compliqué...</para>
+    </section>
+    <section xml:id="flowchart_histoire">
+        <title>Le poids de son histoire</title>
+    <para>Le deuxième problème dont souffre le flowchart est – tout simplement – le poids de son
+        histoire.</para>
+        <para>En effet, il suffit regarder les différents pyctogrammes utilisés pour se rendre
+            compte que cette méthode a été dévloppée au tout début de l'informatique, à l'époque où
+            l'on programmait encore les ordinateurs en langage machine ou – dans le meilleur des cas
+            – en assembleur.</para>
+        <para>Vous l'aurez d'ailleurs deviné lorsque je vous ai signalé que j'utilisais en réalité
+            le pyctogramme réservé aux bandes relais pour représenter l'affichage.</para>
+        <para>Mais, observez bien ce diagramme...</para>
+        <para>L'exemple que je vous présente correspond finalement la notion de boucle
+                <quote>jusque</quote>.  Mais j'aurais tout aussi bien pu ajouter un compteur qui
+            aurait été incrémenté à chaque passage de la boucle et créer ce qui serait devenu une
+            boucle <quote>pour</quote> qui aurait été exécutée dix fois.  Le diagramme serait resté
+            sensiblement identique.</para>
+        <para>Le fait est que, lorsque l'on crée une boucle dans n'importe quel langage de
+            programmation, et que l'ordinateur décide d'exécuter une fois de plus les instructions
+            qu'elle contient, il  va tout simplement ... retourner à l'adresse mémoire à laquelle se
+            trouve la première instruction de cette boucle.</para>
+        <para>C'est d'ailleurs ce que représente la flèche qui part de la branche
+                <quote>vrai</quote> du test <code>continuer = vrai</code> et qui semble se
+                <quote>balader à contre courant</quote>: retourne à l'endroit de ton code où la
+            prochaine instruction que tu exécutera sera <code>afficher "Introduisez est votre
+                choix?"</code></para>
+        <para>Le fait, disais-je donc, est que l'utilisation du flowchart est apparue dans les tous
+            premiers temps de l'informatique, à une période ou la notion de <quote>programmation
+                structurée</quote> n'était pas encore apparue.</para>
+        <para>C'est la raison pour laquelle les différents types de boucles sont représentées
+            sensisblement de la même manière. Et c'est aussi l'une des principale faiblesses de la
+            technique: à moins de suivre spécifiquement <quote>la bonne ligne</quote>, il est tout à
+            fait possible de <quote>louper</quote> le fait que nous sommes effectivement face à une
+            boucle.</para>
+        <para>Pire encore: presque tous les langages fournissent une instruction qui permet de
+                <quote>sauter</quote> à une ligne particulière (ou, le plus souvent, à un repère
+            bien particuier dans le code).  Bien que ce mode de fonctionnement corresponde
+            exactement à ce que l'ordinateur fera, la technique en elle-même est une véritable
+            calamité, ne serait-ce que parce que cela <quote>brise</quote> le flux d'exécution
+                <quote>logique</quote> de notre algorithme.</para>
+        <para>Si cela ne tenait qu'à moi, je vous avouerai que cette instruction (dont je ne ferai
+            plus mention par la suite) aurait déjà été supprimée depuis bien longtemps de <emphasis
+                role="bold">tous</emphasis> les langages de programmation.</para>
+        <para>Pour être tout à fait honnête, l'un de mes profs menaçait de nous jeter par la fenêtre
+            (du deuxième étage!) si nous utilisions cette instruction... Cela aide énormément à
+            apprendre à s'en passer!</para>   
+    </section>
+</chapter>

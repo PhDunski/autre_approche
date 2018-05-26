@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="programme">
+     <title>Demandez le programme</title>
+     <para>Si le but premier de cet ouvrage est de permettre au lecteur d'apprendre le C++ selon une
+        approche moderne, je souhaitais en effet lui faire atteindre un niveau de connaissance qui
+        lui permette d'atteindre une compréhension <emphasis>correcte</emphasis> – quoi que parfois
+        basique – du langage et d'évoluer par la suite vers une maîtrise complete du langage.</para>
+    <para>Mais je voulais aussi limiter au maximum les prérequis nécessaires à cet apprentissage.
+        J'ai donc du partir du principe que le lecteur ne connaissait <emphasis>absolument
+            rien</emphasis>.</para>
+    <para>Or, quel que soit le langage de programmation utilisé, l'écriture du code peut à bien des
+        égards être considéré comme un <quote>long et fastidieux travail de dactylographie</quote>;
+        le vrai travail de développement se faisant normalement avant même d'écrire la première
+        ligne de code.</para>
+    <para>Et c'est particulièrement vrai en ce qui concerne le C++, car il s'agit d'un langage très
+        permissif, qui vous autorise très régulièrement à charger un fusil et à le pointer, doigt
+        sur la gâchette, ne serait-ce que métaphoriquement parlant.  Au risque, bien sûr... de vous
+        tirer une balle dans le pied.</para>
+    <para>La connaissance et la mise en œuvre de principes communs à la plupart des langages et aux
+        différents paradigmes (en plus de quelques spécificités propres au C++) s'avère
+        indispensable en C++, si l'on souhaite obtenir un résultat de qualité.</para>
+    <para>Et, bien sûr, je ne voualis en aucune manière ne serait-ce qu'envisager l'idée de ne pas
+        tout faire pour permettre au lecteur d'atteindre un niveau de qualité <quote>correct</quote>
+            (<quote>correct</quote> pouvant ici être traduit par <quote>excellent</quote>, car c'est
+        le seul niveau de qualité que j'accepte personnellement).</para>
+    <para>Il m'a donc parru tout ce qu'il y a de plus logique de fournir au lecteur – y compris au
+        débutant qui n'a aucune connaissance préalable – tout ce qui lui permettrait d'atteindre un
+        tel niveau qualité dans ses développements.</para>
+    <para>Cet ouvrage est donc divisé en neuf parties, que l'on pourrait résumer comme suit:</para>
+    <itemizedlist>
+        <listitem>
+            <para>La première partie (Introduction, que vous lisez actuellement) aborde une série
+                d'aspects et de notions destinés à votre <quote>édification
+                personnelle</quote>;</para>
+        </listitem>
+        <listitem>
+            <para>La deuxième partie (<link linkend="principes_communs">Principes communs</link>)
+                aborde les principes de base communs à
+                n'importe quel langage qualifié de <quote>procédural</quote>;</para>
+        </listitem>
+        <listitem>
+            <para>la troisième partie (<link linkend="syntaxe_base">La syntaxe de base</link>) présente la syntaxe de base de C++ ainsi
+                que la mise en œuvre des principes de base dans ce langage;</para>
+        </listitem>
+        <listitem>
+            <para>La quatrième partie (<link linkend="oo_principles">Les principes de l'orienté objet</link>)  aborde le paradigme orienté
+                objet du point de vue théorique, ce qui en fait une introduction cohérente à tout
+                langage supportant ce paradigme;</para>
+        </listitem>
+        <listitem>
+            <para>la cinquième partie (<link linkend="cpp_oo">C++ et l'orienté objet</link>)  présente la manière dont C++ met le
+                paradigme orienté objet en œuvre;</para>
+        </listitem>
+        <listitem>
+            <para>la sixième partie (<link linkend="generique">Le paradigme générique</link>) présente le paradigme générique ainsi
+                que l'approche <quote>fonctionnelle</quote> du point de vue théorique;</para>
+        </listitem>
+        <listitem>
+            <para>la septième partie (<link linkend="generique_oo">C++ et généricité</link> )présente la manière dont C++ met le
+                paradigme générique en œuvre, ainsi que la manière dont il permet le cas échéant
+                d'avoir une approche fonctionnelle.</para>
+        </listitem>
+        <listitem>
+            <para>la huitième partie (La bibliothèque standard) présente quelques fonctionnalités
+                issues de la bibliothèque standard qui n'ont pas été abordées ailleurs;</para>
+        </listitem>
+        <listitem>
+            <para>la neuvième partie (Annexe) contient un certain nombre d'informations utiles qui
+                n'auront pas trouvé place ailleurs</para>
+        </listitem>
+    </itemizedlist>
+    <section xml:id="other_languages_known">
+        <title>Que lire, et dans quelle ordre?</title>
+        <para>Cet ouvrage pourrait à juste titre être considéré comme un recueil de <quote>fiches
+                thématiques</quote> dédié au développement en général et au développement en C++ en
+            particulier.</para>
+        <para>Il serait donc sans doute vain d'essayer de le lire d'une traite, de la première à la
+            dernière page, bien qu'il soit – malgré tout – organisé de manière à permettre à qui le
+            souhaiterait de le lire de la sorte .</para>
+        <para>La meilleure manière de lire ce livre, c'est de s'en servir comme d'une référence
+                <quote>absolue</quote> en ce qui concerne le domaine de la programmation, et donc,
+            d'aller <quote>piocher</quote> dans les différentes sections ce qui vous intéresse au
+            moment où vous en avez besoin.</para>
+        <para>Les sections suivantes visent néanmoins à vous proposer un ordre de lecture cohérent
+            en fonction de votre niveau et de vos objectifs.</para>
+        <section xml:id="start_nothing">
+            <title>Je pars de rien</title>
+            <para>Si votre objectif est d'apprendre le C++ alors que vous n'avez strictement aucune
+                connaissance en programmation, je vous conseille de commencer par les quatre
+                premières sections du chapitre <link linkend="intro_tools">Les outils du
+                développeur</link>, puis de lire les parties :
+            <itemizedlist>
+                <listitem>
+                    <para>2 :<link linkend="principes_communs">Principes communs</link>,</para>
+                </listitem>
+                <listitem>
+                    <para>3 :<link linkend="syntaxe_base">La syntaxe de base</link>,</para>
+                </listitem>
+                <listitem>
+                    <para> 4 (<link linkend="oo_principles">Les principes de l'orienté objet</link>) </para>
+                </listitem>
+                <listitem>
+                    <para>, 5 (<link linkend="cpp_oo">C++ et l'orienté objet</link>), </para>
+                </listitem>
+                <listitem>
+                    <para>6 (<link linkend="generique">Le paradigme générique</link>) , </para>
+                </listitem>
+                <listitem>
+                    <para>7 (<link linkend="generique_oo">C++ et généricité</link> )</para>
+                </listitem>
+                <listitem>
+                    <para>et 8 (La bibliothèque standard)</para>
+                </listitem>
+            </itemizedlist>
+            </para>
+            <para>Quant aux première (Introduction)  et neuvième (Annexe) parties, vous y passerez
+                focément si vous suivez les références croisées que vous trouvez, mais, si vous avez
+                    <quote>du temps à perdre</quote> et que vous voulez améliorer votre culture
+                personnelle, vous pouvez les lire à n'importe quel moment.</para>
+        </section>
+        <section xml:id="personal_edification">
+            <title>Je veux améliorer ma culture personnelle</title>
+            <para>Si votre seul objectif – en dehors de disposer d'une référence en français
+                s'entend – en aquérant cet ouvrage est votre édification personnelle, je vous
+                conseillerais de lire en priorité les première (Introduction) et neuvième (Annexe).  </para>
+            <para>Elles traitent de sujets divers et variés qui tournent autour de la notion de
+                    <quote>développement informatique</quote>.</para>
+        </section>
+        <section>
+            <title>Je connais d'autres langages</title>
+            <para>Si vous connaissez déjà d'autres langages, certaines parties purement théoriques
+                n'auront sans doute qu'un intérêt très limité pour vous:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>la deuxième partie ne vous apprendra sans doute rien de nouveau;</para>
+                </listitem>
+                <listitem>
+                    <para>la quatrième partie (<link linkend="oo_principles">Les principes de l'orienté objet</link>) ne vous apprendra sans doute quelque chose 
+                        que si vous n'avez jamais travaillé avec un langage orienté objet</para>
+                </listitem>
+            </itemizedlist>
+            <para>Par contre, la sixième partie, bien que purement théorique, sera sans doute
+                nécessaire pour vous permettre de comprendre la septième.  En effet, même les
+                generics de java sont très loin de proposer l'ensemble des possibilité offertes par
+                le paradigme générique.</para>
+            <para>Pour le reste, l'ordre défini <link linkend="start_nothing">plus haut</link>
+                 devrait également vous convenir.</para>
+        </section>
+        <section xml:id="more_complex">
+            <title>Mon projet prend de l'ampleur</title>
+            <para>Nous atteindrons rapidement un point auquel, même les petits programmes
+                    <quote>jetables</quote> que je vous présenterai nécessiteront de faire appel à
+                plusieurs fichiers.</para>
+            <para>Il sera alors temps de s'intéresser aux sections 5(<link
+                    linkend="automatic_compile">Automatiser la compilation</link>) et 6 (<link
+                    linkend="automatic_config">Automatiser la configuration d'un projet</link>) du
+                chapitre <link linkend="intro_tools">Les outils du développeur</link>.</para>
+            <para>Dans le même temps, vous serez sans doute tentés par le fait de développer vos
+                propres projets qui commenceront à prendre de l'ampleur.</para>
+            <para>Peut-être travaillerez-vous en équipe sur un projet, que vous l'ayez initialisé ou
+                non. La section 7 (<link linkend="concurrent_versions">Gérer différentes
+                    versions</link>) du chapitre <link linkend="intro_tools">Les outils du
+                    développeur</link> vous viendra surement bien en aide.</para>
+            <para>Enfin, l'étape finale consistera sans doute à diffuser votre projet, et vous serez
+                donc des plus intéressés par la section 8 (<link linkend="continue_integration">Les
+                     outils d'intégration continue</link>) du même chapitre.</para>
+        </section>
+        <section>
+            <title>Des outils plus performants</title>
+            <para>On pourra dire ce que l'on veut, les outils que je vous proposent ont beau être
+                performants, certains ont beau être hautement configurables, le fait que tous les
+                outils soient "disséminés un peu partout" est très souvent perçu comme <quote>un
+                    problème</quote>.</para>
+            <para>C'est, bien sur, une pure question de gouts: certains développeurs aiment autant
+                utiliser des outils très spécifiques, quitte à <quote>passer de l'un à
+                    l'autre</quote> en permanence, et d'autres préfèrent avoir des outils
+                    <quote>centralisés</quote>, de préférences, susceptibles d'être utilisés en
+                grosse partie avec la souris.</para>
+            <para>Je me garderai bien d'émettre la moindre opinion sur le sujet, car je n'ai aucune
+                raison de le faire.  Mais j'en suis bien conscient: certains lecteurs en auront
+                rapidement marre de jongler avec des outils disséminés un peu partout et
+                souhaiteront quelque chose de peu plus performant.</para>
+            <para>Il sera alors temps pour eux, quelque soit le moment où cela peut leur arriver, de
+                s'intéresser à la section 9 (Les environnements de développement intégré) du
+                chapitre Les outils du développeur.</para>
+        </section>
+    </section>
+</chapter>

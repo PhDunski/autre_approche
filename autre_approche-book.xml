@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <?xml-model href="http://www.docbook.org/xml/5.0/rng/docbookxi.rng" 
+     schematypens="http://relaxng.org/ns/structure/1.0"?>
+ <book role="reference" version="5.0" xml:id="book" xml:lang="fr"
+     xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ns6="http://www.w3.org/1999/xhtml"
+     xmlns:ns5="http://www.w3.org/2000/svg" xmlns:ns3="http://www.w3.org/1998/Math/MathML"
+     xmlns:ns="http://docbook.org/ns/docbook">
+     <title>Apprendre le développement en C++</title>
+     <info>
+         <biblioid class="isbn" role="html"/>
+         <biblioid class="isbn" role="fo"/>
+         <biblioid class="isbn" role="fo-print"/>
+         <biblioid class="isbn" role="epub"/>
+         <!--    <cover><mediaobject><imageobject><imagedata fileref="nom-manquant.png" format="PNG"/></imageobject></mediaobject></cover>-->
+     </info>
+     <!-- PREFACE -->
+     <!-- <xi:include href="autre_approche-book-preface.xml"/> -->
+     <!-- REMERCIEMENTS -->
+     <acknowledgements>
+         <para></para>
+     </acknowledgements>
+     <!-- PARTIES -->
+     <xi:include href="autre_approche-part-introduction.xml"/>
+     <xi:include href="autre_approche-part-common_principles.xml"/>
+     <xi:include href="autre_approche-part-cplusplus_syntaxe.xml"/>
+     <xi:include href="autre_approche-part-object_principles.xml"/>
+     <xi:include href="autre_approche-part-cplusplus_object.xml"/>
+     <xi:include href="autre_approche-part-generic_principles.xml"/>
+     <xi:include href="autre_approche-part-cplusplus_generics.xml"/>
+     <xi:include href="autre_approche-part-stl.xml"/>
+     <xi:include href="autre_approche-part-annexe.xml"/> 
+     <bibliography>
+         <title>Sources et lectures</title>
+         <biblioentry xml:id="PLAP">
+             <abbrev>PLPAP</abbrev>
+             <title>Programming Languages Principles And Practices</title>
+             <authorgroup>
+                 <author>
+                     <personname>Kenneth C Louden</personname>
+                 </author>
+                 <author>
+                     <personname>Kenneth Lambert</personname>
+                 </author>
+             </authorgroup>
+             <publisher>
+                 <publishername>Course Technology</publishername>
+             </publisher>
+         </biblioentry>
+         <biblioentry xml:id="TAOCP">
+             <abbrev>TAOCP</abbrev>
+             <title>The Arrt Of Computer Programming</title>
+             <authorgroup>
+                 <author>
+                     <personname>Donald Knuth</personname>
+                 </author>
+             </authorgroup>
+         </biblioentry>
+         
+         <biblioentry xml:id="TCPPPL">
+             <abbrev >TC++PL</abbrev>
+             <title>The C++ Programming Language</title>
+             <authorgroup>
+                 <author>
+                     <personname>Bjarne Stroutrup</personname>
+                 </author>
+             </authorgroup>
+         </biblioentry>
+         <biblioentry xml:id="TACPPRM">
+            <abbrev>TAC++RM</abbrev>
+            <title>The Annotated C++ Reference Manual</title>
+            <authorgroup>
+                <author>
+                    <personname>Bjarne Stroutrup</personname>
+                </author>
+                <author>
+                    <personname>Margaret A. Ellis</personname>
+                </author>
+            </authorgroup>
+        </biblioentry>
+         <biblioentry xml:id="TDECPP">
+             <abbrev>TDEC++</abbrev>
+             <title>The Design and Evolution of C++</title>
+             <authorgroup>
+                 <author>
+                     <personname>Bjarne Stroutrup</personname>
+                 </author>
+             </authorgroup>
+         </biblioentry>
+     </bibliography> 
+    <!-- <index/> -->
+ </book>

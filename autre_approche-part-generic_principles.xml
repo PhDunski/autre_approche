@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="generique" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Le paradigme générique</title>
+    <partintro><para>Dans cette partie, nous aborderons une approche très particulière de la programmation appelée
+                <emphasis>programmation générique</emphasis></para></partintro>
+    <chapter>
+        <title>Définition</title>
+        <para>Nous pourrions résumer la programmation générique en une simple phrase proche
+            de</para>
+        <blockquote>
+            <para>La programmation générique permet, à défaut de savoir quel type de donnée sera
+                manipulé, de définir très clairement la manière dont ces données seront
+                manipulées.</para>
+        </blockquote>
+    </chapter>
+</part>

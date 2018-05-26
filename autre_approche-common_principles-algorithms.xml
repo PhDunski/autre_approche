@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="Algorithms">
+    <title>Exprimer la logique</title>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>FlowChart</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>Nassi-Shneidermann</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>Jackson</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Méthodes Algorithmiques</primary>
+        <secondary>Pseudocode</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Outils</primary>
+        <secondary>Compilateur</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Outils</primary>
+        <secondary>Interpréteur</secondary>
+    </indexterm>
+    <para>Nous pouvons très facilement comparer le code d'un programme ou d'une fonctionnalité
+        quelconque avec une recette de cuisine.</para>
+    <para>En effet, le programme que nous écrivons a pour objectif de décrire très clairement à
+        l'ordinateur les étapes par lesquelles il doit passer pour obtenir le résultat souhaité,
+        exactement comme une recette de cuisine décrit les étapes à respecter pour nous permettre
+        d'obtenir le plas souhaité.</para>
+    <para>Mais il faut bien se rendre compte que le langage de programmation que nous utilisons n'a
+        comme objectif que de... nous permettre de faire comprendre à un programme (le
+            <emphasis>compilateur</emphasis> ou l'<emphasis>interpréteur</emphasis>) les étapes qui
+        doivent être effectuées.</para>
+    <para>Si bien que nous pouvons parfaitement faire le parallèle entre les langues comme le
+        français, l'anglais ou l'espagnol et les langages de programmation.</para>
+    <para>Tout comme il est tout à fait possible de traduire une recette de cuisine dans différentes
+        langues, il est aussi possible de traduire les différentes étapes par lesquelles
+        l'ordinateur devra passer pour obtenir un résultat donné dans les différents langages de
+        programmation.</para>
+    <para>Cela ne va modifier ni la recette de cuisine ni la logique de passer d'une langue ou d'un
+        langage à un(e) autre, et le résultat sera toujours le même.</para>
+    <para>Seulement, pour être en mesure de <quote>traduire</quote> les différentes étapes que
+        l'ordinateur devra suivre dans un langage de programmation quelconque, nous devrons – à tout
+        le moins – ... savoir par quelles étapes il doit passer.</para>
+    <para>Nous donnerons généralement à cette suite d'étapes par lesquelles l'ordinateur doit
+        passer, à la logique qu'il doit mettre en œuvre pour obtenir le résultat souhaité le nom
+            d'<emphasis>algorithme</emphasis>.</para>
+    <para>Cependant, il est souvent intéressant de <quote>garder une trace</quote> de la logique que
+        l'on prévoit de mettre en œuvre: </para>
+    <para>Que ce soit pour être en mesure de l'améliorer, pour pouvoir s'assurer qu'elle est
+        correcte ou – tout simplement – pour nous donner l'occasion de <quote>garder bien au
+            chaud</quote> pour <quote>plus tard</quote>, nous pouvons trouver mille et une raisons
+        de nous approprier le fameux aphorisme</para>
+    <blockquote>
+        <para>Les paroles s'envolent, les écrits restent.</para>
+    </blockquote>
+    <para>Et nous pouvons donc trouver tout autant de raisons pour vouloir représenter cette logique
+            <quote>sur papier</quote>.</para>
+    <para>Il existe énormément de méthodes qui nous permettent de représenter cette logique sur
+        papier.</para>
+    <para>J'en parlais récemment avec mon père, qui a eu <quote>le bonheur</quote> de travailler
+        dans l'informatique à une époque où <quote>tout était à faire</quote>, et il me disait que,
+        à l'époque, nous pouvions trouver presque autant de méthodes pour représenter un algorithme
+        qu'il n'y avait de développeurs:<itemizedlist>
+            <listitem>
+                <para>Certains utilisaient le <emphasis>flowchart</emphasis>;</para>
+            </listitem>
+            <listitem>
+                <para>d'autres utilisaient le <emphasis>pseudocode</emphasis>;</para>
+            </listitem>
+            <listitem>
+                <para>d'autres encore utilisaient le <emphasis>Nassi-Shneidermann</emphasis> ou le
+                        <emphasis>Jackson</emphasis>;</para>
+            </listitem>
+            <listitem>
+                <para>Certains d'entre eux exprimaient tout simplement la logique sous forme de
+                    phrases simples décrivant ce qui devait être fait;</para>
+            </listitem>
+            <listitem>
+                <para>J'oublie forcément quelques <quote>catégories</quote>.</para>
+            </listitem>
+        </itemizedlist></para>
+    <note>
+        <para>Bien que j'aborderai les différentes méthodes algorithmiques de manière séparée, il
+            est important de comprendre que ce ne sont jamais que des conventions différentes nous
+            permettant d'exprimer, avec plus ou moins de facilité, de manière plus ou moins
+            compréhensible, des notions qui seront en définitive toujours les mêmes.</para>
+        <para>Nous pourrons donc toujours envisager de convertir un algorithme exprimé dans une
+            représentation particulière en une expression du même algorithme dans une représentation
+            différente.</para>
+    </note>
+    <section>
+        <title>Une logique correcte</title>
+        <para>Le besoin de décrire correctement la logique que l'ordinateur doit appliquer et,
+            surtout, de pouvoir la tester a toujours été très présent en informatique.</para>
+        <para>Car, dés qu'il a été question de demander à <quote>quelque chose d'aussi bête qu'une
+                machine</quote> de faire quelque chose pour nous, il devenait indispensable non
+            seulement de pouvoir lui indiquer comment le faire, mais aussi – et surtout – de
+            s'assurer que la machine soit cappable de faire <emphasis role="bold"
+                >correctement</emphasis> ce que l'on attendait de sa part.</para>
+        <para>Aux débuts de l'informatique, le temps passé à programmer la machine et à attendre la
+            fin de l'exécution de sa tâche était proprement phénoménal.</para>
+        <para>Si bien que les premiers développeurs avaient l'habitude de dire une phrase proche
+            de</para>
+        <blockquote>
+            <para><foreignphrase>You'll have only one try a day. Make it
+                count</foreignphrase></para>
+        </blockquote>
+        <para>que nous pourrions traduire sous la forme de </para>
+        <blockquote>
+            <para>Tu n'auras droit qu'à un essais par jour. Fais qu'il compte.</para>
+        </blockquote>
+        <para>Bien sur, l'évolution des techniques a fait qu'il est non seulement bien plus facile
+            de programmer la machine, mais aussi que l'exécution d'un programme
+                <quote>simple</quote> devient de plus en plus rapide. Si bien que cette expression
+            tombe tout doucement en désuétude. </para>
+        <para>Et pourtant, certains domaines particuliers de la recherche sont toujours confrontés
+            au fait que certains algorithmes demandent toujours un temps d'exécution énorme.</para>
+        <para>Le temps passé à coder (dans un langage de programmation particulier) ces algorithmes
+            et – le cas échéant – à compiler le code qui en résulte n'est alors qu'une <quote>infime
+                goutte d'eau</quote> que représente la durée d'exécution.</para>
+        <para>D'aucuns pourront cependant prétendre que les chances pour qu'ils se retrouvent
+            confrontés au fait d'avoir à mettre de tels algorithmes en œuvres sont sans doute encore
+            plus faibles que leurs chances de gagner au lotto ou à l'euro-million. Et je serais bien
+            obligé d'admettre la véracité de leur argument.</para>
+        <para>Même si ces personnes ne l'expriment pas forcément de manière aussi franche, elles
+            estimeront sans doute que <quote>c'est une perte de temps</quote> que de se
+                <quote>poser</quote> cinq minutes afin de réfléchir à la logique à mettre en œuvre
+            et, surtout, de s'assurer que cette logique est correcte.</para>
+        <para>Ces personnes n'ont sans doute simplement pas conscience du temps qu'elle peuvent
+            perdre à ne pas le faire. Car les occasions de perdre du temps sont alors nombreuses, il
+            est même possible d'en citer quelques unes:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Si le résultat obtenu ne correspond pas au résultat attendu, il faudra quand
+                    même <quote>tout refaire</quote> ou, au minimum, commencer à investiguer pour
+                    savoir pourquoi;</para>
+            </listitem>
+            <listitem>
+                <para>il arrive que l'algorithme mis en place fonctionne <quote>presque
+                        toujours</quote>. Mais cela implique qu'il y ait des cas... où l'algorithme
+                    ne fonctionne pas;</para>
+            </listitem>
+            <listitem>
+                <para>Même si l'on obtient toujours le résultat attendu, certains algorithmes sont
+                    moins efficaces que d'autre – parfois en fonction des circonstances – et l'on en
+                    vient à se satisfaire d'un algorithme qui <emphasis role="bold"
+                        >correctement</emphasis>
+                    <quote>fait le travail</quote> en cinq minutes, alors qu'un autre aurait pu le
+                    faire... en cinq secondes.</para>
+            </listitem>
+        </itemizedlist>
+        <para>Bien sur, le fait de se poser pour réfléchir à la logique et pour s'assurer qu'elle
+            est correcte n'offre strictement aucune garantie quant au fait que nous ne serons
+                <emphasis role="bold">jamais</emphasis> confrontés à de telles occasions de perdre
+            du temps.</para>
+        <para>Cela permet cependant d'en réduire considérablement le risque.</para>
+        <blockquote>
+            <para>Le développement informatique est comme la gestion de capitaux: </para>
+            <para>Les bonnes décision feront gagner du temps et (éventuellement) de l'argent.</para>
+            <para>De mauvais choix occasionneront une <quote>dette technique</quote> dont les
+                intérêts ne feront qu'augmenter et que nous payerons de plus en plus cher (en temps
+                et en argent) au fil du temps.</para>
+        </blockquote>
+    </section>
+</chapter>
+

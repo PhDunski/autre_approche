@@ -1,0 +1,24 @@
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<part xml:id="stl" xml:lang="fr" version="5.0" 
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>La bibliothèque standard</title>
+    <partintro>
+        <para>Comme de nombreux langages de programmation, C++ vient avec une série de
+            fonctionnalités fournie par ce qu'il convient d'appeler la <emphasis>bibliothèque
+                standard</emphasis> propre au langage.</para>
+        <para>Il s'agit le plus souvent de types de données, de fonctions et de variables globales
+            destinés à faciliter la vie du développeur dans son <quote>travail de tous les
+                jours</quote>.</para>
+        <para>Contrairement  à d'autres langages (comme C# ou java) qui viennent avec une
+            bibliothèque standard particulièrement bien fournie au point – à mon sens – de
+                <quote>partir un peu dans tous les sens</quote>, la bibliothèque standard de C++
+            n'essaye de répondre qu'à un nombre <quote>relativement restreint</quote> de
+            problèmes.</para>
+        <para/>
+    </partintro>
+    <chapter><title></title>
+    <para></para></chapter>
+</part>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xml:lang="fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="pseudocode">
+    <title>Le pseudocode</title>
+    <indexterm>
+        <primary>Méthodes algorithmiques</primary>
+        <secondary>Pseudocode</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Outils</primary>
+        <secondary>Compilateur</secondary>
+    </indexterm>
+    <indexterm>
+        <primary>Outils</primary>
+        <secondary>Interpréteur</secondary>
+    </indexterm>
+    <para>Je sais, je me répète, et je le ferai encore souvent. Mais il faut comprendre que
+        n'importe quel langage de programmation n'est qu'un ensemble de conventions qui nous
+        permettent de nous faire comprendre par un programme (le <emphasis>compilateur</emphasis> ou
+            l'<emphasis>interpréteur</emphasis>).</para>
+    <para>Mais, comme il ne s'agit finalement que d'une convention, nous pourrions tout aussi bien
+        envisager d'avoir un <quote>langage</quote> qui ne sera utilisé que pour nous permettre de
+        transmettre l'algorithme non pas à un programme qui se chargera de le compiler ou de
+        l'interpréter mais à une <quote>tierce personne</quote> qui pourra l'analyser,  et / ou
+        l'utiliser pour le <quote>traduire</quote> dans un langage de programmation
+        particulier.</para>
+    <para>Ce langage aurait toutes les caractéristiques que l'on retrouve dans les langages de
+        programmation, dont le formalisme indispensable si on veut se faire comprendre par un
+        programme.</para>
+    <para>Le résultat de cette représentation aurait donc <quote>toutes les caractéristiques</quote>
+        d'un code que nous aurions écrit dans un langage de programmation particulier.</para>
+    <para>La seule différence, c'est sans doute qu'il n'existe aucun interpréteur ni aucun
+        compilateur qui soit en mesure de manipuler un tel code. Et c'est bien sur tout à fait
+        normal, vu que ce n'est pas le but de ce dernier.</para>
+    <para>C'est la raison pour laquelle nous parlerons généralement de
+            <emphasis>pseudocode</emphasis> pour désigner une telle représentation de la
+        logique.</para>
+    <sidebar>
+        <title>La seule représentation <quote>textuelle</quote></title>
+        <para>Vous ne manquerez pas de le constater par vous-même : la grosse majorité des méthodes
+            de représentation d'algorithmes se fait à base de pictogrammes ou de
+                <quote>dessins</quote> qui ne sont jamais très compliqués à comprendre.</para>
+        <para>L'utilisation de dessins et pictogrammes est particulièrement facile lorsqu'il s'agit
+            de transmettre un algorithme dans un <quote>format papier </quote>(ou
+            équivalent).</para>
+        <para>Par contre, cette utilisation de <quote>petits dessins</quote> n'est par exemple
+            absolument pas pratique lorsqu'il s'agit de transmettre un algorithme  sous la forme de
+            texte, lors d'une discussion sur un forum, par exemple</para>
+        <para>Je vous avouerai en outre faire partie de ces gens qui considèrent que, quitte à
+            écrire du <quote>faux code</quote>, nous avons sans doute bien plus intérêt à en écrire
+                <quote>directement du vrai</quote> .</para>
+        <para>Et pourtant, en dehors des explications propres aux différentes méthodes que je vais
+            donner, je vous présenterai la très grosse majorité des algorithmes sous forme de
+            pseudocode, par facilité, dans cet ouvrage.</para>
+        <note>
+            <para>Je dois cependant reconnaître que, si nous commençons à écrire du vrai code, nous
+                sommes tenus de respecter les règles spécifiques prpores au langage utilisé, et que
+                nous perdons dés lors tout l'intérêt d'une éventuelle représentation
+                    <quote>indépendante du langage utilisé</quote> de notre algorithme.</para>
+        </note>
+    </sidebar>
+</chapter>
+
